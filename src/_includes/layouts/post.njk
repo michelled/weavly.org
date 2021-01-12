@@ -1,0 +1,19 @@
+{% extends "layouts/base.njk" %}
+{% block content %}
+<body class="post">
+    {% uioTemplate %}
+    <main>
+        <nav class="flc-toc-tocContainer"></nav>
+        <article>
+            <header>
+                <h1>{{ title }}</h1>
+                <time datetime="{{ date | isoDate }}">{{ date | formatDate }}</time>
+            </header>
+            <div class="content">
+            {{ content | safe }}
+            </div>
+        </article>
+    </main>
+    {% uioInit %}
+</body>
+{% endblock %}
