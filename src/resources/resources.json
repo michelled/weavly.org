@@ -1,0 +1,4 @@
+{
+    "layout": "layouts/resource",
+    "permalink": "/learn/resources/{{ title | slug }}/"
+}
