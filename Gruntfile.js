@@ -26,6 +26,11 @@ module.exports = function (grunt) {
                 css: ["src/**/*.css"],
                 scss: ["src/**/*.scss"]
             }
+        },
+        stylelint: {
+            options: {
+                configFile: "./.stylelintrc.json"
+            }
         }
     });
     // Load the plugin(s):

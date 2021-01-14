@@ -1,6 +1,7 @@
 ---
 layout: layouts/lesson-plans.njk
 title: Lesson Plans
+subtitle: Pick inclusive coding lessons that match your curriculum, learners' needs, and available resources
 eleventyNavigation:
   parent: Learn
   key: Lesson Plans

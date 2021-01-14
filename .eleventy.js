@@ -77,6 +77,12 @@ module.exports = function (config) {
     config.addPlugin(rssPlugin);
     config.addPlugin(syntaxHighlight);
 
+    config.addShortcode("svgPlaceholder", function (width, height, background) {
+        return `<svg viewBox="0 0 ${width} ${height}" class="text-${background} w-auto max-w-full">
+        <rect width="${width}" height="${height}" class="fill-current" />
+    </svg>`;
+    });
+
     // 404
     config.setBrowserSyncConfig({
         callbacks: {

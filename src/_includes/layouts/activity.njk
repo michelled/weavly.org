@@ -3,12 +3,10 @@
 {% set bodyClass = "activity" %}
 
 {% block pageHeader %}
-<header>
     <h1>{{ title }}</h1>
     <p class="tags">
         <span class="tag">{{ type }} Activity</span> &middot; <span class="tag">{{ experience }}</span> &middot; <span class="tag">{{ subject }}</span>
     </p>
-</header>
 {% endblock %}
 
 {% block sidebar %}
@@ -19,7 +17,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="content">
     {{ content | safe }}
     {% if relatedActivities %}
     <div class="related-activities">
@@ -40,5 +37,4 @@
         {% endfor %}
     </div>
     {% endif %}
-</div>
 {% endblock %}

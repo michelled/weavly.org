@@ -3,12 +3,10 @@
 {% set bodyClass = "lesson-plan" %}
 
 {% block pageHeader %}
-<header>
     <h1>{{ title }}</h1>
     <p class="tags">
         <span class="tag">{{ robot }}</span> &middot; <span class="tag">{{ experience }}</span> &middot; <span class="tag">{{ topic }}</span>
     </p>
-</header>
 {% endblock %}
 
 {% block sidebar %}
@@ -19,7 +17,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="content">
     {{ content | safe }}
     {% if supportiveMaterial %}
     <h2>Supportive Materials</h2>
@@ -46,5 +43,4 @@
         {% endfor %}
     </div>
     {% endif %}
-</div>
 {% endblock %}

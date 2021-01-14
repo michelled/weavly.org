@@ -1,6 +1,7 @@
 ---
 layout: layouts/resources.njk
 title: Accessible Coding 101
+subtitle: Find tips and strategies to help you teach coding in a more accessible way
 eleventyNavigation:
   parent: Learn
   key: Accessible Coding 101

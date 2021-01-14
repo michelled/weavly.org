@@ -2,12 +2,6 @@
 
 {% set bodyClass = "lesson-plans" %}
 
-{% block pageHeader %}
-<header>
-    <h1>{{ title }}</h1>
-</header>
-{% endblock %}
-
 {% block content %}
 {% if lessonPlans.length %}
     {% for item in lessonPlans %}

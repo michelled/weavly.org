@@ -3,14 +3,10 @@
 {% set bodyClass = "resource" %}
 
 {% block pageHeader %}
-<header>
     <h1>{{ title }}</h1>
     <p class="metadata">By <span class="author">{{ author if author else "the Coding to Learn and Create Team" }}</span> &middot; Posted <time datetime="{{ date | isoDate }}" class="dt-published">{{ date | formatDate }}</time></p>
-</header>
 {% endblock %}
 
 {% block content %}
-<div class="content">
     {{ content | safe }}
-</div>
 {% endblock %}

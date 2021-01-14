@@ -2,12 +2,6 @@
 
 {% set bodyClass = "activities" %}
 
-{% block pageHeader %}
-<header>
-    <h1>{{ title }}</h1>
-</header>
-{% endblock %}
-
 {% block content %}
 {% if activities.length %}
     {% for item in activities %}

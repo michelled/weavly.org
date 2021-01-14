@@ -1,5 +1,5 @@
-            <nav class="nav" id="menu" aria-label="menu">
-                <ul>
+            <nav class="nav mt-8 md:ml-auto md:mt-0" id="menu" aria-label="menu">
+                <ul class="flex flex-col md:flex-row">
                     {% set navItems = collections.all | eleventyNavigation %}
                     {% for item in navItems %}
                     <li>

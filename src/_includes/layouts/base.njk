@@ -14,20 +14,26 @@
         {% include "partials/global/header.njk" %}
         <main>
             <article>
-                {% block pageHeader %}
-                <header>
-                    <h1>{{ title }}</h1>
+                <header class="w-full">
+                    <div class="wrapper max-w-screen-lg mx-auto px-6 py-6">
+                    {% block pageHeader %}
+                        <h1>{{ title }}</h1>
+                        {% if subtitle %}
+                        <p class="subtitle">{{ subtitle | safe }}</p>
+                        {% endif %}
+                    {% endblock %}
+                    </div>
                 </header>
-                {% endblock %}
                 <nav class="flc-toc-tocContainer"></nav>
                 {% block sidebar %}
                 {% endblock %}
-                {% block content %}
-                <div class="content">
-                {{ content | safe }}
+                <div class="content w-full">
+                    <div class="wrapper max-w-screen-lg mx-auto px-6">
+                    {% block content %}
+                    {{ content | safe }}
+                    {% endblock %}
+                    </div>
                 </div>
-                {% endblock %}
-
             </article>
         </main>
         {% include "partials/global/footer.njk" %}

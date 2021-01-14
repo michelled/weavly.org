@@ -2,12 +2,6 @@
 
 {% set bodyClass = "resources" %}
 
-{% block pageHeader %}
-<header>
-    <h1>{{ title }}</h1>
-</header>
-{% endblock %}
-
 {% block content %}
 {% if resources.length %}
     {% for item in resources %}

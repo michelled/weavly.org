@@ -2,15 +2,6 @@
 
 {% set bodyClass = "projects" %}
 
-{% block pageHeader %}
-<header>
-    <h1>{{ title }}</h1>
-    {% if subtitle %}
-    <p class="subtitle">{{ subtitle | safe }}</p>
-    {% endif %}
-</header>
-{% endblock %}
-
 {% block content %}
 {% if projects.length %}
     {% for item in projects %}

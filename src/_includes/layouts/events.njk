@@ -2,15 +2,6 @@
 
 {% set bodyClass = "events" %}
 
-{% block pageHeader %}
-<header>
-    <h1>{{ title }}</h1>
-    {% if subtitle %}
-    <p class="subtitle">{{ subtitle | safe }}</p>
-    {% endif %}
-</header>
-{% endblock %}
-
 {% block content %}
 {% if events.length %}
     {% for item in events | reverse %}
