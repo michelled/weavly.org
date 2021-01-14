@@ -7,9 +7,28 @@ eleventyNavigation:
     key: Learn
     order: 3
 ---
+<div class="mt-12 md:mt-32">
+    <div class="flex flex-col sm:flex-row">
+        <div class="w-full space-y-4 sm:w-1/3">
+            {% svgPlaceholder "680", "425", "indigo-500" %}
+            <p class="text-lg font-bold"><a href="#accessible-coding-101">Accessible Coding 101</a></p>
+            <p>Find tips and strategies to help you teach coding in a more accessible way</p>
+        </div>
+        <div class="w-full space-y-4 sm:w-1/3 sm:ml-6">
+            {% svgPlaceholder "680", "425", "indigo-500" %}
+            <p class="text-lg font-bold"><a href="#activities-library">Activities Library</a></p>
+            <p>Explore a mix of un-plugged, on-screen or hybrid activities to make music, create games, and tell stories</p>
+        </div>
+        <div class="w-full space-y-4 sm:w-1/3 sm:ml-6">
+            {% svgPlaceholder "680", "425", "indigo-500" %}
+            <p class="text-lg font-bold"><a href="#lesson-plans">Lesson Plans</a></p>
+            <p>Pick inclusive coding lessons that match your curriculum, learners&rsquo; needs, and available resources</p>
+        </div>
+    </div>
+</div>
 <div class="mt-12 md:mt-32 flex flex-col md:flex-row md:items-center">
     <div class="w-full space-y-4 md:w-2/5 md:pr-6">
-        <h2>Accessible Coding 101</h2>
+        <h2 id="accessible-coding-101">Accessible Coding 101</h2>
         <p>Here you can find a collection of techniques and strategies to help create and set up an accessible environment for
         coding education.</p>
         <p><a href="/learn/resources/">Check out resources</a></p>
@@ -19,7 +38,7 @@ eleventyNavigation:
     </div>
 </div>
 <div class="mt-12 md:mt-32">
-    <h2>Activities Library</h2>
+    <h2 id="activities-library">Activities Library</h2>
     <div class="flex flex-col sm:flex-row">
         <div class="w-full space-y-4 sm:w-1/3">
             {% svgPlaceholder "680", "425", "indigo-500" %}
@@ -43,7 +62,7 @@ eleventyNavigation:
 </div>
 <div class="mt-12 md:mt-32 flex flex-col md:flex-row md:items-center">
     <div class="w-full space-y-4 mt-6 md:w-2/5 md:mt-0 md:pr-6">
-        <h2>Lesson Plans</h2>
+        <h2 id="lesson-plans">Lesson Plans</h2>
         <p>This collection of lesson plans are created with the K-12 coding curriculum in mind. These aim to support educators to
         teach basic concepts of coding to learners with unique needs.</p>
         <p><a href="/learn/lesson-plans/">Check out lesson plans</a></p>
