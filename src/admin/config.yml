@@ -7,25 +7,6 @@ site_url: "https://c2lc-project.netlify.app"
 media_folder: "src/assets/media"
 public_folder: "/assets/media"
 collections:
-  - name: pages
-    label: Pages
-    label_singular: Page
-    folder: "src/pages"
-    slug: "{{slug}}"
-    preview_path: "{{slug}}"
-    editor:
-      preview: false
-    create: true
-    filter: {field: "editable", value: true}
-    fields:
-      - {label: "Editable", name: "editable", widget: hidden, default: true}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
-      - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Permalink", name: "permalink", widget: "string", required: false}
-      - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
-      - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
   - name: resources
     label: Coding Resources
     label_singular: Coding Resource
