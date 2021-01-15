@@ -21,7 +21,7 @@
     {% if supportiveMaterial %}
     <h2>Supportive Materials</h2>
     {% for item in supportiveMaterial %}
-    <p>{{ item.label }} &middot; <a href="{{ item.file }}">Download File<span class="visually-hidden"> &ldquo;{{ item.label }}&rdquo;</span></a></p>
+    <p>{{ item.label }} &middot; <a href="{{ item.file }}">Download File<span class="sr-only"> &ldquo;{{ item.label }}&rdquo;</span></a></p>
     {% endfor %}
     {% endif %}
     {% if relatedLessonPlans %}

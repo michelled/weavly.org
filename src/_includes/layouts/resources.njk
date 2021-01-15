@@ -4,15 +4,25 @@
 
 {% block content %}
 {% if resources.length %}
+<div class="space-y-12 resources">
     {% for item in resources %}
-        <article class="entry">
-            <h2>{{ item.data.title }}</h2>
-            <p class="metadata">By <span class="author">{{ item.data.author if item.data.author else "the Coding to Learn and Create Team" }}</span> &middot; Posted <time datetime="{{ item.data.date | isoDate }}" class="dt-published">{{ item.data.date | formatDate }}</time></p>
-            {% if item.data.description %}
-            <p>{{ item.data.description | safe }}</p>
-            {% endif %}
-            <p><a href="{{ item.url }}">Read more<span class="visually-hidden"> of &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
+        <article class="flex flex-col entry md:flex-row md:items-center">
+            <div class="md:w-1/2">
+                {% svgPlaceholder "570", "380" %}
+            </div>
+            <div class="mt-4 space-y-4 md:w-1/2 md:pl-6 md:mt-0">
+                <h2>{{ item.data.title }}</h2>
+                <p class="metadata">{% if item.data.author %}By <span class="author">{{ item.data.author }}</span> &middot; {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="dt-published">{{ item.data.date | formatDate }}</time></p>
+                {% if item.data.description %}
+                <p>{{ item.data.description | safe }}</p>
+                {% endif %}
+                <p><a href="{{ item.url }}">Read more<span class="sr-only"> of &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
+            </div>
         </article>
     {% endfor %}
+</div>
+{% endif %}
+{% if pagination.pages.length > 1 %}
+{% include "partials/components/pagination.njk" %}
 {% endif %}
 {% endblock %}

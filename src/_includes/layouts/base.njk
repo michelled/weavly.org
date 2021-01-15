@@ -15,11 +15,11 @@
         <main>
             <article>
                 <header class="w-full">
-                    <div class="wrapper max-w-screen-lg mx-auto px-6 py-6">
+                    <div class="max-w-screen-lg px-6 py-6 mx-auto wrapper">
                     {% block pageHeader %}
                         <h1>{{ title }}</h1>
                         {% if subtitle %}
-                        <p class="subtitle">{{ subtitle | safe }}</p>
+                        <p class="mt-4 subtitle md:max-w-prose">{{ subtitle | safe }}</p>
                         {% endif %}
                     {% endblock %}
                     </div>
@@ -27,8 +27,8 @@
                 <nav class="flc-toc-tocContainer"></nav>
                 {% block sidebar %}
                 {% endblock %}
-                <div class="content w-full">
-                    <div class="wrapper max-w-screen-lg mx-auto px-6">
+                <div class="w-full my-12 content md:my-24">
+                    <div class="max-w-screen-lg px-6 mx-auto wrapper">
                     {% block content %}
                     {{ content | safe }}
                     {% endblock %}

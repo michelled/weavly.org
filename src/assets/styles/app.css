@@ -3,31 +3,29 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
     h1 {
-        @apply text-4xl font-bold mb-4;
+        @apply mb-4 text-4xl font-bold;
     }
 
     h2 {
-        @apply text-2xl font-bold mb-4;
+        @apply mb-4 text-2xl font-bold;
     }
 
     h3 {
-        @apply text-lg font-bold mb-4;
+        @apply mb-4 text-lg font-bold;
     }
 
     a {
         @apply underline;
     }
-}
-
-.nav li + li {
-    @apply md:ml-4;
-}
-
-.nav [aria-current="page"] {
-    @apply bg-black text-white;
-}
-
-.subtitle {
-    @apply mt-4 md:max-w-prose;
 }

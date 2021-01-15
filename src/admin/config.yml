@@ -19,7 +19,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime", timeFormat: false}
-      - {label: "Author", name: "author", widget: "string", required: false, default: "Coding to Learn and Create Team"}
+      - {label: "Author", name: "author", widget: "string", required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
