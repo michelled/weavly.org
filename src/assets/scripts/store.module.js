@@ -26,10 +26,12 @@ const url = {
     subscribe: derived(href, ($href) => new URL($href)).subscribe
 };
 
+const activities = writable([]);
 const type = writable("");
 const experience = writable("");
 const subject = writable("");
+const pageCount = derived(activities, $activities => Math.ceil($activities.length / 10));
 
 export {
-    url, type, experience, subject
+    url, activities, pageCount, type, experience, subject
 };
