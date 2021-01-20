@@ -1,0 +1,141 @@
+<script>
+    import { onMount } from 'svelte';
+
+    import { url } from './store.module.js'
+
+    let offset = 0;
+    let activities = [];
+    let pageCount = 0;
+    let pages = [];
+    let params = new URLSearchParams(window.location.search);
+    let page = parseInt(params.get('page')) || 1;
+
+    let types = [
+        'Unplugged',
+        'On-Screen',
+        'Hybrid'
+    ];
+
+    let levels = [
+        'No Coding Experience',
+        'Unplugged Coding Experience',
+        'Blockly Coding Experience'
+    ];
+
+    let subjects = [
+        'Drawings',
+        'Music',
+        'Games',
+        'Stories'
+    ];
+
+    let type = '';
+    let experience = '';
+    let subject = '';
+
+    function handleLinkClick(e) {
+        e.preventDefault()
+        const href = e.target.href;
+        history.pushState(href, '', href);
+    }
+
+    function applyFilters() {
+        console.log({type, experience, subject});
+    }
+
+    function clearFilters() {
+        type = experience = subject = '';
+        applyFilters();
+    }
+
+    function goToPrev() {
+        offset = offset - 10;
+    }
+
+    function goToNext() {
+        offset = offset + 10;
+    }
+
+    function applyOffset(event) {
+        offset = parseInt(event.target.dataset.offset);
+    }
+
+    onMount(async () => {
+		const res = await fetch(`/activities.json`);
+        activities = await res.json();
+        pageCount = activities.length / 10;
+        offset = (page - 1) * 10;
+        for(let i = 1; i <= pageCount; i++) {
+            pages.push((i - 1) * 10);
+        }
+	});
+</script>
+
+<div class="my-12 space-y-4 filter">
+    <h2>Filter Activities</h2>
+    <div class="space-y-4 lg:space-y-0 lg:flex lg:justify-start lg:items-center">
+        <label class="block lg:flex lg:items-center" for="type">
+            Type: 
+            <select bind:value={type} class="py-1 ml-2 border border-black rounded focus:outline-none focus:ring-2" name="type" id="type">
+                <option value="">Any Type</option>
+                {#each types as type}
+				<option value={type}>{type}</option>
+				{/each}
+            </select>
+        </label>
+        <label class="block lg:flex lg:items-center lg:ml-4" for="experience">
+            Experience:        
+            <select bind:value={experience} class="py-1 ml-2 border border-black rounded focus:outline-none focus:ring-2" name="experience" id="experience">
+                <option value="">Any Level</option>
+                {#each levels as level}
+				<option value={level}>{level}</option>
+				{/each}
+            </select>
+        </label>
+        <label class="block lg:flex lg:items-center lg:ml-4" for="subject">
+            Subject:
+            <select bind:value={subject} class="py-1 ml-2 border border-black rounded focus:outline-none focus:ring-2" name="subject" id="subject">
+                <option value="">Any Subject</option>
+                {#each subjects as subject}
+				<option value={subject}>{subject}</option>
+				{/each}
+            </select>
+        </label>
+        <button on:click={applyFilters} class="px-2 py-1 font-semibold border border-black rounded lg:ml-4 focus:outline-none focus:ring-2" id="apply" type="button">Apply Filters</button>
+        <button on:click={clearFilters} class="px-2 py-1 border border-black rounded lg:ml-auto focus:outline-none focus:ring-2" id="clear" type="button">Clear Filters</button>
+    </div>
+</div>
+<p>Current page: {page}</p>
+<p>Total items: {activities.length}</p>
+<div class="grid gap-6 my-12 activities md:grid-cols-2">
+    <h2 class="sr-only">Activities</h2>
+    {#if activities.length > 0}
+        {#each activities.slice(offset, offset + 10) as item}
+            <article class="relative border border-black card entry focus-within:ring-2">
+                <svg viewBox="0 0 570 393" class="w-auto max-w-full"><rect width="570" height="393" class="fill-current"></rect></svg>
+                <div class="p-4 space-y-4">
+                    <h3><a href="{ item.url }">{ item.title }</a></h3>
+                    <p class="metadata">{ item.type } &middot; { item.experience } &middot; { item.subject }</p>
+                    {#if item.description }
+                    <p>{ item.description }</p>
+                    {/if}
+                </div>
+            </article>
+        {/each}
+    {/if}
+</div>
+{#if activities.length > 10}
+<nav class="w-full mb-12 pagination" aria-label="pagination">
+    <ul class="flex flex-row items-center justify-center w-full">
+    {#if offset > 0}
+        <li class="ml-2"><a on:click={handleLinkClick} class="p-2" href="?page={page - 1}"><span aria-hidden="true">&larr;</span><span class="sr-only">previous</span></a></li>
+    {/if}
+    {#each pages as p, i}
+    <li class="ml-2"><a on:click={handleLinkClick} class="{offset === p ? "p-2 text-white bg-black" : "p-2"}" href="?page={i + 1}">{i + 1}</a></li>
+    {/each}
+    {#if activities.length > offset + 10}
+        <li class="ml-2"><a on:click={handleLinkClick} class="p-2" href="?page={page + 1}"><span class="sr-only">next</span><span aria-hidden="true">&rarr;</span></a></li>
+    {/if}
+    </ul>
+</nav>
+{/if}

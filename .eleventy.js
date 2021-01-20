@@ -40,7 +40,13 @@ module.exports = function (config) {
     const now = new Date();
 
     // Custom collections
+
+    const sortedActivities = (a, b) => {
+        return a - b;
+    };
+
     const liveResources = resource => resource.date <= now && !resource.data.draft;
+
     config.addCollection("resources", collection => {
         return [
             ...collection.getFilteredByGlob("./src/resources/*.md").filter(liveResources)
@@ -49,7 +55,49 @@ module.exports = function (config) {
 
     config.addCollection("activities", collection => {
         return [
-            ...collection.getFilteredByGlob("./src/activities/*.md")
+            ...collection
+                .getFilteredByGlob("./src/activities/*.md")
+                .sort(sortedActivities)
+        ];
+    });
+
+    config.addCollection("unpluggedActivities", collection => {
+        return [
+            ...collection
+                .getFilteredByGlob("./src/activities/*.md")
+                .filter(
+                    function (activity) {
+                        return activity.data.type === "Unplugged";
+                    }
+                )
+                .sort(sortedActivities)
+        ];
+    });
+
+    config.addCollection("onscreenActivities", collection => {
+        return [
+            ...collection
+                .getFilteredByGlob("./src/activities/*.md")
+                .filter(
+                    function (activity) {
+                        return activity.data.type === "On-Screen";
+                    }
+                )
+                .sort(sortedActivities)
+
+        ];
+    });
+
+    config.addCollection("hybridActivities", collection => {
+        return [
+            ...collection
+                .getFilteredByGlob("./src/activities/*.md")
+                .filter(
+                    function (activity) {
+                        return activity.data.type === "Hybrid";
+                    }
+                )
+                .sort(sortedActivities)
         ];
     });
 

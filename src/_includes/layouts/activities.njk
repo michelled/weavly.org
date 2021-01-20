@@ -3,15 +3,68 @@
 {% set bodyClass = "activities" %}
 
 {% block content %}
-{% if activities.length %}
-    {% for item in activities %}
-        <article class="entry">
-            <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
-            <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
-            {% if item.data.description %}
-            <p>{{ item.data.description | safe }}</p>
+<div id="activities"></div>
+<noscript class="space-y-12">
+    <h2 id="#unplugged">Unplugged Activities</h2>
+    {% if collections.unpluggedActivities.length %}
+    <div class="grid gap-6 my-12 activities md:grid-cols-2">
+    {% for item in collections.unpluggedActivities | limit(2) %}
+        <article class="relative border border-black card entry focus-within:ring-2">
+            {% svgPlaceholder "570", "393" %}
+            <div class="p-4 space-y-4">
+                <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+                <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
+                {% if item.data.description %}
+                <p>{{ item.data.description | safe }}</p>
             {% endif %}
+            </div>
         </article>
     {% endfor %}
-{% endif %}
+    </div>
+    <p><a href="/learn/activities/unplugged/">See more unplugged activities</a></p>
+    {% else %}
+    <p>No activities found.</p>
+    {% endif %}
+    <h2 id="on-screen">On-Screen Activities</h2>
+    {% if collections.onscreenActivities.length %}
+    <div class="grid gap-6 my-12 activities md:grid-cols-2">
+    {% for item in collections.onscreenActivities | limit(2) %}
+        <article class="relative border border-black card entry focus-within:ring-2">
+            {% svgPlaceholder "570", "393" %}
+            <div class="p-4 space-y-4">
+                <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+                <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
+                {% if item.data.description %}
+                <p>{{ item.data.description | safe }}</p>
+            {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+    <p><a href="/learn/activities/on-screen/">See more on-screen activities</a></p>
+    {% else %}
+    <p>No activities found.</p>
+    {% endif %}
+    <h2 id="hybrid">Hybrid Activities</h2>
+    {% if collections.onscreenActivities.length %}
+    <div class="grid gap-6 my-12 activities md:grid-cols-2">
+    {% for item in collections.hybridActivities | limit(2) %}
+        <article class="relative border border-black card entry focus-within:ring-2">
+            {% svgPlaceholder "570", "393" %}
+            <div class="p-4 space-y-4">
+                <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+                <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
+                {% if item.data.description %}
+                <p>{{ item.data.description | safe }}</p>
+            {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+    <p><a href="/learn/activities/hybrid/">See more hybrid activities</a></p>
+    {% else %}
+    <p>No activities found.</p>
+    {% endif %}
+</noscript>
+<script type="module" src="/assets/scripts/activities.module.js"></script>
 {% endblock %}

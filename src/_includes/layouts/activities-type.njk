@@ -1,0 +1,27 @@
+{% extends "layouts/base.njk" %}
+
+{% set bodyClass = "activities" %}
+
+{% block content %}
+<noscript class="space-y-12">
+    {% if activities.length %}
+        <div class="grid gap-6 my-12 activities md:grid-cols-2">
+        {% for item in activities %}
+            <article class="relative border border-black card entry focus-within:ring-2">
+                {% svgPlaceholder "570", "393" %}
+                <div class="p-4 space-y-4">
+                    <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+                    <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
+                    {% if item.data.description %}
+                    <p>{{ item.data.description | safe }}</p>
+                {% endif %}
+                </div>
+            </article>
+        {% endfor %}
+        </div>
+        {% if pagination.pages.length > 1 %}
+        {% include "partials/components/pagination.njk" %}
+        {% endif %}
+    {% endif %}
+</noscript>
+{% endblock %}
