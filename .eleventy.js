@@ -40,9 +40,26 @@ module.exports = function (config) {
     const now = new Date();
 
     // Custom collections
+    const sortActivities = (a, b) => {
+        const levels = ["No Coding Experience", "Unplugged Coding Experience", "Blockly Coding Experience"];
 
-    const sortedActivities = (a, b) => {
-        return a - b;
+        if (a.data.experience !== b.data.experience) {
+            if (levels.indexOf(a.data.experience) < levels.indexOf(b.data.experience)) {
+                return -1;
+            }
+
+            if (levels.indexOf(a.data.experience) > levels.indexOf(b.data.experience)) {
+                return 1;
+            }
+        }
+
+        if (a.title > b.title) {
+            return 1;
+        }
+
+        if (a.title < b.title) {
+            return -1;
+        }
     };
 
     const liveResources = resource => resource.date <= now && !resource.data.draft;
@@ -57,7 +74,7 @@ module.exports = function (config) {
         return [
             ...collection
                 .getFilteredByGlob("./src/activities/*.md")
-                .sort(sortedActivities)
+                .sort(sortActivities)
         ];
     });
 
@@ -70,7 +87,7 @@ module.exports = function (config) {
                         return activity.data.type === "Unplugged";
                     }
                 )
-                .sort(sortedActivities)
+                .sort(sortActivities)
         ];
     });
 
@@ -83,8 +100,7 @@ module.exports = function (config) {
                         return activity.data.type === "On-Screen";
                     }
                 )
-                .sort(sortedActivities)
-
+                .sort(sortActivities)
         ];
     });
 
@@ -97,7 +113,7 @@ module.exports = function (config) {
                         return activity.data.type === "Hybrid";
                     }
                 )
-                .sort(sortedActivities)
+                .sort(sortActivities)
         ];
     });
 
