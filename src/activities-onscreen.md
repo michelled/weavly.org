@@ -1,6 +1,7 @@
 ---
 layout: layouts/activities-type
 title: On-Screen Activites
+type: On-Screen
 permalink: "/learn/activities/on-screen/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 eleventyNavigation:
   parent: Activities Library

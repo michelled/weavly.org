@@ -8,6 +8,8 @@
         <script type="text/javascript" src="{{ '/' | url }}lib/infusion/infusion-uio.min.js"></script>
         {% include "partials/global/scripts.njk" %}
         {% include "partials/global/stylesheets.njk" %}
+        {% block headerScripts %}
+        {% endblock %}
     </head>
     <body class="{{ bodyClass if bodyClass else "page" }}">
         {% uioTemplate %}
