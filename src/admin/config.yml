@@ -51,7 +51,7 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
-        default: "## Description\n\n## Steps\n\n## Tips\n\n## Skill Development\n\n## Level Up!\n\n"
+        default: "## Objectives\n\n## Description\n\n## Steps\n\n## Tips\n\n## Skill Development\n\n## Level Up!\n\n"
       - label: "Book suggestions"
         name: "books"
         widget: "list"
