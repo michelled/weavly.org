@@ -148,16 +148,16 @@
     {/if}
 </div>
 {#if $filteredActivities.length > 10}
-<nav class="w-full mb-12 pagination" aria-label="pagination">
-    <ul class="flex flex-row items-center justify-center w-full">
+<nav class="[ pagination ]" aria-label="pagination">
+    <ul>
     {#if offset > 0}
-        <li class="ml-2"><a on:click|preventDefault={changePage} class="p-2" href={window.location.search.replace(/page=([0-9])*/g, `page=${page - 1}`)} data-page={page - 1}><span aria-hidden="true">&larr;</span><span class="sr-only">previous</span></a></li>
+        <li><a on:click|preventDefault={changePage} href={window.location.search.replace(/page=([0-9])*/g, `page=${page - 1}`)} data-page={page - 1}><span aria-hidden="true">&larr;</span><span class="[ visually-hidden ]">previous</span></a></li>
     {/if}
     {#each $pages as p, i}
-    <li class="ml-2"><a on:click|preventDefault={changePage} class="{offset === p ? "p-2 text-white bg-black" : "p-2"}" href={window.location.search.replace(/page=([0-9])*/g, `page=${i + 1}`)} data-page={i + 1}>{i + 1}</a></li>
+    <li><a on:click|preventDefault={changePage} href={window.location.search.replace(/page=([0-9])*/g, `page=${i + 1}`)} data-page={i + 1}>{i + 1}</a></li>
     {/each}
     {#if $filteredActivities.length > offset + 10}
-        <li class="ml-2"><a on:click|preventDefault={changePage} class="p-2" href={window.location.search.replace(/page=([0-9])*/g, `page=${page + 1}`)} data-page={page + 1}><span class="sr-only">next</span><span aria-hidden="true">&rarr;</span></a></li>
+        <li><a on:click|preventDefault={changePage} href={window.location.search.replace(/page=([0-9])*/g, `page=${page + 1}`)} data-page={page + 1}><span class="[ visually-hidden ]">next</span><span aria-hidden="true">&rarr;</span></a></li>
     {/if}
     </ul>
 </nav>

@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the placeholder component.
+// -----------------------------------------------------------------------------
+
+svg.placeholder {
+    max-width: 100%;
+    width: auto;
+
+    rect {
+        fill: currentColor;
+    }
+}

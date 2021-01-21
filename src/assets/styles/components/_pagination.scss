@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the pagination component.
+// -----------------------------------------------------------------------------
+
+.pagination {
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.pagination ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination li {
+    margin-left: 0.5rem;
+}
+
+.pagination a {
+    padding: 0.5rem;
+
+    &[aria-current="page"] {
+        background: black;
+        color: white;
+        text-decoration: none;
+    }
+}

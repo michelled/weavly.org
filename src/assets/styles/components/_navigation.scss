@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigation component.
+// -----------------------------------------------------------------------------
+
+.nav {
+    margin-top: 2rem;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav li {
+    margin-left: -0.5rem;
+    margin-top: 1rem;
+}
+
+.nav a {
+    padding: 0.5rem;
+
+    &[aria-current="page"] {
+        background: black;
+        color: white;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav {
+        margin-left: auto;
+        margin-top: 0;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav li {
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+}

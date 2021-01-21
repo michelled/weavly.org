@@ -142,8 +142,8 @@ module.exports = function (config) {
     config.addPlugin(syntaxHighlight);
 
     config.addShortcode("svgPlaceholder", function (width, height) {
-        return `<svg viewBox="0 0 ${width} ${height}" class="w-auto max-w-full">
-        <rect width="${width}" height="${height}" class="fill-current" />
+        return `<svg viewBox="0 0 ${width} ${height}" class="placeholder">
+        <rect width="${width}" height="${height}" />
     </svg>`;
     });
 

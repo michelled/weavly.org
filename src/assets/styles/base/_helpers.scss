@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.center {
+    text-align: center;
+}
+
+.flow > * + * {
+    --space: 1rem;
+
+    margin-top: var(--space, 1rem);
+}
+
+.flow-md {
+    --space: 3rem;
+}
+
+.flow-lg {
+    --space: 3rem;
+}
+
+.columns {
+    --threshold: 768px;
+    --space: 1.5rem;
+}
+
+.columns > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(var(--space) / 2 * -1);
+}
+
+.columns > * > * {
+    flex-basis: calc((var(--threshold) - (100% - var(--space))) * 999);
+    flex-grow: 1;
+    margin: calc(var(--space) / 2);
+}
+
+.columns.columns-two > * > :nth-last-child(n+4),
+.columns.columns-two > * > :nth-last-child(n+4) ~ * {
+    flex-basis: 100%;
+}
+
+.columns.columns-three > * > :nth-last-child(n+4),
+.columns.columns-three > * > :nth-last-child(n+4) ~ * {
+    flex-basis: 100%;
+}
+
+.two\:three {
+    --space: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.two\:three > * + * {
+    margin-top: var(--space);
+}
+
+@media (min-width: 768px) {
+    .md\:hidden {
+        display: none;
+    }
+
+    .flow-lg > * + * {
+        margin-top: 8rem;
+    }
+
+    .columns.columns-two > * > :nth-child(even) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .two\:three {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .two\:three > * + * {
+        margin-top: 0;
+    }
+
+    .two\:three__two {
+        width: calc((2 / 5 * 100%) - var(--space) / 2);
+    }
+
+    .two\:three__three {
+        width: calc((3 / 5 * 100%) - var(--space) / 2);
+    }
+}

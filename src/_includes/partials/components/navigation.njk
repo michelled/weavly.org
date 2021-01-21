@@ -1,9 +1,9 @@
-            <nav class="mt-8 nav md:ml-auto md:mt-0" id="menu" aria-label="menu">
-                <ul class="flex flex-col md:flex-row">
+            <nav class="[ nav ]" id="menu" aria-label="menu">
+                <ul role="list">
                     {% set navItems = collections.all | eleventyNavigation %}
                     {% for item in navItems %}
-                    <li class="md:ml-4">
-                        <a class="p-2{% if item.url == page.url %} text-white bg-black{% endif %}" href="{{ item.url | url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+                    <li>
+                        <a href="{{ item.url | url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
                     </li>
                     {% endfor %}
                 </ul>

@@ -4,21 +4,23 @@
 
 {% block content %}
 {% if resources.length %}
-<div class="space-y-12 resources">
+<div class="[ flow ] [ flow-md ]">
     {% for item in resources %}
-        <article class="flex flex-col entry md:flex-row md:items-center">
-            <div class="md:w-1/2">
+    <article class="[ resource ] [ columns ] [ columns-two ]">
+        <div>
+            <div class="[ resource__image ]">
                 {% svgPlaceholder "570", "380" %}
             </div>
-            <div class="mt-4 space-y-4 md:w-1/2 md:pl-6 md:mt-0">
+            <div class="[ resource__details ] [ flow ]">
                 <h2>{{ item.data.title }}</h2>
-                <p class="metadata">{% if item.data.author %}By <span class="author">{{ item.data.author }}</span> &middot; {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="dt-published">{{ item.data.date | formatDate }}</time></p>
+                <p class="metadata">{% if item.data.author %}By <span class="[ author ]">{{ item.data.author }}</span> &middot; {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="[ dt-published ]">{{ item.data.date | formatDate }}</time></p>
                 {% if item.data.description %}
                 <p>{{ item.data.description | safe }}</p>
                 {% endif %}
-                <p><a href="{{ item.url }}">Read more<span class="sr-only"> of &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
+                <p><a href="{{ item.url }}">Read more<span class="[ visually-hidden ]"> of &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
             </div>
-        </article>
+        </div>
+    </article>
     {% endfor %}
 </div>
 {% endif %}

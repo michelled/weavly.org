@@ -10,17 +10,17 @@
         {% block headerScripts %}
         {% endblock %}
     </head>
-    <body class="{{ bodyClass if bodyClass else "page" }}">
+    <body class="[ {{ bodyClass if bodyClass else "page" }} ]">
         {% uioTemplate %}
         {% include "partials/global/header.njk" %}
         <main>
             <article>
-                <header class="w-full">
-                    <div class="max-w-screen-lg px-6 py-6 mx-auto wrapper">
+                <header class="[ header ]">
+                    <div class="[ wrapper ]">
                     {% block pageHeader %}
                         <h1>{{ title }}</h1>
                         {% if subtitle %}
-                        <p class="mt-4 subtitle md:max-w-prose">{{ subtitle | safe }}</p>
+                        <p class="[ subtitle ] [ prose ]">{{ subtitle | safe }}</p>
                         {% endif %}
                     {% endblock %}
                     </div>
@@ -28,8 +28,8 @@
                 <nav class="flc-toc-tocContainer"></nav>
                 {% block sidebar %}
                 {% endblock %}
-                <div class="w-full my-12 content md:my-24">
-                    <div class="max-w-screen-lg px-6 mx-auto wrapper">
+                <div class="[ content ]">
+                    <div class="[ wrapper ]">
                     {% block content %}
                     {{ content | safe }}
                     {% endblock %}
