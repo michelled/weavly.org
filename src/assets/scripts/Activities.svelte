@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
 
-    import { url, activities, filteredActivities, pages, pageCount, type, experience, subject } from './store.module.js'
+    import { url, activities, filteredActivities, pages, pageCount, type, experience, subject } from './activitiesStore.module.js'
 
     let offset = 0;
     let params = new URLSearchParams(window.location.search);
