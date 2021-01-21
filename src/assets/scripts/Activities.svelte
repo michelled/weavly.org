@@ -43,15 +43,15 @@
         let queryParams = {};
 
         if (selectedType) {
-            queryParams.type = selectedType.toLowerCase();
+            queryParams.type = selectedType;
         }
 
         if (selectedExperience) {
-            queryParams.experience = selectedExperience.toLowerCase();
+            queryParams.experience = selectedExperience;
         }
 
         if (selectedSubject) {
-            queryParams.subject = selectedSubject.toLowerCase();
+            queryParams.subject = selectedSubject;
         }
 
         queryParams.page = 1;
@@ -122,9 +122,13 @@
         <button on:click={applyFilters} class="px-2 py-1 font-semibold border border-black rounded lg:ml-4 focus:outline-none focus:ring-2" id="apply" type="button">Apply Filters</button>
         <button on:click={clearFilters} class="px-2 py-1 border border-black rounded lg:ml-auto focus:outline-none focus:ring-2" id="clear" type="button">Clear Filters</button>
     </div>
-    {#if $filteredActivities.length < $activities.length}
-    <p>Showing {$filteredActivities.length} of {$activities.length} activities.</p>
+    <div class="pt-2" role="alert">
+    {#if $filteredActivities.length === 0}
+    <p class="mt-12">No activities matched these filters.</p>
+    {:else if $filteredActivities.length < $activities.length}
+    <p>Showing <strong>{$filteredActivities.length}</strong> of <strong>{$activities.length}</strong> activities{#if $pageCount > 1}, page <strong>1</strong> of <strong>{$pageCount}</strong>{/if}.</p>
     {/if}
+    </div>
 </div>
 <div class="grid gap-6 my-12 activities md:grid-cols-2">
     <h2 class="sr-only">Activities</h2>
