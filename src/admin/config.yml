@@ -52,6 +52,15 @@ collections:
         name: "body"
         widget: "markdown"
         default: "## Description\n\n## Steps\n\n## Tips\n\n## Skill Development\n\n## Level Up!\n\n"
+      - label: "Book suggestions"
+        name: "books"
+        widget: "list"
+        summary: "{{fields.title}}"
+        required: false
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Author", name: "author", widget: "string"}
+        - {label: "Cover Image", name: "coverImage", widget: "image"}
   - name: lessonPlans
     label: Lesson Plans
     label_singular: Lesson Plan

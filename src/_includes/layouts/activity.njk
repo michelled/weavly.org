@@ -14,6 +14,18 @@
     <h2>What you need</h2>
     {{ whatYouNeed | markdown | safe }}
 </div>
+{% if books %}
+<div class="books">
+    <h2>Book suggestions</h2>
+    {% for book in books %}
+    <div class="book">
+        <img src="{{ book.coverImage }}" alt="" role="decoration" />
+        <p>{{ book.title }}</p>
+        <p>By {{ book.author }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
 {% endblock %}
 
 {% block content %}

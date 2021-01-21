@@ -4,6 +4,10 @@ type: Hybrid
 experience: No Coding Experience
 subject: Music
 whatYouNeed: "### Tools\n\n### Skills\n\n### Environment\n\n### Support\n\n"
+books:
+    - title: Adi's Perfect Patterns and Loops
+      author: Caroline Karanja
+      coverImage: /assets/media/test.jpg
 relatedActivities:
     - Example Activity
 ---
