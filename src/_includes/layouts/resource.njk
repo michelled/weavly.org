@@ -4,7 +4,7 @@
 
 {% block pageHeader %}
     <h1>{{ title }}</h1>
-    <p class="metadata">{% if author %}By <span class="author">{{ author }}</span> &middot; {% endif %}Posted <time datetime="{{ date | isoDate }}" class="dt-published">{{ date | formatDate }}</time></p>
+    <p class="[ metadata ]">{% if author %}By <span class="author">{{ author }}</span> &middot; {% endif %}Posted <time datetime="{{ date | isoDate }}" class="dt-published">{{ date | formatDate }}</time></p>
 {% endblock %}
 
 {% block content %}

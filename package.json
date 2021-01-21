@@ -35,8 +35,7 @@
         "@11ty/eleventy-plugin-rss": "1.1.0",
         "@11ty/eleventy-plugin-syntaxhighlight": "3.0.6",
         "eleventy-plugin-fluid": "0.1.0",
-        "modern-css-reset": "^1.4.0",
-        "tailwindcss": "^2.0.2"
+        "modern-css-reset": "^1.4.0"
     },
     "devDependencies": {
         "@commitlint/cli": "11.0.0",
