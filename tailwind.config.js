@@ -2,7 +2,8 @@
 
 module.exports = {
     purge: [
-        "./src/**/*.njk"
+        "./src/**/*.njk",
+        "./src/**/*.svelte"
     ],
     darkMode: "class",
     theme: {
