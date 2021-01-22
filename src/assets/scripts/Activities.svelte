@@ -22,17 +22,18 @@
 
     let filtered = false;
 
-    function applyFilters(event) {
-        if(event && event.submitter.id === 'clear') {
-            selectedType = selectedExperience = selectedSubject = '';
-        }
-
+    function applyFilters() {
         $type = selectedType;
         $experience = selectedExperience;
         $subject = selectedSubject;
         
         page = 1;
         offset = 0;
+    }
+
+    function clearFilters() {
+        selectedType = selectedExperience = selectedSubject = '';
+        applyFilters();
     }
 
     function changePage(event) {
@@ -52,7 +53,7 @@
 <div class="[ flow-lg ]">
     <div class="[ filter ] [ flow ]">
         <h2>Filter Activities</h2>
-        <form class="[ filters ]" on:submit|preventDefault={applyFilters}>
+        <form class="[ filters ]">
             <label class="[ label ]" for="type">
                 Type: 
                 <select class="[ select ]" bind:value={selectedType} name="type" id="type">
@@ -80,8 +81,8 @@
                     {/each}
                 </select>
             </label>
-            <button class="[ button ] [ button--primary ]" id="apply" type="submit">Apply Filters</button>
-            <button class="[ button ]" id="clear" type="submit">Clear Filters</button>
+            <button on:click|preventDefault={applyFilters} class="[ button ] [ button--primary ]" id="apply" type="submit">Apply Filters</button>
+            <button on:click|preventDefault={clearFilters} class="[ button ]" id="clear" type="submit">Clear Filters</button>
         </form>
         <div class="[ alert ] [ { $filteredActivities.length > 0 ? 'alert--info' : 'alert--error' } ]" role="alert">
         {#if filtered && $filteredActivities.length === 0}
