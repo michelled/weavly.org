@@ -23,54 +23,65 @@
 }
 
 .flow > * + * {
-    --space: 1rem;
-
-    margin-top: var(--space, 1rem);
+    margin-top: 1rem;
 }
 
-.flow-md {
-    --space: 3rem;
+.flow-md > * + * {
+    margin-top: 1.5rem;
 }
 
-.flow-lg {
-    --space: 3rem;
+.flow-lg > * + * {
+    margin-top: 3rem;
 }
 
-.columns {
+.flow-xl > * + * {
+    margin-top: 8rem;
+}
+
+.flow-xxl > * + * {
+    margin-top: 12rem;
+}
+
+.switcher {
     --threshold: 768px;
     --space: 1.5rem;
 }
 
-.columns > * {
+.switcher > * {
     display: flex;
     flex-wrap: wrap;
     margin: calc(var(--space) / 2 * -1);
 }
 
-.columns > * > * {
+.switcher > * > * {
     flex-basis: calc((var(--threshold) - (100% - var(--space))) * 999);
     flex-grow: 1;
     margin: calc(var(--space) / 2);
 }
 
-.columns.columns-two > * > :nth-last-child(n+4),
-.columns.columns-two > * > :nth-last-child(n+4) ~ * {
+.switcher > * > :nth-last-child(n+4),
+.switcher > * > :nth-last-child(n+4) ~ * {
     flex-basis: 100%;
 }
 
-.columns.columns-three > * > :nth-last-child(n+4),
-.columns.columns-three > * > :nth-last-child(n+4) ~ * {
-    flex-basis: 100%;
+.grid {
+    --gap: 1.5rem;
+    --columns: 2;
+
+    display: grid;
+    grid-gap: var(--gap);
 }
 
-.two\:three {
+.two\:three,
+.three\:two {
     --space: 1.5rem;
 
     display: flex;
     flex-direction: column;
 }
 
-.two\:three > * + * {
+.two\:three > * + *,
+.three\:two > * + * {
     margin-top: var(--space);
 }
 
@@ -79,31 +90,37 @@
         display: none;
     }
 
-    .flow-lg > * + * {
+    .md\:flow-lg > * + * {
+        margin-top: 3rem;
+    }
+
+    .md\:flow-xl > * + * {
         margin-top: 8rem;
     }
 
-    .columns.columns-two > * > :nth-child(even) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .grid {
+        grid-template-columns: repeat(var(--columns), 1fr);
     }
 
-    .two\:three {
+    .two\:three,
+    .three\:two {
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .two\:three > * + * {
+    .two\:three > * + *,
+    .three\:two > * + * {
         margin-top: 0;
     }
 
-    .two\:three__two {
+    .two\:three__two,
+    .three\:two__two {
         width: calc((2 / 5 * 100%) - var(--space) / 2);
     }
 
-    .two\:three__three {
+    .two\:three__three,
+    .three\:two__three {
         width: calc((3 / 5 * 100%) - var(--space) / 2);
     }
 }

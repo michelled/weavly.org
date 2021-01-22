@@ -33,4 +33,4 @@ This project is based on other publicly available software, categorized by licen
 * [eleventy-webpack](https://github.com/clenemt/eleventy-webpack)
 * [Hylia](https://github.com/hankchizljaw/hylia)
 * [Supermaya](https://github.com/MadeByMike/supermaya)
-* [Vanilla JS Toolkit](https://vanillajstoolkit.com/helpers/buildquery/)
+* [Teenyicons](https://github.com/teenyicons/teenyicons)

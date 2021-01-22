@@ -2,6 +2,22 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-button {
-    // TODO.
+.button {
+    appearance: none;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: inherit;
+    padding: 0.125rem 0.25rem;
+}
+
+.button.button--primary {
+    font-weight: 600;
+}
+
+.button:focus {
+    box-shadow: 0 0 0 2px skyblue;
+    outline: none;
 }

@@ -2,6 +2,25 @@
 // This file contains all styles related to the select component.
 // -----------------------------------------------------------------------------
 
-select {
-    // TODO.
+.select {
+    appearance: none;
+    background-color: white;
+    background-image: url('data:image/svg+xml;utf8,<svg width="11" height="7" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M.55 1.5L1.964.086 5.5 3.62 9.036.086 10.45 1.5 5.5 6.45z" fill-rule="evenodd"/></svg>');
+    background-position: right 4px center;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: inherit;
+    padding: 0.125rem 1.5rem 0.125rem 0.25rem;
+}
+
+.select:focus {
+    box-shadow: 0 0 0 2px skyblue;
+    outline: none;
+}
+
+.label .select {
+    margin-left: 0.5rem;
 }

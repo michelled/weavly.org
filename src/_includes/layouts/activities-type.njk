@@ -3,17 +3,21 @@
 {% set bodyClass = "activities" %}
 
 {% block headerScripts %}
-    <script>window.location.href = "/learn/activities/?type={{ type }}";</script>
+    <script>window.location.href = "/learn/activities/#{{ type | slug }}";</script>
 {% endblock %}
 
 {% block content %}
-<noscript class="space-y-12">
+<noscript class="[ flow-lg md:flow-xl ]">
+    <div class="[ flow-md ]">
+
     {% if activities.length %}
-        <div class="grid gap-6 my-12 activities md:grid-cols-2">
+        <div class="[ grid ]">
         {% for item in activities %}
-            <article class="relative border border-black card entry focus-within:ring-2">
+            <article class="[ card ]">
+                <div class="[ card__image ]">
                 {% svgPlaceholder "570", "393" %}
-                <div class="p-4 space-y-4">
+                </div>
+                <div class="[ card__content ] [ flow ]">
                     <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
                     <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
                     {% if item.data.description %}
@@ -26,6 +30,9 @@
         {% if pagination.pages.length > 1 %}
         {% include "partials/components/pagination.njk" %}
         {% endif %}
+    {% else %}
+        <p>No {{ type }} activities found.</p>
     {% endif %}
+    </div>
 </noscript>
 {% endblock %}

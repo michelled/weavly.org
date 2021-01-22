@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the label component.
+// ---------------------
+
+.label {
+    font-weight: 600;
+}
+
+.label > * {
+    font-weight: normal;
+}

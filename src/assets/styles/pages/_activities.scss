@@ -1,3 +1,36 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the activities page.
 // -----------------------------------------------------------------------------
+.activities .filters > * {
+    display: block;
+}
+
+.activities .filters > * + * {
+    margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .activities .filters {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .activities .filters > * {
+        align-items: center;
+        display: flex;
+    }
+
+    .activities .filters > * + * {
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+
+    .activities button.button--primary {
+        margin-left: 0.5;
+    }
+
+    .activities button:not(.button--primary) {
+        margin-left: auto;
+    }
+}

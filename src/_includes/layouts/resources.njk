@@ -6,19 +6,17 @@
 {% if resources.length %}
 <div class="[ flow ] [ flow-md ]">
     {% for item in resources %}
-    <article class="[ resource ] [ columns ] [ columns-two ]">
-        <div>
-            <div class="[ resource__image ]">
-                {% svgPlaceholder "570", "380" %}
-            </div>
-            <div class="[ resource__details ] [ flow ]">
-                <h2>{{ item.data.title }}</h2>
-                <p class="metadata">{% if item.data.author %}By <span class="[ author ]">{{ item.data.author }}</span> &middot; {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="[ dt-published ]">{{ item.data.date | formatDate }}</time></p>
-                {% if item.data.description %}
-                <p>{{ item.data.description | safe }}</p>
-                {% endif %}
-                <p><a href="{{ item.url }}">Read more<span class="[ visually-hidden ]"> of &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
-            </div>
+    <article class="[ resource ] [ two:three ]">
+        <div class="[ three:two__three ]">
+            {% svgPlaceholder "570", "380" %}
+        </div>
+        <div class="[ three:two__two ] [ flow ]">
+            <h2>{{ item.data.title }}</h2>
+            <p class="metadata">{% if item.data.author %}By <span class="[ author ]">{{ item.data.author }}</span> &middot; {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="[ dt-published ]">{{ item.data.date | formatDate }}</time></p>
+            {% if item.data.description %}
+            <p>{{ item.data.description | safe }}</p>
+            {% endif %}
+            <p><a href="{{ item.url }}">Read more<span class="[ visually-hidden ]"> of &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
         </div>
     </article>
     {% endfor %}
