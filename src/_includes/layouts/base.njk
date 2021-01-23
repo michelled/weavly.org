@@ -26,10 +26,10 @@
                     </div>
                 </header>
                 <nav class="flc-toc-tocContainer"></nav>
-                {% block sidebar %}
-                {% endblock %}
                 <div class="[ content ]">
-                    <div class="[ wrapper ]">
+                    <div class="[ wrapper ] [ flow-lg ]">
+                    {% block sidebar %}
+                    {% endblock %}
                     {% block content %}
                     {{ content | safe }}
                     {% endblock %}

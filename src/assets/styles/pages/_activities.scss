@@ -9,6 +9,10 @@
     margin-top: 1rem;
 }
 
+.activity .book img[role="decoration"] {
+    max-width: 10rem;
+}
+
 @media (min-width: 1024px) {
     .activities .filters {
         align-items: center;

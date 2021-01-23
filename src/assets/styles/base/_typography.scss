@@ -33,3 +33,7 @@ h3 {
 .prose {
     max-width: 65ch;
 }
+
+.prose > * + * {
+    margin-top: 1rem;
+}
