@@ -22,6 +22,11 @@
     outline: none;
 }
 
+.button[aria-pressed="true"] {
+    background-color: black;
+    color: white;
+}
+
 .link {
     appearance: none;
     background: transparent;

@@ -1,40 +1,32 @@
 // -----------------------------------------------------------------------------
-// This file contains styles that are specific to the activities page.
+// This file contains styles that are specific to the events page.
 // -----------------------------------------------------------------------------
-.activities .filters > * {
+.events .filters > * {
     display: block;
 }
 
-.activities .filters > * + * {
+.events .filters > * + * {
     margin-top: 1rem;
 }
 
-.activity .book img[role="decoration"] {
-    max-width: 10rem;
-}
-
 @media (min-width: 1024px) {
-    .activities .filters {
+    .events .filters {
         align-items: center;
         display: flex;
         justify-content: flex-start;
     }
 
-    .activities .filters > * {
+    .events .filters > * {
         align-items: center;
         display: flex;
     }
 
-    .activities .filters > * + * {
+    .events .filters > * + * {
         margin-left: 1rem;
         margin-top: 0;
     }
 
-    .activities button.button--primary {
+    .events button {
         margin-left: 0.5rem;
-    }
-
-    .activities button:not(.button--primary) {
-        margin-left: auto;
     }
 }

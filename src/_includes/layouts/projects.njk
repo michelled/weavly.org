@@ -3,16 +3,31 @@
 {% set bodyClass = "projects" %}
 
 {% block content %}
+<div id="projects"></div>
+<noscript class="[ flow ] [ flow-md ]">
 {% if projects.length %}
     {% for item in projects %}
-        <article class="entry">
+        <article class="[ project ] [ two:three ]">
+            <div class="[ three:two__three ]">
+                {% svgPlaceholder "570", "380" %}
+            </div>
+            <div class="[ three:two__two ] [ flow ]">
             <h2>{{ item.data.title }}</h2>
-            <p class="metadata"><span class="category">{{ item.data.category }}</span></p>
-            {% if item.data.description %}
-            <p>{{ item.data.description | safe }}</p>
-            {% endif %}
-            <p><a href="{{ item.data.link }}">Visit website<span class="sr-only"> for &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
+                <p class="[ metadata ]"><span class="[ category ]">{{ item.data.category }}</span></p>
+                {% if item.data.description %}
+                <p>{{ item.data.description | safe }}</p>
+                {% endif %}
+                <p><a href="{{ item.data.link }}">Visit website<span class="[ visually-hidden ]"> for &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
+            </div>
         </article>
     {% endfor %}
+    {% if pagination.pages.length > 1 %}
+    {% include "partials/components/pagination.njk" %}
+    {% endif %}
+</div>
+{% else %}
+<p>No related projects found.</p>
 {% endif %}
+</noscript>
+<script type="module" src="/assets/scripts/projects.module.js"></script>
 {% endblock %}

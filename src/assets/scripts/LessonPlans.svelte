@@ -80,7 +80,7 @@
         </form>
         <div class="[ alert ] [ { $filteredLessonPlans.length > 0 ? 'alert--info' : 'alert--error' } ]" role="alert">
         {#if filtered && $filteredLessonPlans.length === 0}
-        <p>No activities matched these filters.</p>
+        <p>No lesson plans matched these filters.</p>
         {:else if $filteredLessonPlans.length < $lessonPlans.length}
         <p>Showing <strong>{$filteredLessonPlans.length}</strong> of <strong>{$lessonPlans.length}</strong> activities{#if $pageCount > 1}, page <strong>1</strong> of <strong>{$pageCount}</strong>{/if}.</p>
         {/if}

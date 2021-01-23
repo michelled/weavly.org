@@ -1,0 +1,13 @@
+---
+permalink: /events.json
+---
+[
+    {%- for event in collections.events %}
+    {
+        "title": "{{ event.data.title | safe }}",
+        "date": "{{ event.date }}",
+        "category": "{{ event.data.category | safe }}",
+        "description": "{{ event.data.description | safe }}"
+    }{{ "" if loop.last else "," }}
+    {%- endfor %}
+]
