@@ -21,3 +21,24 @@
     box-shadow: 0 0 0 2px skyblue;
     outline: none;
 }
+
+.link {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.5rem;
+    padding: 0.5rem;
+}
+
+.link.link--current {
+    background: black;
+    color: white;
+}
+
+.link:focus {
+    box-shadow: 0 0 0 2px skyblue;
+    outline: none;
+}

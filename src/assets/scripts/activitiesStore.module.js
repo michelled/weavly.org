@@ -1,4 +1,4 @@
-import { derived, writable } from "svelte/store";
+import { derived, readable, writable } from "svelte/store";
 
 const activities = writable([]);
 const type = writable("");
@@ -13,17 +13,18 @@ const filteredActivities = derived([activities, type, experience, subject], ([$a
         return false;
     });
 });
-const pageCount = derived(filteredActivities, $filteredActivities => Math.ceil($filteredActivities.length / 10));
-const pages = derived(pageCount, $pageCount => {
+const perPage = readable(10);
+const pageCount = derived([filteredActivities, perPage], ([$filteredActivities, $perPage]) => Math.ceil($filteredActivities.length / $perPage));
+const pages = derived([pageCount, perPage], ([$pageCount, $perPage]) => {
     let pages = [];
 
     for (let i = 1; i <= $pageCount; i++) {
-        pages.push((i - 1) * 10);
+        pages.push((i - 1) * $perPage);
     }
 
     return pages;
 });
 
 export {
-    activities, filteredActivities, pageCount, pages, type, experience, subject
+    activities, filteredActivities, perPage, pageCount, pages, type, experience, subject
 };

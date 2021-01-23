@@ -40,8 +40,8 @@ module.exports = function (config) {
     const now = new Date();
 
     // Custom collections
-    const sortActivities = (a, b) => {
-        const levels = require("./src/_data/activity-levels.json");
+    const sortByLevel = (a, b) => {
+        const levels = require("./src/_data/levels.json");
 
         if (a.data.experience !== b.data.experience) {
             if (levels.indexOf(a.data.experience) < levels.indexOf(b.data.experience)) {
@@ -74,7 +74,7 @@ module.exports = function (config) {
         return [
             ...collection
                 .getFilteredByGlob("./src/activities/*.md")
-                .sort(sortActivities)
+                .sort(sortByLevel)
         ];
     });
 
@@ -87,7 +87,7 @@ module.exports = function (config) {
                         return activity.data.type === "Unplugged";
                     }
                 )
-                .sort(sortActivities)
+                .sort(sortByLevel)
         ];
     });
 
@@ -100,7 +100,7 @@ module.exports = function (config) {
                         return activity.data.type === "On-Screen";
                     }
                 )
-                .sort(sortActivities)
+                .sort(sortByLevel)
         ];
     });
 
@@ -113,13 +113,15 @@ module.exports = function (config) {
                         return activity.data.type === "Hybrid";
                     }
                 )
-                .sort(sortActivities)
+                .sort(sortByLevel)
         ];
     });
 
     config.addCollection("lessonPlans", collection => {
         return [
-            ...collection.getFilteredByGlob("./src/lesson-plans/*.md")
+            ...collection
+                .getFilteredByGlob("./src/lesson-plans/*.md")
+                .sort(sortByLevel)
         ];
     });
 

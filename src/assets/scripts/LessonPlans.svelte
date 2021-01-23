@@ -1,38 +1,32 @@
 <script>
     import { onMount } from 'svelte';
 
-    import { activities, filteredActivities, perPage, pages, pageCount, type, experience, subject } from './activitiesStore.module.js'
+    import { lessonPlans, filteredLessonPlans, perPage, pageCount, pages, robot, experience, topic } from './lessonPlansStore.module.js'
 
-     let types = {
-        "unplugged": "Unplugged",
-        "on-screen": "On-Screen",
-        "hybrid": "Hybrid"
-    };
-    
+    let robots = require("../../_data/lessonPlan-robots.json");
     let levels = require("../../_data/levels.json");
-    let subjects = require("../../_data/activity-subjects.json");
+    let topics = require("../../_data/lessonPlan-topics.json");
     
     let offset = 0;
     let page = 1;
-    let hash = window.location.hash.replace('#', '');
 
-    let selectedType = Object.keys(types).includes(hash) ? types[hash] : "";
+    let selectedRobot = "";
     let selectedExperience = "";
-    let selectedSubject = "";
+    let selectedTopic = "";
 
     let filtered = false;
 
     function applyFilters() {
-        $type = selectedType;
+        $robot = selectedRobot;
         $experience = selectedExperience;
-        $subject = selectedSubject;
+        $topic = selectedTopic;
         
         page = 1;
         offset = 0;
     }
 
     function clearFilters() {
-        selectedType = selectedExperience = selectedSubject = '';
+        selectedRobot = selectedExperience = selectedTopic = '';
         applyFilters();
     }
 
@@ -43,8 +37,8 @@
     }
 
     onMount(async () => {
-		const res = await fetch(`/activities.json`);
-        $activities = await res.json();
+		const res = await fetch(`/lessonPlans.json`);
+        $lessonPlans = await res.json();
         offset = (page - 1) * $perPage;
         applyFilters();
 	});
@@ -52,14 +46,14 @@
 
 <div class="[ flow-lg ]">
     <div class="[ filter ] [ flow ]">
-        <h2>Filter Activities</h2>
+        <h2>Filter Lesson Plans</h2>
         <form class="[ filters ]">
-            <label class="[ label ]" for="type">
-                Type: 
-                <select class="[ select ]" bind:value={selectedType} name="type" id="type">
-                    <option value="">Any Type</option>
-                    {#each Object.values(types) as t}
-                    <option value={t}>{t}</option>
+            <label class="[ label ]" for="robot">
+                Robot: 
+                <select class="[ select ]" bind:value={selectedRobot} name="robot" id="robot">
+                    <option value="">Any Robot</option>
+                    {#each robots as r}
+                    <option value={r}>{r}</option>
                     {/each}
                 </select>
             </label>
@@ -72,36 +66,36 @@
                     {/each}
                 </select>
             </label>
-            <label class="[ label ]" for="subject">
-                Subject:
-                <select class="[ select ]" bind:value={selectedSubject} name="subject" id="subject">
-                    <option value="">Any Subject</option>
-                    {#each subjects as s}
-                    <option value={s}>{s}</option>
+            <label class="[ label ]" for="topic">
+                Topic:
+                <select class="[ select ]" bind:value={selectedTopic} name="topic" id="topic">
+                    <option value="">Any Topic</option>
+                    {#each topics as t}
+                    <option value={t}>{t}</option>
                     {/each}
                 </select>
             </label>
             <button on:click|preventDefault={applyFilters} class="[ button ] [ button--primary ]" id="apply" type="submit">Apply Filters</button>
             <button on:click|preventDefault={clearFilters} class="[ button ]" id="clear" type="submit">Clear Filters</button>
         </form>
-        <div class="[ alert ] [ { $filteredActivities.length > 0 ? 'alert--info' : 'alert--error' } ]" role="alert">
-        {#if filtered && $filteredActivities.length === 0}
+        <div class="[ alert ] [ { $filteredLessonPlans.length > 0 ? 'alert--info' : 'alert--error' } ]" role="alert">
+        {#if filtered && $filteredLessonPlans.length === 0}
         <p>No activities matched these filters.</p>
-        {:else if $filteredActivities.length < $activities.length}
-        <p>Showing <strong>{$filteredActivities.length}</strong> of <strong>{$activities.length}</strong> activities{#if $pageCount > 1}, page <strong>1</strong> of <strong>{$pageCount}</strong>{/if}.</p>
+        {:else if $filteredLessonPlans.length < $lessonPlans.length}
+        <p>Showing <strong>{$filteredLessonPlans.length}</strong> of <strong>{$lessonPlans.length}</strong> activities{#if $pageCount > 1}, page <strong>1</strong> of <strong>{$pageCount}</strong>{/if}.</p>
         {/if}
         </div>
     </div>
-    <div class="[ grid ]" aria-label="activities">
-        {#if $filteredActivities.length > 0}
-            {#each $filteredActivities.slice(offset, offset + $perPage) as item}
+    <div class="[ grid ]" aria-label="lesson plans">
+        {#if $filteredLessonPlans.length > 0}
+            {#each $filteredLessonPlans.slice(offset, offset + $perPage) as item}
                 <article class="[ card ]">
                     <div class="[ card__image ]">
                         <svg viewBox="0 0 570 393" class="placeholder"><rect width="570" height="393"></rect></svg>
                     </div>
                     <div class="[ card__content ] [ flow ]">
                         <h3><a href="{ item.url }">{ item.title }</a></h3>
-                        <p class="metadata"><span class="[ tag ]">{ item.type }</span> &middot; <span class="[ tag ]">{ item.experience }</span> &middot; <span class="[ tag ]">{ item.subject }</span></p>
+                        <p class="metadata"><span class="[ tag ]">{ item.robot }</span> &middot; <span class="[ tag ]">{ item.experience }</span> &middot; <span class="[ tag ]">{ item.topic }</span></p>
                         {#if item.description }
                         <p>{ item.description }</p>
                         {/if}
@@ -110,7 +104,7 @@
             {/each}
         {/if}
     </div>
-    {#if $filteredActivities.length > $perPage}
+    {#if $filteredLessonPlans.length > $perPage}
     <nav class="[ pagination ]" aria-label="pagination">
         <ul role="list">
         {#if offset > 0}
@@ -119,7 +113,7 @@
         {#each $pages as p, i}
         <li><button class="[ link ]{ page === i + 1 ? '[ link--current ]' : '' }" on:click|preventDefault={changePage} data-page={i + 1}>{i + 1}</button></li>
         {/each}
-        {#if $filteredActivities.length > offset + $perPage}
+        {#if $filteredLessonPlans.length > offset + $perPage}
             <li><button class="[ link ]" on:click|preventDefault={changePage} data-page={page + 1}><span class="[ visually-hidden ]">next</span><span aria-hidden="true">&rarr;</span></button></li>
         {/if}
         </ul>

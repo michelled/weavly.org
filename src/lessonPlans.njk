@@ -1,0 +1,15 @@
+---
+permalink: /lessonPlans.json
+---
+[
+    {%- for lessonPlan in collections.lessonPlans %}
+    {
+        "title": "{{ lessonPlan.data.title | safe }}",
+        "url": "{{ lessonPlan.url }}",
+        "robot": "{{ lessonPlan.data.robot | safe }}",
+        "experience": "{{ lessonPlan.data.experience | safe }}",
+        "topic": "{{ lessonPlan.data.topic | safe }}",
+        "description": "{{ lessonPlan.data.description | safe }}"
+    }{{ "" if loop.last else "," }}
+    {%- endfor %}
+]

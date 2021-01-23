@@ -25,6 +25,9 @@ mix.js("./src/assets/scripts/activities.module.js", "dist/assets/scripts").svelt
     dev: !mix.inProduction()
 });
 mix.js("./src/assets/scripts/app.js", "dist/assets/scripts");
+mix.js("./src/assets/scripts/lessonPlans.module.js", "dist/assets/scripts").svelte({
+    dev: !mix.inProduction()
+});
 mix.js("./src/assets/scripts/matomo.js", "dist/assets/scripts");
 
 // Process CSS with PostCSS.

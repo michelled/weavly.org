@@ -4,12 +4,12 @@ permalink: /activities-onscreen.json
 [
     {%- for activity in collections.onscreenActivities %}
     {
-        "title": "{{ activity.data.title }}",
+        "title": "{{ activity.data.title | safe }}",
         "url": "{{ activity.url }}",
-        "type": "{{ activity.data.type }}",
-        "experience": "{{ activity.data.experience }}",
-        "subject": "{{ activity.data.subject }}",
-        "description": "{{ activity.data.description }}"
+        "type": "{{ activity.data.type | safe }}",
+        "experience": "{{ activity.data.experience | safe }}",
+        "subject": "{{ activity.data.subject | safe }}",
+        "description": "{{ activity.data.description | safe }}"
     }{{ "" if loop.last else "," }}
     {%- endfor %}
 ]
