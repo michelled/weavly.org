@@ -33,24 +33,20 @@
 {% block content %}
     <div class="[ prose ]">
         {{ content | safe }}
-        {% if relatedActivities %}
-        <div class="related-activities">
-            <h2>You may like this:</h2>
-            {% for relatedActivity in relatedActivities %}
-                {% for activity in collections.activities %}
-                    {% if activity.data.title == relatedActivity %}
-                        {% set item = activity %}
-                        <article class="entry">
-                            <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
-                            <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
-                            {% if item.data.description %}
-                            <p>{{ item.data.description | safe }}</p>
-                            {% endif %}
-                        </article>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-        </div>
-        {% endif %}
     </div>
+    {% if relatedActivities %}
+    <div class="[ related-activities ]">
+        <h2>You may like this:</h2>
+        <div class="[ grid ]">
+        {% for relatedActivity in relatedActivities %}
+            {% for activity in collections.activities %}
+                {% if activity.data.title == relatedActivity %}
+                    {% set item = activity %}
+                    {% include "partials/components/card--activity.njk" %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}

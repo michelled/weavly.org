@@ -27,24 +27,20 @@
         <p>{{ item.label }} &middot; <a href="{{ item.file }}">Download File<span class="sr-only"> &ldquo;{{ item.label }}&rdquo;</span></a></p>
         {% endfor %}
         {% endif %}
-        {% if relatedLessonPlans %}
-        <div class="related-activities">
-            <h2>You may like this:</h2>
-            {% for relatedLessonPlan in relatedLessonPlans %}
-                {% for lessonPlan in collections.lessonPlans %}
-                    {% if lessonPlan.data.title == relatedLessonPlan %}
-                        {% set item = lessonPlan %}
-                        <article class="entry">
-                            <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
-                            <p class="metadata">{{ item.data.robot }} &middot; {{ item.data.experience }} &middot; {{ item.data.topic }}</p>
-                            {% if item.data.description %}
-                            <p>{{ item.data.description | safe }}</p>
-                            {% endif %}
-                        </article>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-        </div>
-        {% endif %}
     </div>
+    {% if relatedLessonPlans %}
+    <div class="[ related-activities ]">
+        <h2>You may like this:</h2>
+        <div class="[ grid ]">
+        {% for relatedLessonPlan in relatedLessonPlans %}
+            {% for lessonPlan in collections.lessonPlans %}
+                {% if lessonPlan.data.title == relatedLessonPlan %}
+                    {% set item = lessonPlan %}
+                    {% include "partials/components/card--lesson-plan.njk" %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}

@@ -8,18 +8,7 @@
 {% if lessonPlans.length %}
     <div class="[ grid ]">
     {% for item in lessonPlans %}
-        <article class=" [ card ]">
-            <div class="[ card__image ]">
-                {% svgPlaceholder "570", "393" %}
-            </div>
-            <div class="[ card__content ] [ flow ]">
-            <h3 aria-level="2"><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
-            <p class="metadata">{{ item.data.robot }} &middot; {{ item.data.experience }} &middot; {{ item.data.topic }}</p>
-            {% if item.data.description %}
-            <p>{{ item.data.description | safe }}</p>
-            {% endif %}
-            </div>
-        </article>
+        {% include "partials/components/card--lesson-plan.njk" %}
     {% endfor %}
     </div>
     {% if pagination.pages.length > 1 %}

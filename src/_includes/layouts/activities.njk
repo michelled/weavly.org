@@ -10,18 +10,7 @@
         {% if collections.unpluggedActivities.length %}
         <div class="[ grid ]" aria-labelledby="unplugged">
         {% for item in collections.unpluggedActivities | limit(2) %}
-            <article class="[ card ]">
-                <div class="[ card__image ]">
-                {% svgPlaceholder "570", "393" %}
-                </div>
-                <div class="[ card__content ] [ flow ]">
-                    <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
-                    <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
-                    {% if item.data.description %}
-                    <p>{{ item.data.description | safe }}</p>
-                {% endif %}
-                </div>
-            </article>
+            {% include "partials/components/card--activity.njk" %}
         {% endfor %}
         </div>
         <p><a href="/learn/activities/unplugged/">See more unplugged activities</a></p>
@@ -34,18 +23,7 @@
         {% if collections.onscreenActivities.length %}
         <div class="[ grid ]" aria-labelledby="on-screen">
         {% for item in collections.onscreenActivities | limit(2) %}
-            <article class="[ card ]">
-                <div class="[ card__image ]">
-                {% svgPlaceholder "570", "393" %}
-                </div>
-                <div class="[ card__content ] [ flow ]">
-                    <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
-                    <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
-                    {% if item.data.description %}
-                    <p>{{ item.data.description | safe }}</p>
-                {% endif %}
-                </div>
-            </article>
+            {% include "partials/components/card--activity.njk" %}
         {% endfor %}
         </div>
         <p><a href="/learn/activities/on-screen/">See more on-screen activities</a></p>
@@ -58,18 +36,7 @@
         {% if collections.hybridActivities.length %}
         <div class="[ grid ]" aria-labelledby="hybrid">
         {% for item in collections.hybridActivities | limit(2) %}
-            <article class="[ card ]">
-                <div class="[ card__image ]">
-                {% svgPlaceholder "570", "393" %}
-                </div>
-                <div class="[ card__content ] [ flow ]">
-                    <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
-                    <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
-                    {% if item.data.description %}
-                    <p>{{ item.data.description | safe }}</p>
-                {% endif %}
-                </div>
-            </article>
+            {% include "partials/components/card--activity.njk" %}
         {% endfor %}
         </div>
         <p><a href="/learn/activities/hybrid/">See more hybrid activities</a></p>
