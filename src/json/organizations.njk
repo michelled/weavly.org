@@ -1,0 +1,13 @@
+---
+permalink: /organizations.json
+---
+[
+    {%- for organization in collections.organizations %}
+    {
+        "title": "{{ organization.data.title | safe }}",
+        "category": "{{ organization.data.category | safe }}",
+        "description": "{{ organization.data.description | safe }}",
+        "link": "{{ project.data.link }}"
+    }{{ "" if loop.last else "," }}
+    {%- endfor %}
+]

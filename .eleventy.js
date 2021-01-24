@@ -137,6 +137,18 @@ module.exports = function (config) {
         ];
     });
 
+    config.addCollection("organizations", collection => {
+        return [
+            ...collection.getFilteredByGlob("./src/organizations/*.md")
+        ];
+    });
+
+    config.addCollection("manufacturers", collection => {
+        return [
+            ...collection.getFilteredByGlob("./src/manufacturers/*.md")
+        ];
+    });
+
     // Plugins
     config.addPlugin(fluidPlugin);
     config.addPlugin(navigationPlugin);

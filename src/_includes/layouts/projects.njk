@@ -17,7 +17,7 @@
                 {% if item.data.description %}
                 <p>{{ item.data.description | safe }}</p>
                 {% endif %}
-                <p><a href="{{ item.data.link }}">Visit website<span class="[ visually-hidden ]"> for &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
+                <p><a href="{{ item.data.link }}" rel="external">Visit website<span class="[ visually-hidden ]"> for &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
             </div>
         </article>
     {% endfor %}
