@@ -1,12 +1,13 @@
 import { derived, readable, writable } from "svelte/store";
 
 const events = writable([]);
-const category = writable("");
+const category = writable("All");
 const filteredEvents = derived([events, category], ([$events, $category]) => {
     return $events.filter(event => {
-        return $category === "" || event.category === $category;
+        return $category === "All" || event.category === $category;
     });
 });
+const filtered = derived(category, $category => $category !== "All");
 const perPage = readable(10);
 const pageCount = derived([filteredEvents, perPage], ([$filteredEvents, $perPage]) => Math.ceil($filteredEvents.length / $perPage));
 const pages = derived([pageCount, perPage], ([$pageCount, $perPage]) => {
@@ -20,5 +21,5 @@ const pages = derived([pageCount, perPage], ([$pageCount, $perPage]) => {
 });
 
 export {
-    events, filteredEvents, perPage, pageCount, pages, category
+    events, filtered, filteredEvents, perPage, pageCount, pages, category
 };

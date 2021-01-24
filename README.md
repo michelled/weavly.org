@@ -27,6 +27,10 @@ The website code is available under the [New BSD License](https://raw.githubuser
 
 This project is based on other publicly available software, categorized by license:
 
+### BSD 3-Clause License
+
+* [Cooperative Tool Library](https://github.com/platform-coop-toolkit/coop-tool-library)
+
 ### MIT License
 
 * [Eleventastic](https://github.com/maxboeck/eleventastic)

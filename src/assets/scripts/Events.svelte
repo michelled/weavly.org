@@ -1,8 +1,9 @@
 <script>
     import { onMount } from 'svelte';
 
-    import { events, filteredEvents, perPage, pageCount, pages, category } from './eventsStore.module.js'
+    import { events, filteredEvents, filtered, perPage, pageCount, pages, category } from './eventsStore.module.js'
 
+    import RadioGroup from './components/RadioGroup.svelte';
 
     let categories = {
         conferences: "Conferences",
@@ -13,8 +14,6 @@
      
     let offset = 0;
     let page = 1;
-
-    let filtered = false;
 
     // @see https://stackoverflow.com/a/31615643
     function getOrdinal (n) {
@@ -49,13 +48,10 @@
     <div class="[ filter ] [ flow ]">
         <h2>Filter Events</h2>
         <form class="[ filters ]">
-            <button on:click|preventDefault={() => $category = ""} class="[ button ]" aria-pressed={ $category === "" } id="all" type="submit">All</button>
-            {#each Object.entries(categories) as [slug, name]}
-            <button on:click|preventDefault={() => $category = name} class="[ button ]" aria-pressed={ $category === name } id={ slug } type="submit">{ name }</button>
-            {/each}
+            <RadioGroup options={Object.values(categories)} bind:activeOption={$category} />
         </form>
         <div class="[ alert ] [ { $filteredEvents.length > 0 ? 'alert--info' : 'alert--error' } ]" role="alert">
-        {#if filtered && $filteredEvents.length === 0}
+        {#if $filtered && $filteredEvents.length === 0}
         <p>No events matched these filters.</p>
         {:else if $filteredEvents.length < $events.length}
         <p>Showing <strong>{$filteredEvents.length}</strong> of <strong>{$events.length}</strong> activities{#if $pageCount > 1}, page <strong>1</strong> of <strong>{$pageCount}</strong>{/if}.</p>
