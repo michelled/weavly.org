@@ -1,0 +1,13 @@
+---
+permalink: /projects.json
+---
+[
+    {%- for project in collections.projects %}
+    {
+        "title": "{{ project.data.title | safe }}",
+        "category": "{{ project.data.category | safe }}",
+        "description": "{{ project.data.description | safe }}",
+        "link": "{{ project.data.link }}"
+    }{{ "" if loop.last else "," }}
+    {%- endfor %}
+]

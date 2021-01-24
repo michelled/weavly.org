@@ -47,9 +47,9 @@
 <div class="[ flow-lg ]">
     <div class="[ filter ] [ flow ]">
         <h2>Filter Events</h2>
-        <form class="[ filters ]">
+        <div class="[ filters ]">
             <RadioGroup options={Object.values(categories)} bind:activeOption={$category} />
-        </form>
+        </div>
         <div class="[ alert ] [ { $filteredEvents.length > 0 ? 'alert--info' : 'alert--error' } ]" role="alert">
         {#if $filtered && $filteredEvents.length === 0}
         <p>No events matched these filters.</p>
@@ -66,11 +66,12 @@
                         <svg viewBox="0 0 570 380" class="placeholder"><rect width="570" height="380"></rect></svg>
                     </div>
                     <div class="[ three:two__two ] [ flow ]">
-                        <h3><a href="{ item.url }">{ item.title }</a></h3>
+                        <h3>{ item.title }</h3>
                         <p class="[ metadata ]"><span class="[ tag ]">{ item.category }</span> &middot; <span class="[ date ]" itemprop="startDate" content="{ new Date(item.date).toISOString() }">{ formatDate(item.date) }</span></p>
                         {#if item.description }
                         <p>{ item.description }</p>
                         {/if}
+                        <p><a href={ item.link} rel="external">Visit Website<span class="[ visually-hidden ]"> for { item.title }</span></a></p>
                     </div>
                 </article>
             {/each}
