@@ -1,5 +1,5 @@
 /*
-Copyright the Fluidic Eleventy copyright holders.
+Copyright the Trivet copyright holders.
 
 See the AUTHORS.md file at the top-level directory of this distribution and at
 https://github.com/fluid-project/fluidic-11ty/raw/master/AUTHORS.md.

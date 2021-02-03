@@ -1,0 +1,37 @@
+{
+    "eslint": {
+        "js": {
+            "includes": ["./.eleventy.js"]
+        }
+    },
+    "lintspaces": {
+        "newlines": {
+            "excludes": [
+                "*.ico",
+                "*.jpg",
+                "*.png",
+                "*.webp",
+                "./src/activities/*.md",
+                "./src/events/*.md",
+                "./src/lesson-plans/*.md",
+                "./src/organizations/*.md",
+                "./src/products/*.md",
+                "./src/projects/*.md",
+                "./src/resources/*.md",
+                "./CHANGELOG.md"
+            ]
+        }
+    },
+    "markdownlint": {
+        "excludes": [
+            "./src/activities/*.md",
+            "./src/events/*.md",
+            "./src/lesson-plans/*.md",
+            "./src/organizations/*.md",
+            "./src/products/*.md",
+            "./src/projects/*.md",
+            "./src/resources/*.md",
+            "./CHANGELOG.md"
+        ]
+    }
+}
