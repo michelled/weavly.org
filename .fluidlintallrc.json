@@ -9,6 +9,7 @@
             "excludes": [
                 "*.ico",
                 "*.jpg",
+                "*.jpeg",
                 "*.png",
                 "*.webp",
                 "./src/activities/*.md",
