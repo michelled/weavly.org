@@ -72,9 +72,9 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Robot", name: "robot", widget: "select", options: ["Cubetto", "Dash & Dot", "Cubeletes"]}
+      - {label: "Robot", name: "robot", widget: "select", options: ["Cubetto", "Dash & Dot", "Cubeletes", "Sphero"]}
       - {label: "Coding Experience Level", name: "experience", widget: "select", options: ["No Coding Experience", "Unplugged Coding Experience", "Blockly Coding Experience"]}
-      - {label: "Topic", name: "topic", widget: "select", options: ["Sequencing", "Repeating Patterns", "Loops", "Debugging", "Conditions"]}
+      - {label: "Topic", name: "topic", widget: "select", options: ["Introduction", "Sequencing", "Repeating Patterns", "Loops", "Debugging", "Conditions"]}
       - {label: "Related Lesson Plans", name: "relatedLessonPlans", widget: "relation", collection: "lessonPlans", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
