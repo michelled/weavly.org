@@ -5,6 +5,8 @@
 
     import RadioGroup from './components/RadioGroup.svelte';
 
+    const decodeEntities = require('./utils/decodeEntities.js');
+    
     let categories = {
         conferences: "Conferences",
         workshops: "Workshops",
@@ -69,7 +71,7 @@
                         <h3>{ item.title }</h3>
                         <p class="[ metadata ]"><span class="[ tag ]">{ item.category }</span> &middot; <span class="[ date ]" itemprop="startDate" content="{ new Date(item.date).toISOString() }">{ formatDate(item.date) }</span></p>
                         {#if item.description }
-                        <p>{ item.description }</p>
+                        <p>{ decodeEntities(item.description) }</p>
                         {/if}
                         <p><a href={ item.link} rel="external">Visit Website<span class="[ visually-hidden ]"> for { item.title }</span></a></p>
                     </div>

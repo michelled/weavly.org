@@ -3,6 +3,8 @@
 
     import { lessonPlans, filteredLessonPlans, perPage, pageCount, pages, robot, experience, topic } from './lessonPlansStore.module.js'
 
+    const decodeEntities = require('./utils/decodeEntities.js');
+
     let robots = require("../../_data/lessonPlan-robots.json");
     let levels = require("../../_data/levels.json");
     let topics = require("../../_data/lessonPlan-topics.json");
@@ -97,7 +99,7 @@
                         <h3><a href="{ item.url }">{ item.title }</a></h3>
                         <p class="metadata"><span class="[ tag ]">{ item.robot }</span> &middot; <span class="[ tag ]">{ item.experience }</span> &middot; <span class="[ tag ]">{ item.topic }</span></p>
                         {#if item.description }
-                        <p>{ item.description }</p>
+                        <p>{ decodeEntities(item.description) }</p>
                         {/if}
                     </div>
                 </article>

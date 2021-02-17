@@ -4,12 +4,12 @@ permalink: /lessonPlans.json
 [
     {%- for lessonPlan in collections.lessonPlans %}
     {
-        "title": "{{ lessonPlan.data.title | safe }}",
+        "title": "{{ lessonPlan.data.title }}",
         "url": "{{ lessonPlan.url }}",
-        "robot": "{{ lessonPlan.data.robot | safe }}",
-        "experience": "{{ lessonPlan.data.experience | safe }}",
-        "topic": "{{ lessonPlan.data.topic | safe }}",
-        "description": "{{ lessonPlan.data.description | safe }}"
+        "robot": "{{ lessonPlan.data.robot }}",
+        "experience": "{{ lessonPlan.data.experience }}",
+        "topic": "{{ lessonPlan.data.topic }}",
+        "description": "{{ lessonPlan.data.description }}"
     }{{ "" if loop.last else "," }}
     {%- endfor %}
 ]

@@ -5,6 +5,8 @@
 
     import RadioGroup from './components/RadioGroup.svelte';
 
+    const decodeEntities = require('./utils/decodeEntities.js');
+
     let categories = [
         "Accessible Education",
         "Coding Education"
@@ -23,7 +25,6 @@
 		const res = await fetch(`/organizations.json`);
         $organizations = await res.json();
         offset = (page - 1) * $perPage;
-        console.log($organizations);
 	});
 </script>
 
@@ -52,7 +53,7 @@
                         <h3>{ item.title }</h3>
                         <p class="[ metadata ]"><span class="[ tag ]">{ item.category }</span></p>
                         {#if item.description }
-                        <p>{ item.description }</p>
+                        <p>{ decodeEntities(item.description) }</p>
                         {/if}
                         <p><a href={ item.link} rel="external">Visit Website<span class="[ visually-hidden ]"> for { item.title }</span></a></p>
                     </div>

@@ -3,7 +3,9 @@
 
     import { activities, filteredActivities, perPage, pages, pageCount, type, experience, subject } from './activitiesStore.module.js'
 
-     let types = {
+    const decodeEntities = require('./utils/decodeEntities.js');
+
+    let types = {
         "unplugged": "Unplugged",
         "on-screen": "On-Screen",
         "hybrid": "Hybrid"
@@ -103,7 +105,7 @@
                         <h3><a href="{ item.url }">{ item.title }</a></h3>
                         <p class="metadata"><span class="[ tag ]">{ item.type }</span> &middot; <span class="[ tag ]">{ item.experience }</span> &middot; <span class="[ tag ]">{ item.subject }</span></p>
                         {#if item.description }
-                        <p>{ item.description }</p>
+                        <p>{ decodeEntities(item.description) }</p>
                         {/if}
                     </div>
                 </article>

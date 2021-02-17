@@ -5,6 +5,8 @@
 
     import RadioGroup from './components/RadioGroup.svelte';
 
+    const decodeEntities = require('./utils/decodeEntities.js');
+
     let categories = [
         "Assistive Devices",
         "Robots",
@@ -25,7 +27,6 @@
 		const res = await fetch(`/products.json`);
         $products = await res.json();
         offset = (page - 1) * $perPage;
-        console.log($products);
 	});
 </script>
 
@@ -54,7 +55,7 @@
                         <h3>{ item.title }</h3>
                         <p class="[ metadata ]">By <span class="[ manufacturer ]">{ item.manufacturer }</span> &middot; <span class="[ category ]">{ item.category }</span></p>
                         {#if item.description }
-                        <p>{ item.description }</p>
+                        <p>{ decodeEntities(item.description) }</p>
                         {/if}
                         <p><a href={ item.url }>Available learning resources<span class="[ visually-hidden ]"> for &ldquo;{ item.title }&rdquo;</span></a></p>
                     </div>

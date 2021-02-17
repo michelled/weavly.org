@@ -4,9 +4,9 @@ permalink: /organizations.json
 [
     {%- for organization in collections.organizations %}
     {
-        "title": "{{ organization.data.title | safe }}",
-        "category": "{{ organization.data.category | safe }}",
-        "description": "{{ organization.data.description | safe }}",
+        "title": "{{ organization.data.title }}",
+        "category": "{{ organization.data.category }}",
+        "description": "{{ organization.data.description }}",
         "link": "{{ organization.data.link }}"
     }{{ "" if loop.last else "," }}
     {%- endfor %}
