@@ -73,10 +73,10 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Robot", name: "robot", widget: "select", options: ["Cubetto", "Dash & Dot", "Cubeletes", "Sphero"]}
+      - {label: "Robot", name: "robot", widget: "select", options: ["Cubetto", "Dash & Dot", "Cubelets", "Sphero"]}
       - {label: "Coding Experience Level", name: "experience", widget: "select", options: ["No Coding Experience", "Unplugged Coding Experience", "Blockly Coding Experience"]}
       - {label: "Topic", name: "topic", widget: "select", options: ["Introduction", "Sequencing", "Repeating Patterns", "Loops", "Debugging", "Conditions"]}
-      - {label: "Related Lesson Plans", name: "relatedLessonPlans", widget: "relation", collection: "lessonPlans", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}
+      - {label: "Related Activities with Robots", name: "relatedRobotActivities", widget: "relation", collection: "robotActivities", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
@@ -123,3 +123,26 @@ collections:
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
+  - name: guides
+    label: Manufacturer's Guides
+    label_singular: Manufacturer's Guide
+    folder: "src/guides"
+    preview_path: "/learn/robots/"
+    editor:
+      preview: false
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Robot", name: "robot", widget: "select", options: ["Cubetto", "Dash & Dot", "Cubelets", "Sphero"]}
+      - {label: "Manufacturer", name: "manufacturer", widget: "string"}
+      - {label: "Manufacturer Link", name: "manufacturerLink", widget: "string"}
+      - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
+      - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
+      - label: "Learning Resources"
+        name: "resources"
+        widget: "list"
+        summary: "{{fields.description}}"
+        required: false
+        fields:
+        - {label: "Description", name: "description", widget: "string"}
+        - {label: "Link", name: "link", widget: "string"}

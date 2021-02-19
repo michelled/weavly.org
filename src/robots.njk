@@ -1,0 +1,17 @@
+---
+layout: layouts/page.njk
+title: Activities with Robots
+subtitle: Check out a great collection of activities you can do with your robots to develop your computational thinking and programming skills.
+eleventyNavigation:
+  parent: Learn
+  key: Activities with Robots
+  order: 1
+permalink: /learn/robots/
+---
+<div class="[ flow ] [ flow-lg md:flow-xl ]">
+    <div class="[ grid ]">
+    {% for robot in robots %}
+      {% include "partials/components/card--robot.njk" %}
+    {% endfor %}
+    </div>
+</div>

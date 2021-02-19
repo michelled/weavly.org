@@ -117,13 +117,13 @@ module.exports = function (config) {
         ];
     });
 
-    config.addCollection("cubeletesActivities", collection => {
+    config.addCollection("cubeletsActivities", collection => {
         return [
             ...collection
                 .getFilteredByGlob("./src/robot-activities/*.md")
                 .filter(
                     function (activity) {
-                        return activity.data.robot === "Cubeletes";
+                        return activity.data.robot === "Cubelets";
                     }
                 )
                 .sort(sortByLevel)

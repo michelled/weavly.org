@@ -15,6 +15,18 @@
         <h2>What you need</h2>
         {{ whatYouNeed | markdown | safe }}
     </div>
+    {% if books %}
+    <div id="books" class="[ callout ] [ flow ]">
+        <h2>Book suggestions</h2>
+        {% for book in books %}
+        <div class="[ book ] [ flow ]">
+            <img src="{{ book.coverImage }}" alt="" role="decoration" />
+            <p><em>{{ book.title }}</em><br />
+            By {{ book.author }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
 
@@ -28,15 +40,15 @@
         {% endfor %}
         {% endif %}
     </div>
-    {% if relatedLessonPlans %}
+    {% if relatedRobotActivities %}
     <div class="[ related-activities ]">
         <h2>You may like this:</h2>
         <div class="[ grid ]">
-        {% for relatedLessonPlan in relatedLessonPlans %}
-            {% for lessonPlan in collections.lessonPlans %}
-                {% if lessonPlan.data.title == relatedLessonPlan %}
-                    {% set item = lessonPlan %}
-                    {% include "partials/components/card--lesson-plan.njk" %}
+        {% for relatedRobotActivity in relatedRobotActivities %}
+            {% for robotActivity in collections.robotActivities %}
+                {% if robotActivity.data.title == relatedRobotActivity %}
+                    {% set item = robotActivity %}
+                    {% include "partials/components/card--robot-activity.njk" %}
                 {% endif %}
             {% endfor %}
         {% endfor %}

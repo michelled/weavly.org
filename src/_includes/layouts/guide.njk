@@ -1,0 +1,24 @@
+{% extends "layouts/base.njk" %}
+
+{% set bodyClass = "guide" %}
+
+{% block pageHeader %}
+    <h1>{{ title }}</h1>
+    <p class="[ metadata ]">By <span class="[ manufacturer ]"><a href="{{ manufacturerLink }}" rel="external">{{ manufacturer }}</a></span></p>
+{% endblock %}
+
+{% block content %}
+    <div class="[ prose ]">
+        <h2>Available Learning Resources</h2>
+        {% if resources %}
+        {% for resource in resources %}
+        <p class="[ learning-resource ]">
+            <span class="[ resource-description ]">{{ resource.description }}</span>
+            <span class="[ resource-link ]"><a href="{{ resource.link }}" rel="external">Visit website</a></span>
+        </p>
+        {% endfor %}
+        {% else %}
+        <p>No learning resources available.</p>
+        {% endif %}
+    </div>
+{% endblock %}

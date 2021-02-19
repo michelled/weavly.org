@@ -11,3 +11,16 @@ https://github.com/fluid-project/fluidic-11ty/raw/master/LICENSE.md.
 */
 
 import "@zachleat/filter-container";
+
+document.addEventListener("click", event => {
+    if (event.target.id !== "reset") {
+        return;
+    }
+
+    const filters = [...event.target.parentNode.querySelectorAll("select")];
+
+    filters.forEach(filter => {
+        filter.value = "";
+        filter.dispatchEvent(new Event("change", {"bubbles": true}));
+    });
+});

@@ -3,6 +3,16 @@
 {% set bodyClass = "robot-activities" %}
 
 {% block content %}
+<div class="[ guide ] [ two:three ]">
+    <div class="[ three:two__three ]">
+        {% svgPlaceholder "570", "380" %}
+    </div>
+    <div class="[ three:two__two ] [ flow ]">
+        <h2>Manufacturer's Guide</h2>
+        <p>This collection of lesson plans are created with the K-12 coding curriculum in mind. These aim to support educators to teach basic concepts of coding to learners with unique needs.</p>
+        <p><a href="/learn/robots/{{ robot | slug }}/guide/">Check out guide</a></p>
+    </div>
+</div>
 <div id="robot-activities">
     <div class="[ flow-lg ]">
         <filter-container class="[ filter ] [ flow ]" data-oninit>
@@ -26,6 +36,7 @@
                         {% endfor %}
                     </select>
                 </label>
+                <button type="reset" id="reset">Clear Filters</button>
             </form>
             <div class="[ alert ] [ alert--info ]" role="alert" aria-live="polite">
             <p>Showing <strong data-filter-results="activity/activities">{{ robotActivities.length }} activities</strong>.</p>

@@ -3,11 +3,10 @@
 // -----------------------------------------------------------------------------
 
 svg.placeholder {
-    border: solid 1px currentColor;
     max-width: 100%;
     width: auto;
 
     rect {
-        fill: none;
+        fill: currentColor;
     }
 }
