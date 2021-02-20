@@ -121,8 +121,8 @@ collections:
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
   - name: guides
-    label: Manufacturer's Guides
-    label_singular: Manufacturer's Guide
+    label: "Manufacturer’s Guides"
+    label_singular: "Manufacturer’s Guide"
     folder: "src/guides"
     preview_path: "/learn/robots/"
     editor:
@@ -145,7 +145,7 @@ collections:
         - {label: "Link", name: "link", widget: "string"}
   
   - name: data
-    label: Data
+    label: Site Data
     files:
       - label: Activity Tags
         name: activityTags

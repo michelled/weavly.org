@@ -41,7 +41,7 @@ module.exports = function (config) {
 
     // Custom collections
     const sortByLevel = (a, b) => {
-        const levels = require("./src/_data/experienceLevels.json");
+        const levels = require("./src/_data/activityTags.json").experience;
 
         if (a.data.experience !== b.data.experience) {
             if (levels.indexOf(a.data.experience) < levels.indexOf(b.data.experience)) {
