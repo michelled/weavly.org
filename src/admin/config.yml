@@ -21,7 +21,6 @@ collections:
       - {label: "Date", name: "date", widget: "datetime", timeFormat: false}
       - {label: "Author", name: "author", widget: "string", required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -41,7 +40,6 @@ collections:
       - {label: "Subject", name: "subject", widget: "select", options: ["Drawings", "Music", "Games", "Stories"]}
       - {label: "Related Activities", name: "relatedActivities", widget: "relation", collection: "activities", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
       - label: "What You Need"
@@ -78,7 +76,6 @@ collections:
       - {label: "Topic", name: "topic", widget: "select", options: ["Introduction", "Sequencing", "Repeating Patterns", "Loops", "Debugging", "Conditions"]}
       - {label: "Related Activities with Robots", name: "relatedRobotActivities", widget: "relation", collection: "robotActivities", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Permalink", name: "permalink", widget: "string", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
       - label: "What You Need"
