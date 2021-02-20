@@ -130,7 +130,7 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Robot", name: "robot", widget: "relation", collection: "siteData", file: "robotActivityTags", valueField: "robotActivityTags.robots.*", search_fields: "robotActivityTags.robots.*"}
+      - {label: "Robot", name: "robot", widget: "relation", collection: "siteData", file: "robotActivityTags", valueField: "robots.*", search_fields: "robots.*"}
       - {label: "Manufacturer", name: "manufacturer", widget: "string"}
       - {label: "Manufacturer Link", name: "manufacturerLink", widget: "string"}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
