@@ -1,6 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% set bodyClass = "robot-activities" %}
+{% set title = "Activities with " + robot %}
 
 {% block content %}
 <div class="[ guide ] [ two:three ]">
@@ -42,7 +43,7 @@
             <p>Showing <strong data-filter-results="activity/activities">{{ robotActivities.length }} activities</strong>.</p>
             </div>
             <div class="[ grid ]">
-            {% for item in robotActivities %}
+            {% for item in collections[robot] %}
                 {% include "partials/components/card--robot-activity.njk" %}
             {% endfor %}
             </div>

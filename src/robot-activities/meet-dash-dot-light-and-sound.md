@@ -1,6 +1,7 @@
 ---
 title: 'Meet Dash & Dot: light and sound'
-robot: Dash & Dot
+tags:
+  - Dash & Dot
 experience: Blockly Coding Experience
 topic: Debugging
 description: This activity explores visual and audio control settings for Dash & Dot.

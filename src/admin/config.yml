@@ -73,7 +73,7 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Robot", name: "robot", widget: "select", options: ["Cubetto", "Dash & Dot", "Cubelets", "Sphero"]}
+      - {label: "Robot", name: "tags", widget: "list", max: 1, min: 1}
       - {label: "Coding Experience Level", name: "experience", widget: "select", options: ["No Coding Experience", "Unplugged Coding Experience", "Blockly Coding Experience"]}
       - {label: "Topic", name: "topic", widget: "select", options: ["Introduction", "Sequencing", "Repeating Patterns", "Loops", "Debugging", "Conditions"]}
       - {label: "Related Activities with Robots", name: "relatedRobotActivities", widget: "relation", collection: "robotActivities", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}

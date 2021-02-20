@@ -1,6 +1,5 @@
 ---
 title: Meet Cubetto
-robot: Cubetto
 experience: No Coding Experience
 topic: Sequencing
 description: This activity explores the features of Cubetto.
@@ -29,6 +28,8 @@ whatYouNeed: >-
   Depends on the learner, could be independent/group or require
   supervision/facilitation as necessary
 supportiveMaterial: []
+tags:
+  - Cubetto
 ---
 ## Description
 

@@ -1,6 +1,7 @@
 ---
 title: Learning directions with command blocks
-robot: Cubetto
+tags:
+  - Cubetto
 experience: Unplugged Coding Experience
 topic: Sequencing
 description: This activity explores features for Cubetto.

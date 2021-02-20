@@ -1,6 +1,7 @@
 ---
 title: Meet Sphero
-robot: Sphero
+tags:
+  - Sphero
 experience: Blockly Coding Experience
 topic: Debugging
 description: This activity explores control settings for Sphero

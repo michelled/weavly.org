@@ -117,58 +117,6 @@ module.exports = function (config) {
         ];
     });
 
-    config.addCollection("cubeletsActivities", collection => {
-        return [
-            ...collection
-                .getFilteredByGlob("./src/robot-activities/*.md")
-                .filter(
-                    function (activity) {
-                        return activity.data.robot === "Cubelets";
-                    }
-                )
-                .sort(sortByLevel)
-        ];
-    });
-
-    config.addCollection("cubettoActivities", collection => {
-        return [
-            ...collection
-                .getFilteredByGlob("./src/robot-activities/*.md")
-                .filter(
-                    function (activity) {
-                        return activity.data.robot === "Cubetto";
-                    }
-                )
-                .sort(sortByLevel)
-        ];
-    });
-
-    config.addCollection("dashAndDotActivities", collection => {
-        return [
-            ...collection
-                .getFilteredByGlob("./src/robot-activities/*.md")
-                .filter(
-                    function (activity) {
-                        return activity.data.robot === "Dash & Dot";
-                    }
-                )
-                .sort(sortByLevel)
-        ];
-    });
-
-    config.addCollection("spheroActivities", collection => {
-        return [
-            ...collection
-                .getFilteredByGlob("./src/robot-activities/*.md")
-                .filter(
-                    function (activity) {
-                        return activity.data.robot === "Sphero";
-                    }
-                )
-                .sort(sortByLevel)
-        ];
-    });
-
     config.addCollection("projects", collection => {
         return [
             ...collection.getFilteredByGlob("./src/projects/*.md")

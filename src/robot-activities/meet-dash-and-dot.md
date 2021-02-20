@@ -1,6 +1,7 @@
 ---
 title: Meet Dash and Dot
-robot: Dash & Dot
+tags:
+  - Dash & Dot
 experience: Blockly Coding Experience
 topic: Debugging
 description: >-
