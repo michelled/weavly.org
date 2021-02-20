@@ -12,7 +12,7 @@
                     Category:        
                     <select class="[ select ]" name="category" id="category" data-filter-bind="category">
                         <option value="">Any Category</option>
-                        {% for category in projectCategories %}
+                        {% for category in projectTags.categories %}
                             <option value="{{ category }}">{{ category }}</option>
                         {% endfor %}
                     </select>

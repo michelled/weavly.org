@@ -12,7 +12,7 @@
                     Type: 
                     <select class="[ select ]" name="type" id="type" data-filter-bind="type">
                         <option value="">Any Type</option>
-                        {% for type in activityTypes %}
+                        {% for type in activityTags.types %}
                         <option value="{{ type }}" data-slug="{{ type | slug }}">{{ type }}</option>
                         {% endfor %}
                     </select>
@@ -21,7 +21,7 @@
                     Experience:        
                     <select class="[ select ]" name="experience" id="experience" data-filter-bind="experience">
                         <option value="">Any Level</option>
-                        {% for level in experienceLevels %}
+                        {% for level in activityTags.experience %}
                         <option value="{{ level }}">{{ level }}</option>
                         {% endfor %}
                     </select>
@@ -30,7 +30,7 @@
                     Subject:
                     <select class="[ select ]" name="subject" id="subject" data-filter-bind="subject">
                         <option value="">Any Subject</option>
-                        {% for subject in activitySubjects %}
+                        {% for subject in activityTags.subjects %}
                         <option value="{{ subject }}">{{ subject }}</option>
                         {% endfor %}
                     </select>

@@ -158,10 +158,11 @@ collections:
         name: robotActivityTags
         file: "src/_data/robotActivityTags.json"
         fields:
+          - {label: "Robots", name: "robots", widget: "list"}
           - {label: "Experience Levels", name: "experience", widget: "list"}
           - {label: "Topics", name: "topics", widget: "list"}
       - label: Project Tags
         name: projectTags
         file: "src/_data/projectTags.json"
         fields:
-          - {label: "Category", name: "category", widget: "list"}
+          - {label: "Categories", name: "categories", widget: "list"}

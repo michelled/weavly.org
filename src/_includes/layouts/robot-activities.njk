@@ -23,7 +23,7 @@
                     Experience:        
                     <select class="[ select ]" bind:value={selectedExperience} name="experience" id="experience" data-filter-bind="experience">
                         <option value="">Any Level</option>
-                        {% for level in experienceLevels %}
+                        {% for level in robotActivityTags.experience %}
                             <option value="{{ level }}">{{ level }}</option>
                         {% endfor %}
                     </select>
@@ -32,7 +32,7 @@
                     Topic:
                     <select class="[ select ]" bind:value={selectedTopic} name="topic" id="topic" data-filter-bind="topic">
                         <option value="">Any Topic</option>
-                        {% for topic in robotTopics %}
+                        {% for topic in robotActivityTags.topics %}
                             <option value="{{ topic }}">{{ topic }}</option>
                         {% endfor %}
                     </select>
