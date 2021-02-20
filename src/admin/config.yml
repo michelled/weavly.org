@@ -2,6 +2,7 @@
 backend:
   name: git-gateway
   branch: main
+local_backend: true
 publish_mode: editorial_workflow
 site_url: "https://c2lc-project.netlify.app"
 media_folder: "src/assets/media"
@@ -35,10 +36,10 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Type", name: "type", widget: "select", options: ["Unplugged", "On-Screen", "Hybrid"]}
-      - {label: "Coding Experience Level", name: "experience", widget: "select", options: ["No Coding Experience", "Unplugged Coding Experience", "Blockly Coding Experience"]}
-      - {label: "Subject", name: "subject", widget: "select", options: ["Drawings", "Music", "Games", "Stories"]}
-      - {label: "Related Activities", name: "relatedActivities", widget: "relation", collection: "activities", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}
+      - {label: "Type", name: "type", widget: "relation", collection: "siteData", file: "activityTags", value_field: types.*, displayFields: [types.*], search_fields: [types.*]}
+      - {label: "Coding Experience Level", name: "experience", widget: "relation", collection: "siteData", file: "activityTags", value_field: experience.*, displayFields: [experience.*], search_fields: [experience.*]}
+      - {label: "Subject", name: "subject", widget: "relation", collection: "siteData", file: "activityTags", value_field: subjects.*, displayFields: [subjects.*], search_fields: [subjects.*]}
+      - {label: "Related Activities", name: "relatedActivities", widget: "relation", collection: "activities", search_fields: ["title"], value_field: "title", display_fields: ["title"], multiple: true, required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
@@ -72,9 +73,9 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Robot", name: "tags", widget: "list", max: 1, min: 1}
-      - {label: "Coding Experience Level", name: "experience", widget: "select", options: ["No Coding Experience", "Unplugged Coding Experience", "Blockly Coding Experience"]}
-      - {label: "Topic", name: "topic", widget: "select", options: ["Introduction", "Sequencing", "Repeating Patterns", "Loops", "Debugging", "Conditions"]}
-      - {label: "Related Activities with Robots", name: "relatedRobotActivities", widget: "relation", collection: "robotActivities", search_fields: ["title"], value_field: "title", display_fields: "title", multiple: true, required: false}
+      - {label: "Coding Experience Level", name: "experience", widget: "relation", collection: "siteData", file: "robotActivityTags", value_field: experience.*, displayFields: [experience.*], search_fields: [experience.*]}
+      - {label: "Topic", name: "topic", widget: "relation", collection: "siteData", file: "robotActivityTags", value_field: topics.*, displayFields: [topics.*], search_fields: [topics.*]}
+      - {label: "Related Activities with Robots", name: "relatedRobotActivities", widget: "relation", collection: "robotActivities", search_fields: ["title"], value_field: "title", display_fields: ["title"], multiple: true, required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
@@ -114,8 +115,8 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Type", name: "type", widget: "select", options: ["Research", "Applications"], required: false}
-      - {label: "Category", name: "category", widget: "select", options: ["Coding", "Robotics", "Computational Thinking"]}
+      - {label: "Type", name: "type", widget: "relation", collection: "siteData", file: "projectTags", value_field: types.*, displayFields: [types.*], search_fields: [types.*], required: false}
+      - {label: "Category", name: "category", widget: "relation", collection: "siteData", file: "projectTags", value_field: categories.*, displayFields: [categories.*], search_fields: [categories.*]}
       - {label: "Link", name: "link", widget: "string"}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
@@ -130,7 +131,7 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Robot", name: "robot", widget: "relation", collection: "siteData", file: "robotActivityTags", valueField: "robots.*", search_fields: "robots.*"}
+      - {label: "Robot", name: "robot", widget: "relation", collection: "siteData", file: "robotActivityTags", value_field: robots.*, displayFields: [robots.*], search_fields: [robots.*]}
       - {label: "Manufacturer", name: "manufacturer", widget: "string"}
       - {label: "Manufacturer Link", name: "manufacturerLink", widget: "string"}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
@@ -143,7 +144,6 @@ collections:
         fields:
         - {label: "Description", name: "description", widget: "string"}
         - {label: "Link", name: "link", widget: "string"}
-  
   - name: siteData
     label: Site Data
     files:

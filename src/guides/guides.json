@@ -1,4 +1,5 @@
 {
     "layout": "layouts/guide",
-    "permalink": "/learn/robots/{{ robot | slug }}/guide/"
+    "permalink": "/learn/robots/{{ robot | slug }}/guide/",
+    "tags": ["guides"]
 }

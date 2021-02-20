@@ -16,5 +16,6 @@ pagination:
     - onscreenActivities
     - hybridActivities
     - projects
+    - guides
   addAllPagesToCollections: true
 ---

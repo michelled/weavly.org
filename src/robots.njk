@@ -10,7 +10,7 @@ permalink: /learn/robots/
 ---
 <div class="[ flow ] [ flow-lg md:flow-xl ]">
     <div class="[ grid ]">
-    {% for robot in robots %}
+    {% for robot in robotActivityTags.robots %}
       {% if collections[robot].length %}
       {% include "partials/components/card--robot.njk" %}
       {% endif %}
