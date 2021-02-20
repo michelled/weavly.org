@@ -25,8 +25,8 @@ collections:
       - {label: "Preview Image Alt Text", name: "metaImageAlt", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: activities
-    label: Activities
-    label_singular: Activity
+    label: Activities at Home
+    label_singular: Home Activity
     folder: "src/activities"
     slug: "{{slug}}"
     preview_path: "/learn/activities/{{slug}}"
@@ -62,10 +62,10 @@ collections:
         - {label: "Link", name: "link", widget: "string"}
   - name: robotActivities
     label: Activities with Robots
-    label_singular: Activity
+    label_singular: Robot Activity
     folder: "src/robot-activities"
     slug: "{{slug}}"
-    preview_path: "/learn/robot-activities/{{slug}}"
+    preview_path: "/learn/robots/"
     editor:
       preview: false
     create: true
@@ -130,7 +130,7 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Robot", name: "robot", widget: "select", options: ["Cubetto", "Dash & Dot", "Cubelets", "Sphero"]}
+      - {label: "Robot", name: "robot", widget: "relation", options: ["Cubetto", "Dash & Dot", "Cubelets", "Sphero"]}
       - {label: "Manufacturer", name: "manufacturer", widget: "string"}
       - {label: "Manufacturer Link", name: "manufacturerLink", widget: "string"}
       - {label: "Preview Image", name: "metaImage", widget: "image", required: false}
@@ -143,3 +143,14 @@ collections:
         fields:
         - {label: "Description", name: "description", widget: "string"}
         - {label: "Link", name: "link", widget: "string"}
+  
+  - name: data
+    label: Data
+    files:
+      - label: Activity Tags
+        name: activityTags
+        file: "src/_data/activityTags.json"
+        fields:
+          - {label: "Types", name: "types", widget: "list"}
+          - {label: "Experience Levels", name: "experience", widget: "list"}
+          - {label: "Subjects", name: "subjects", widget: "list"}
