@@ -160,3 +160,8 @@ collections:
         fields:
           - {label: "Experience Levels", name: "experience", widget: "list"}
           - {label: "Topics", name: "topics", widget: "list"}
+      - label: Project Tags
+        name: projectTags
+        file: "src/_data/projectTags.json"
+        fields:
+          - {label: "Category", name: "category", widget: "list"}
