@@ -154,3 +154,9 @@ collections:
           - {label: "Types", name: "types", widget: "list"}
           - {label: "Experience Levels", name: "experience", widget: "list"}
           - {label: "Subjects", name: "subjects", widget: "list"}
+      - label: Robot Activity Tags
+        name: robotActivityTags
+        file: "src/_data/robotActivityTags.json"
+        fields:
+          - {label: "Experience Levels", name: "experience", widget: "list"}
+          - {label: "Topics", name: "topics", widget: "list"}
