@@ -17,6 +17,8 @@
                 "*.jpeg",
                 "*.png",
                 "*.webp",
+                "*.pdf",
+                "*.docx",
                 "./src/_data/*.json",
                 "./src/activities/*.md",
                 "./src/robot-activities/*.md",
