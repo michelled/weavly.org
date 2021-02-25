@@ -19,6 +19,7 @@
                 "*.webp",
                 "*.pdf",
                 "*.docx",
+                "*.pptx",
                 "./src/_data/*.json",
                 "./src/activities/*.md",
                 "./src/robot-activities/*.md",
