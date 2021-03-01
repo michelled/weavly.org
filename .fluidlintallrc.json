@@ -20,6 +20,7 @@
                 "*.pdf",
                 "*.docx",
                 "*.pptx",
+                "*.gif",
                 "./src/_data/*.json",
                 "./src/activities/*.md",
                 "./src/robot-activities/*.md",
