@@ -28,6 +28,9 @@ whatYouNeed: >-
 
 
   Independent or with two players. Depends on the learner, assistance may be required to guide or facilitate
+supportiveMaterial:
+  - label: Shapes for tracing
+    file: /assets/media/shapes.pdf
 ---
 ## Description
 
@@ -57,6 +60,6 @@ In this activity, learners plan and build a sequence of movements to trace simpl
 
 ## Skill Development
 
-* Reasoning
+* Analytical/Reasoning
 * Spatial
 * Mathematical
