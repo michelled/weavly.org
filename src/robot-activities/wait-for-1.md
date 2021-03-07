@@ -3,33 +3,33 @@ title: Wait For
 tags:
   - Dash & Dot
 experience: Blockly Coding Experience
-topic: Loops
+topic: Conditions
 relatedRobotActivities:
-  - Creating loops
-description: This activity creates a setting for a robot to pause.
-whatYouNeed: >-
+  - Free Play with Dash
+  - "Meet Dash and Dot: Animation, Drive & Look"
+  - "Meet Dash and Dot: Light & Sound"
+description: This activity creates a setting for Dash and Dot to pause.
+whatYouNeed: |-
   ### Tools
 
-
-  [](https://resources.codelearncreate.org/lesson-plans-and-materials/dash-and-dot/wait-for/Dash_and_Dot-Lesson_09-WAIT_FOR.pdf)Computer and access to internet, Dash and Dot, Adapted Materials
-
+  Device with access to internet, Dash and Dot, adapted materials
 
   ### Skills
 
-
   Logical skills to understand basic directions and repetition
-
 
   ### Environment
 
-
-  Indoor area
-
+  Indoor area with space for Dash and Dot to move
 
   ### Support
 
-
   Depends on the learner, assistance may be required to guide or facilitate
+books:
+  - author: Adam Rex
+    title: The Legend of Rock, Paper, Scissors
+    coverImage: /assets/media/the-legend-of-rock-paper-scissors-.jpg
+    link: /learn/resources/picture-book-list/
 supportiveMaterial:
   - file: /assets/media/dash_and_dot-lesson_09-wait_for.pdf
     label: Extended lesson guide
@@ -38,36 +38,61 @@ supportiveMaterial:
 ---
 ## Description
 
-In this activity, learners are introduced to the Wait for Blocks. Learners will explore the Wait for and Wait for “x” seconds blocks on Block.ly. Learners will learn how conditions can affect what the robot does, such as pause programming until that condition is met. Learners will learn to recognize the events that can prompt the wait for conditions to take place until an event occurs or a set amount of time has passed.
+Conditions can affect what the robot does, such as pause programming until that condition is met. In this activity, Dash and Dot will stop and wait for a specific event to happen before they can finish the program. Larners are introduced to conditional blocks that help Dash and Dot make decisions.  Learners will explore the 'Wait for' and 'Wait for “x” seconds blocks' on Weavly or Block.ly in the Control category with Repeat blocks. Learners will learn to recognize the events that can prompt the wait for conditions to take place until an event occurs or a set amount of time has passed.
 
 ## Steps
 
-**Introduce and anchor**
+**Introduce conditions**
 
-1. Open the slide presentation in the supportive materials
-2. Introduce conditions and place vocabulary cards: "conditionals", and "wait for" in front. Read the definition of these vocabulary (and refer to slide 3) 
-3. Identity the parameter window on the wait for "x" seconds block to review how long a robot will wait for (refer to slide 3)
-4. Provide events (refer to slide 5-7) and identify what can happen before, the wait time and what can happen after using the vocabulary card: event
-5. Consider events with wait time (refer to slide 8-13) and emphasize what was happening before (actions leading up to the wait for), the event that triggers us to continue the task, and what happens after that event occurs
-6. Imagine how the "wait for" block can get Dash and Dot to wait until an event to happen before continuing (refer to slide 14-15)
+1. Place vocabulary cards in front: 'conditionals', 'event' and 'wait for', and review their definitions (what each word means)
+2. Review Event A and Event B where a wait for is part of the sequence. Describe what happens before, the wait time and what can happen after for each event
 
-**Model**
+   Event A: 
 
-1. Open Block.ly app to create a program using the "wait for" to play Catch with Dot.
-2. Think aloud with the steps Dot will do to play catch and drag blocks onto the canvas that follows: 
+   * What happens before: We get upset
+   * Wait time: 'x' time for cool down
+   * What happens after: Talk about it 
 
-   * Play Dot Catch
-   * Wait for Dot Toss
-   * Say Dot Wee
-3. Attach this sequence to the When Start block
-4. Run program
-5. Discuss whether prediction(s) were correct or not
+   Event B: 
+
+   * What happens before: We put food in the microwave
+   * Wait time: 'x' time to reheat food
+   * What happens after: Take food out of microwave
+3. Provide pictures of events where wait time takes place or ask learners to think of events where wait time is part of the event. For each event, ask learners to identify:
+
+   * What was happening before (actions leading up to the wait for)
+   * Wait time (the pause before continuing the task)
+   * What happens after that event occurs (actions taking place after wait for time)
+
+**Model: Dash and Dot play catch** 
+
+1. Open Weavly or Block.ly app 
+2. Introduce the conditionals block as the setting used to help robots, such as Dash and Dot, to stop and check for certain conditions or events before they perform the next task
+3. Introduce the 'Wait for' block as the setting to help robots, such as Dash and Dot, to wait for a specific event (toss a ball) to happen before the program (playing catch) can be finished
+4. Think aloud what steps (such as catch, toss, wait, say wee!) that Dot will do to play catch. Ask learners to imagine the list of events in a game of catch between Dash and Dot using the "wait for" block
+5. Drag blocks to create the listed events into a sequence and use the 'Wait for' block on the canvas.
+
+   * For example: 
+
+     1. Play | Dot | Catch
+     2. Wait for | Dot | Toss
+     3. Say | Dot | Wee
+6. Attach this sequence to the When Start block
+7. Run program
+8. Discuss whether prediction(s) were correct or not
+
+## Tips
+
+* Test program and count the seconds for the "Wait for" out loud
 
 ## Skill Development
 
-* Analytical/Planning
+* Analytical/Reasoning 
+* Creative Thinking 
+* Planning
+* Problem solving (debugging)
+* Sequencing
 
 ## Level Up
 
-* Think aloud as additional blocks are added: Dance Dot Happy, Wait for Dot Shake, Expression Dot Dizzy, and emphasize the "wait for". Add two blocks, Wait for 3 seconds and Expression Dot Laugh
-* Test program and count the seconds for the "Wait for".
+Add additional 'Wait for' conditional blocks for a more complex sequence
