@@ -7,6 +7,8 @@ relatedActivities:
   - Beginning, middle, and end
   - Sequencing in daily activities
 description: "This activity helps learners to identify and change patterns. "
+metaImage: /assets/media/fixing_a_sequence.jpg
+metaImageAlt: Illustartion of a hand trying to put a series of cards in the correct order
 whatYouNeed: |-
   ### Tools
 
@@ -42,7 +44,7 @@ In this simple and interactive game, moderators and players work together to fin
 ## Tips
 
 * Try to create situations that are fun and engaging for the learner
-* In situations in which the learner does not recognize the missed or misplaced step, perform the activity again in the correct order and explain the correct sequence of actions and events
+* In situations where the learner does not recognize the missed or misplaced step, perform the activity again in the correct order slowly and explain the correct sequence of actions and events
 
 ## Skill Development
 
