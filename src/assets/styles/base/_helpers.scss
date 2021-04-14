@@ -1,6 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
+@use "sass:map";
 
 /**
  * Hide element while making it readable for screen readers
@@ -83,6 +84,16 @@
 .two\:three > * + *,
 .three\:two > * + * {
     margin-top: var(--space);
+}
+
+@each $name, $color in $palette {
+    .bg--#{$name} {
+        background-color: #{map.get($color, value)};
+    }
+
+    .text--#{$name} {
+        color: #{map.get($color, value)};
+    }
 }
 
 @media (min-width: 768px) {

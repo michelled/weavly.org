@@ -4,8 +4,19 @@
 @use "sass:map";
 
 $palette: map-get($tokens, palette);
+$typography: map-get($tokens, typography);
 
 :root {
+    --font-family-base: "#{typography-prop($tokens, p, fontFamily)}", sans-serif;
+    --font-family-display: "#{typography-prop($tokens, p, fontFamily)}", sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --step-0: calc(#{typography-prop($tokens, p, fontSize)} / 16 * 1rem);
+    --step-1: calc(#{typography-prop($tokens, h3, fontSize)} / 16 * 1rem);
+    --step-2: calc(#{typography-prop($tokens, h2, fontSize)} / 16 * 1rem);
+    --step-3: calc(#{typography-prop($tokens, h1, fontSize)} / 16 * 1rem);
+
     @each $name, $color in $palette {
         --color-#{$name}: #{map.get($color, value)};
     }

@@ -2,9 +2,9 @@
 
 // 1. Configuration and helpers
 @import
+    'abstracts/functions',
     'abstracts/tokens',
     'abstracts/variables',
-    'abstracts/functions',
     'abstracts/mixins';
 
 // 2. Vendors
@@ -30,6 +30,7 @@
     'components/alert',
     'components/brand',
     'components/button',
+    'components/call-to-action',
     'components/callout',
     'components/card',
     'components/label',

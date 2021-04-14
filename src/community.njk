@@ -1,29 +1,12 @@
 ---
 layout: layouts/page
-title: Community
-subtitle: Here you can find links to conferences, workshops, talks, camps, and other events that explore topics and resources related to accessible coding
-permalink: /community/
+title: About
+subtitle: We’re designing educational coding tools for kids who have been left out of learning—especially those with complex needs.
+permalink: /about/
 eleventyNavigation:
-    key: Community
-    order: 4
+    key: About
+    order: 5
 ---
-<div class="[ flow ] [ flow-lg md:flow-xl ]">
-    <div class="[ flow ]">
-        <h3 aria-level="2">Related Projects</h3>
-        <div class="[ switcher ]">
-            <div>
-                {% for item in collections.projects | limit(3) %}
-                <div class="[ flow ]">
-                    {% svgPlaceholder "680", "425" %}
-                    <h2 aria-level="3">{{ item.data.title }}</h2>
-                    {% if item.data.description %}
-                    <p>{{ item.data.description | safe }}</p>
-                    {% endif %}
-                    <p><a href="{{ item.data.link }}" rel="external">Learn more<span class="[ visually-hidden ]"> about &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <p><a href="/community/projects/">See More Projects</a></p>
-    </div>
+<div class="[ wrapper ]">
+  
 </div>
