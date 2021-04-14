@@ -14,7 +14,7 @@
         "start": "npm-run-all -l clean -p start:*",
         "start:webpack": "run-s tokens mix:watch",
         "start:eleventy": "cross-env NODE_ENV=development eleventy --serve",
-        "tokens": "json-to-scss --tt='    ' src/_data/design-tokens.json src/assets/styles/abstracts/_tokens.scss"
+        "tokens": "json-to-scss --tt='    ' src/_data/designTokens.json src/assets/styles/abstracts/_tokens.scss"
     },
     "repository": {
         "type": "git",

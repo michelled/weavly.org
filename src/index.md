@@ -1,8 +1,9 @@
 ---
 layout: layouts/base
-title: Coding to Learn and Create
+title: Weavly
 eleventyNavigation:
     key: Home
     order: 0
 ---
-You can write content for your page in [Markdown](https://www.11ty.dev/docs/languages/markdown/) format.
+Weavly is a tool designed for everyone to learn about coding. Explore activities and discover new ways to turn your
+ideas into reality. Share your ideas and creations with others.
