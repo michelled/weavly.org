@@ -4,14 +4,17 @@
     "description": "Fluid is an open, collaborative project to improve the user experience and inclusiveness of open source software.",
     "scripts": {
         "build": "npm-run-all -l clean build:*",
-        "build:webpack": "mix --production",
+        "build:webpack": "run-s tokens mix:build",
         "build:eleventy": "cross-env NODE_ENV=production eleventy",
         "clean": "rimraf dist",
         "lint": "fluid-lint-all",
+        "mix:build": "mix --production",
+        "mix:watch": "mix watch",
         "release": "standard-version -t ''",
         "start": "npm-run-all -l clean -p start:*",
-        "start:webpack": "mix watch",
-        "start:eleventy": "cross-env NODE_ENV=development eleventy --serve"
+        "start:webpack": "run-s tokens mix:watch",
+        "start:eleventy": "cross-env NODE_ENV=development eleventy --serve",
+        "tokens": "json-to-scss --tt='    ' src/_data/design-tokens.json src/assets/styles/abstracts/_tokens.scss"
     },
     "repository": {
         "type": "git",
@@ -48,6 +51,7 @@
         "husky": "4.3.8",
         "image-size": "0.9.4",
         "jsdom": "16.4.0",
+        "json-to-scss": "1.6.2",
         "laravel-mix": "6.0.9",
         "move-file": "2.0.0",
         "npm-run-all": "4.1.5",
