@@ -11,7 +11,7 @@ body {
 /**
  * Basic styles for links
  */
-a {
+a:not([class]) {
     color: currentColor;
     text-decoration: underline;
 

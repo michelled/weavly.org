@@ -4,7 +4,3 @@
 @function rem($pixels) {
     @return $pixels / 16 * 1rem;
 }
-
-@function typography-prop($tokens, $key, $value) {
-    @return map-get(map-get(map-get(map-get($tokens, "typography"), $key), $value), "value");
-}

@@ -3,21 +3,80 @@
 // -----------------------------------------------------------------------------
 @use "sass:map";
 
-$palette: map-get($tokens, palette);
-$typography: map-get($tokens, typography);
+$colors: (
+    "white": white,
+    grey-95: #f1f2f4,
+    grey-85: #d5d8dd,
+    grey-75: #b9bec6,
+    black-35: #505862,
+    black-25: #3a3f46,
+    black-15: #22262a,
+    black-05: #1e1e1e,
+    blue-95: #eef2f6,
+    blue-85: #cdd7e4,
+    blue-75: #acbcd2,
+    blue-65: #8ba2c0,
+    blue-55: #6a87ae,
+    blue-45: #516d95,
+    blue-35: #3f5574,
+    blue-25: #2d3d53,
+    blue-15: #1b2432,
+    cream-95: #f9f2ec,
+    cream-85: #ecd8c7,
+    cream-75: #dfbda0,
+    cream-65: #d2a27a,
+    red-85: #f8c1ba,
+    red-75: #f3988b,
+    red-65: #ea7362,
+    red-55: #ea462f,
+    red-45: #c13925,
+    green-95: #ebfaf8,
+    green-85: #cce6e2,
+    green-75: #aad5cf,
+    green-65: #88c3bc,
+    green-55: #66b2a9,
+    green-45: #4c9990,
+    green-25: #30444e,
+    green-15: #22343c,
+    green-05: #18252c,
+    orange-95: #feece6,
+    orange-85: #fcc6b5,
+    orange-75: #fa9f84,
+    orange-65: #f97953,
+    orange-55: #f75322,
+    teal-85: #d3e7ec,
+    teal-75: #a4d0da,
+    teal-65: #80becc,
+    teal-55: #5babbd,
+    teal-45: #4292a4,
+    teal-35: #33717f,
+    yellow-85: #f9dcb9,
+    yellow-75: #f5c58a,
+    yellow-65: #f1ae5b,
+    yellow-55: #ed972c,
+    yellow-45: #d37d12,
+    purple-75: #d0afc8,
+    purple-65: #bd8fb2,
+    purple-55: #aa6f9c,
+    purple-45: #905582,
+    purple-35: #704265
+);
 
 :root {
-    --font-family-base: "#{typography-prop($tokens, p, fontFamily)}", sans-serif;
-    --font-family-display: "#{typography-prop($tokens, p, fontFamily)}", sans-serif;
+    --font-family-base: "Work Sans", sans-serif;
+    --font-family-display: "Libre Franklin", sans-serif;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --step-0: calc(#{typography-prop($tokens, p, fontSize)} / 16 * 1rem);
-    --step-1: calc(#{typography-prop($tokens, h3, fontSize)} / 16 * 1rem);
-    --step-2: calc(#{typography-prop($tokens, h2, fontSize)} / 16 * 1rem);
-    --step-3: calc(#{typography-prop($tokens, h1, fontSize)} / 16 * 1rem);
+    --step--2: calc(14 / 16 * 1rem);
+    --step--1: calc(16 / 16 * 1rem);
+    --step-0: calc(18 / 16 * 1rem);
+    --step-1: calc(28 / 16 * 1rem);
+    --step-2: calc(40 / 16 * 1rem);
+    --step-3: calc(44 / 16 * 1rem);
+    --max-content-width: 1320px;
 
-    @each $name, $color in $palette {
-        --color-#{$name}: #{map.get($color, value)};
+    @each $name, $color in $colors {
+        --color-#{$name}: #{$color};
     }
 }

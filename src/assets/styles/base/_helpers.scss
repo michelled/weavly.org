@@ -1,7 +1,6 @@
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
-@use "sass:map";
 
 /**
  * Hide element while making it readable for screen readers
@@ -24,28 +23,30 @@
 }
 
 .flow > * + * {
-    margin-top: 1rem;
+    margin-top: 1em;
 }
 
 .flow-md > * + * {
-    margin-top: 1.5rem;
+    margin-top: 1.5em;
 }
 
 .flow-lg > * + * {
-    margin-top: 3rem;
+    margin-top: 3em;
 }
 
 .flow-xl > * + * {
-    margin-top: 8rem;
+    margin-top: 8em;
 }
 
 .flow-xxl > * + * {
-    margin-top: 12rem;
+    margin-top: 12em;
 }
 
 .switcher {
     --threshold: 768px;
-    --space: 1.5rem;
+    --space: 3.75rem;
+
+    margin-top: 3rem;
 }
 
 .switcher > * {
@@ -75,7 +76,7 @@
 
 .two\:three,
 .three\:two {
-    --space: 1.5rem;
+    --space: 5rem;
 
     display: flex;
     flex-direction: column;
@@ -86,27 +87,111 @@
     margin-top: var(--space);
 }
 
-@each $name, $color in $palette {
-    .bg--#{$name} {
-        background-color: #{map.get($color, value)};
-    }
-
-    .text--#{$name} {
-        color: #{map.get($color, value)};
-    }
+.three\:two__three,
+.two\:three__three {
+    display: flex;
+    justify-content: center;
 }
 
-@media (min-width: 768px) {
+.bg {
+    position: relative;
+}
+
+.bg--yellow-85 {
+    --cta-accent: var(--color-yellow-75);
+    --cta-interactive: var(--color-yellow-55);
+
+    background-color: var(--color-yellow-85);
+}
+
+.bg--red-75 {
+    --cta-accent: var(--color-red-65);
+    --cta-interactive: var(--color-red-45);
+
+    background-color: var(--color-red-75);
+}
+
+.bg--orange-75 {
+    --cta-accent: var(--color-orange-65);
+    --cta-interactive: var(--color-orange-55);
+
+    background-color: var(--color-orange-75);
+}
+
+.bg--green-85 {
+    --cta-accent: var(--color-green-75);
+    --cta-interactive: var(--color-green-55);
+
+    background-color: var(--color-green-85);
+}
+
+.bg--cream-95 {
+    --cta-accent: var(--color-cream-85);
+    --cta-interactive: var(--color-cream-65);
+
+    background-color: var(--color-cream-95);
+}
+
+.bg--purple-35 {
+    --cta-accent: var(--color-purple-25);
+    --cta-interactive: var(--color-purple-05);
+
+    background-color: var(--color-purple-35);
+}
+
+.p-block-xs {
+    padding-block: 0.25rem;
+}
+
+.p-block-sm {
+    padding-block: 0.75rem;
+}
+
+.p-block-md {
+    padding-block: 1.5rem;
+}
+
+.p-block-lg {
+    padding-block: 3rem;
+}
+
+.p-block-xl {
+    padding-block: 6rem;
+}
+
+.wave {
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+}
+
+.wave--bottom {
+    bottom: -1px;
+}
+
+.wave--top {
+    top: -1px;
+}
+
+@media (min-width: 960px) {
+    .wave--bottom {
+        bottom: 0;
+    }
+
+    .wave--top {
+        top: 0;
+    }
+
     .md\:hidden {
         display: none;
     }
 
     .md\:flow-lg > * + * {
-        margin-top: 3rem;
+        margin-top: 3em;
     }
 
     .md\:flow-xl > * + * {
-        margin-top: 8rem;
+        margin-top: 8em;
     }
 
     .grid {
@@ -132,6 +217,7 @@
 
     .two\:three__three,
     .three\:two__three {
+        display: block;
         width: calc((3 / 5 * 100%) - var(--space) / 2);
     }
 }

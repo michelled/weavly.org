@@ -130,7 +130,7 @@ module.exports = function (config) {
     config.addPlugin(syntaxHighlight);
 
     config.addShortcode("svgPlaceholder", function (width, height) {
-        return `<svg viewBox="0 0 ${width} ${height}" class="placeholder">
+        return `<svg viewBox="0 0 ${width} ${height}" style="--width: ${width}px;" class="placeholder">
         <rect width="${width}" height="${height}" />
     </svg>`;
     });

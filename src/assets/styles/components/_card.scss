@@ -3,15 +3,42 @@
 // -----------------------------------------------------------------------------
 
 .card {
-    border: 1px solid black;
+    background-color: var(--color-cream-95);
+    border: none;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: var(--step-0);
+    position: relative;
+}
+
+.card__image {
+    text-align: center;
 }
 
 .card__content {
-    padding: 0.75rem 1rem 1rem;
+    padding: 2.25rem 1.5rem 2.5rem;
+}
+
+.card a {
+    text-decoration: none;
+
+    &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 0 0 4px var(--color-red-75) inset, 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .card:focus-within {
-    box-shadow: 0 0 0 3px skyblue;
+    box-shadow: 0 0 0 4px var(--color-red-55) inset, 0 4px 4px rgba(0, 0, 0, 0.25);
 
     a {
         outline: none;

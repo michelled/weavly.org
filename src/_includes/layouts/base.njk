@@ -16,12 +16,15 @@
         {% include "partials/global/header.njk" %}
         <main>
             <article>
-                <header class="[ header ]{% if headerBg %} [ bg--{{ headerBg }} ]{% endif %}{% if headerText %} [ text--{{ headerText }} ]{% endif %}">
-                    <div class="[ wrapper ]">
+                <header class="[ header ]{% if headerBg %} [ bg bg--{{ headerBg }} ]{% endif %}{% if headerText %} [ text--{{ headerText }} ]{% endif %}">
+                    <div class="[ wrapper ] [ p-block-xl ]">
                     {% block pageHeader %}
                         <h1>{{ title }}</h1>
                         {% if subtitle %}
                         <p class="[ subtitle ] [ prose ]">{{ subtitle | safe }}</p>
+                        {% endif %}
+                        {% if page.url === "/" %}
+                        <p><a class="call-to-action" rel="external" href="https://create.weavly.org">Create</a></p>
                         {% endif %}
                     {% endblock %}
                     </div>

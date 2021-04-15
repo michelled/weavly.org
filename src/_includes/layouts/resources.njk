@@ -4,7 +4,7 @@
 
 {% block content %}
 {% if resources.length %}
-<div class="[ wrapper ]">
+<div class="[ wrapper ] [ p-block-lg ]">
   <div class="[ flow ] [ flow-md ]">
       {% for item in resources %}
       <article class="[ resource ] [ two:three ]">
@@ -13,7 +13,7 @@
           </div>
           <div class="[ three:two__two ] [ flow ]">
               <h2>{{ item.data.title }}</h2>
-              <p class="metadata">{% if item.data.author %}By <span class="[ author ]">{{ item.data.author }}</span> &middot; {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="[ dt-published ]">{{ item.data.date | formatDate }}</time></p>
+              <p class="metadata">{% if item.data.author %}By <span class="[ author ]">{{ item.data.author }}</span> / {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="[ dt-published ]">{{ item.data.date | formatDate }}</time></p>
               {% if item.data.description %}
               <p>{{ item.data.description | safe }}</p>
               {% endif %}

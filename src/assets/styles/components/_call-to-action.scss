@@ -1,9 +1,31 @@
-a.call-to-action {
+.call-to-action {
     align-items: center;
     background-color: var(--color-white);
     border-radius: rem(40);
+    box-shadow: 0 16px 0 0 var(--cta-accent);
+    color: currentColor;
     display: inline-flex;
+    font-size: var(--step-1);
+    font-weight: var(--font-weight-semibold);
     height: rem(80);
     justify-content: center;
-    min-width: rem(320);
+    margin-block: 32px 16px;
+    max-width: rem(320);
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+
+    &:hover {
+        box-shadow: 0 16px 0 0 var(--cta-interactive);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px var(--cta-interactive) inset, 0 16px 0 0 var(--cta-interactive);
+        outline: none;
+    }
+
+    &:active {
+        box-shadow: 0 12px 0 0 var(--cta-interactive);
+        margin-block: 36px 12px;
+    }
 }
