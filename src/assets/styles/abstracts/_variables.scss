@@ -62,20 +62,67 @@ $colors: (
     purple-35: #704265
 );
 
+$spaces: (
+    xxs: 2px,
+    xs: 4px,
+    sm: 12px,
+    md: 20px,
+    lg: 48px,
+    xl: 96px,
+    xxl: 192px
+);
+
+$borders: (
+    hairline: 1px,
+    thin: 2px,
+    medium: 3px,
+    thick: 4px
+);
+
+$radii: (
+    xs: 4px,
+    md: 20px,
+    lg: 40px,
+    xl: 50px
+);
+
 :root {
+    // Font Families
     --font-family-base: "Work Sans", sans-serif;
     --font-family-display: "Libre Franklin", sans-serif;
+
+    // Font Weights
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+
+    // Font Sizes
     --step--2: calc(14 / 16 * 1rem);
     --step--1: calc(16 / 16 * 1rem);
     --step-0: calc(18 / 16 * 1rem);
     --step-1: calc(28 / 16 * 1rem);
     --step-2: calc(40 / 16 * 1rem);
     --step-3: calc(44 / 16 * 1rem);
-    --max-content-width: 1320px;
 
+    // Responsive Helpers
+    --max-content-width: #{rem(1320px)};
+
+    // Spacing
+    @each $name, $space in $spaces {
+        --space-#{$name}: #{rem($space)};
+    }
+
+    // Borders
+    @each $name, $border in $borders {
+        --border-#{$name}: #{rem($border)};
+    }
+
+    // Border Radii
+    @each $name, $radius in $radii {
+        --radius-#{$name}: #{rem($radius)};
+    }
+
+    // Colors
     @each $name, $color in $colors {
         --color-#{$name}: #{$color};
     }

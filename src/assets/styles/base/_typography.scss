@@ -30,15 +30,6 @@ h3 {
     font-weight: var(--font-weight-semibold);
 }
 
-* + h2,
-* + h3 {
-    margin-top: 1em;
-}
-
-* + p {
-    margin-top: 1em;
-}
-
 address {
     font-style: normal;
 }
@@ -48,5 +39,5 @@ address {
 }
 
 .prose > * + * {
-    margin-top: 1rem;
+    margin-top: 1em;
 }

@@ -1,52 +1,10 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the lesson plans page.
 // -----------------------------------------------------------------------------
-.robot-activities .filters > * {
-    display: block;
-}
-
-.robot-activities .filters > * + * {
-    margin-top: 1rem;
-}
-
-.robot-activities .filter-experience--hide {
-    display: none;
-}
-
-.robot-activities .filter-topic--hide {
-    display: none;
-}
-
 .lesson-plan .book img[role="decoration"] {
-    max-width: 10rem;
+    // TODO
 }
 
 .no-js .robot-activities #robot-activities {
     display: none;
-}
-
-@media (min-width: 960px) {
-    .robot-activities .filters {
-        align-items: center;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .robot-activities .filters > * {
-        align-items: center;
-        display: flex;
-    }
-
-    .robot-activities .filters > * + * {
-        margin-left: 1rem;
-        margin-top: 0;
-    }
-
-    .robot-activities button.button--primary {
-        margin-left: 0.5rem;
-    }
-
-    .robot-activities button:not(.button--primary) {
-        margin-left: auto;
-    }
 }

@@ -1,18 +1,9 @@
 {
     "extends": "stylelint-config-fluid",
+    "plugins": [
+        "stylelint-use-logical"
+    ],
     "rules": {
-        "scss/at-rule-no-unknown": [
-            true,
-            {
-                "ignoreAtRules": [
-                    "tailwind",
-                    "apply",
-                    "variants",
-                    "responsive",
-                    "screen",
-                    "layer"
-                ]
-            }
-        ]
+        "csstools/use-logical": ["always", {"except": ["float"]}]
     }
 }

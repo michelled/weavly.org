@@ -27,26 +27,26 @@
 }
 
 .flow-md > * + * {
-    margin-top: 1.5em;
+    margin-top: var(--space-md);
 }
 
 .flow-lg > * + * {
-    margin-top: 3em;
+    margin-top: var(--space-lg);
 }
 
 .flow-xl > * + * {
-    margin-top: 8em;
+    margin-top: var(--space-xl);
 }
 
 .flow-xxl > * + * {
-    margin-top: 12em;
+    margin-top: var(--space-xxl);
 }
 
 .switcher {
     --threshold: 768px;
-    --space: 3.75rem;
+    --space: var(--space-lg);
 
-    margin-top: 3rem;
+    margin-top: var(--space-lg);
 }
 
 .switcher > * {
@@ -67,7 +67,7 @@
 }
 
 .grid {
-    --gap: 1.5rem;
+    --gap: var(--space-md);
     --columns: 2;
 
     display: grid;
@@ -76,7 +76,7 @@
 
 .two\:three,
 .three\:two {
-    --space: 5rem;
+    --space: var(--space-lg);
 
     display: flex;
     flex-direction: column;
@@ -139,26 +139,6 @@
     background-color: var(--color-purple-35);
 }
 
-.p-block-xs {
-    padding-block: 0.25rem;
-}
-
-.p-block-sm {
-    padding-block: 0.75rem;
-}
-
-.p-block-md {
-    padding-block: 1.5rem;
-}
-
-.p-block-lg {
-    padding-block: 3rem;
-}
-
-.p-block-xl {
-    padding-block: 6rem;
-}
-
 .wave {
     height: auto;
     max-width: 100%;
@@ -187,11 +167,11 @@
     }
 
     .md\:flow-lg > * + * {
-        margin-top: 3em;
+        margin-top: var(--space-lg);
     }
 
     .md\:flow-xl > * + * {
-        margin-top: 8em;
+        margin-top: var(--space-xl);
     }
 
     .grid {

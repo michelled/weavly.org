@@ -4,22 +4,22 @@
 
 [role="banner"] {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    height: 6.625rem;
-    margin-top: 3rem;
+    margin-block-start: var(--space-lg);
 }
 
 [role="banner"] .wrapper {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
     max-width: var(--max-content-width);
-    padding: 1.5rem;
+    padding: var(--space-md);
 }
 
 @media (min-width: 960px) {
     [role="banner"] .wrapper {
         flex-direction: row;
+        height: calc(106 / 16 * 1rem);
         justify-content: start;
+        padding: var(--space-md);
     }
 }

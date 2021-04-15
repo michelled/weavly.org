@@ -5,36 +5,36 @@
     background-color: var(--color-black-25);
     color: var(--color-white);
     font-size: var(--step--1);
-    margin-top: auto;
+    margin-block-start: auto;
 }
 
 [role="contentinfo"] .wrapper {
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
     max-width: var(--max-content-width);
-    padding: 6rem 1.5rem;
+    padding: var(--space-lg) var(--space-md);
 }
 
 [role="contentinfo"] h3 {
     border-top: 3px solid currentColor;
-    padding-block-start: 1rem;
+    padding-block-start: var(--space-md);
 }
 
 [role="contentinfo"] .contact {
-    margin-top: 3rem;
+    margin-top: var(--space-lg);
 }
 
 [role="contentinfo"] .credits {
     font-size: var(--step--2);
-    margin-top: 3rem;
+    margin-top: var(--space-lg);
 }
 
 @media (min-width: 960px) {
     [role="contentinfo"] .wrapper {
         display: grid;
-        gap: 3rem 1.5rem;
+        gap: var(--space-lg) var(--space-md);
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, auto);
+        padding: var(--space-xl) var(--space-lg);
     }
 
     [role="contentinfo"] .contact {
@@ -48,7 +48,7 @@
         }
 
         div {
-            width: calc(50% - 0.75rem);
+            width: calc(50% - var(--space-md) / 2);
         }
     }
 
