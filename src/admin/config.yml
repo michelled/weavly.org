@@ -118,6 +118,14 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Title Link", name: "titleLink", widget: "string"}
           - {label: "Content", name: "content", widget: "text"}
+      - label: Community
+        name: community
+        file: "src/community.md"
+        editor:
+          preview: false
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "text"}
       - label: About
         name: about
         file: "src/about.md"
@@ -126,6 +134,33 @@ collections:
         fields:
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Subtitle", name: "subtitle", widget: "text"}
+        - label: Goal Section
+          name: goalSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Image Alt Text", name: "imageAlt", widget: "string"}
+          - {label: "Call to Action Text", name: "callToActionText", widget: "string"}
+          - {label: "Call to Action Link", name: "callToActionLink", widget: "string"}
+        - label: What We Do Section
+          name: whatWeDoSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: Cards
+            name: cards
+            widget: list
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+        - label: Who We Are Section
+          name: whoSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "markdown"}
   - name: resources
     label: Coding Resources
     label_singular: Coding Resource

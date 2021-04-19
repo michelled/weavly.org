@@ -1,0 +1,43 @@
+{% extends "layouts/page.njk" %}
+
+{% block content %}
+<div class="[ bg bg--yellow-85 ]">
+  <svg class="[ wave wave--top ]" viewBox="0 0 1437 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M612.315 52C400.697 52 111.495 20.667-4 0h1440.92c-81.96 0-560.084 52-824.605 52z" fill="var(--color-teal-75)" /></svg>
+  <div class="[ wrapper ]">
+    <div class="[ two:three ]">
+        <div class="[ two:three__two ] [ flow ]">
+            <h2>{{ goalSection.title }}</h2>
+            {{ goalSection.content | markdown | safe }}
+            <p class="[ sm:center ]"><a class="call-to-action" href="{{ goalSection.callToActionLink }}">{{ goalSection.callToActionText }}</a></p>
+        </div>
+        <div class="[ two:three__three ] ">
+          {% image "./src" + goalSection.image, goalSection.imageAlt, "50vw, 100vw" %}
+        </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="[ wrapper ]">
+    <h2 class="[ center ]">{{ whatWeDoSection.title }}</h2>
+    <div class="[ switcher ]">
+        <div>
+          {% for card in whatWeDoSection.cards %}
+            <div class="[ card card--small ]">
+                <div class="[ card__content ] [ flow ]">
+                    <h3><a href="{{ card.link }}">{{ card.title }}</a></h3>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</div>
+<div class="[ bg bg--green-85 ]">
+  <div class="[ wrapper ]">
+    <div class="[ center flow ]">
+      <h2>{{ whoSection.title }}</h2>
+      {{ whoSection.content | markdown | safe }}
+    </div>
+  </div>
+</div>
+{% endblock%}

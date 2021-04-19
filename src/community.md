@@ -1,12 +1,12 @@
 ---
 layout: layouts/projects.njk
-title: Projects
+title: Community
 subtitle: Here you can find new and inspiring ideas being explored around the world to make coding fun and accessible for learners with unique needs
+headerBg: purple-75
 eleventyNavigation:
-  parent: Community
-  key: Projects
-  order: 1
-permalink: "/community/projects/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+  key: Community
+  order: 4
+permalink: "/community/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 pagination:
   data: collections.projects
   size: 10
