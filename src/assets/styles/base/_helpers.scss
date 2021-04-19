@@ -23,30 +23,30 @@
 }
 
 .flow > * + * {
-    margin-top: 1em;
+    margin-block-start: 1em;
 }
 
 .flow-md > * + * {
-    margin-top: var(--space-md);
+    margin-block-start: var(--space-md);
 }
 
 .flow-lg > * + * {
-    margin-top: var(--space-lg);
+    margin-block-start: var(--space-lg);
 }
 
 .flow-xl > * + * {
-    margin-top: var(--space-xl);
+    margin-block-start: var(--space-xl);
 }
 
 .flow-xxl > * + * {
-    margin-top: var(--space-xxl);
+    margin-block-start: var(--space-xxl);
 }
 
 .switcher {
     --threshold: 768px;
     --space: var(--space-lg);
 
-    margin-top: var(--space-lg);
+    margin-block-start: var(--space-lg);
 }
 
 .switcher > * {
@@ -84,7 +84,7 @@
 
 .two\:three > * + *,
 .three\:two > * + * {
-    margin-top: var(--space);
+    margin-block-start: var(--space);
 }
 
 .three\:two__three,
@@ -146,20 +146,20 @@
 }
 
 .wave--bottom {
-    bottom: -1px;
+    inset-block-end: -1px;
 }
 
 .wave--top {
-    top: -1px;
+    inset-block-start: -1px;
 }
 
 @media (min-width: 960px) {
     .wave--bottom {
-        bottom: 0;
+        inset-block-end: 0;
     }
 
     .wave--top {
-        top: 0;
+        inset-block-start: 0;
     }
 
     .md\:hidden {
@@ -167,11 +167,11 @@
     }
 
     .md\:flow-lg > * + * {
-        margin-top: var(--space-lg);
+        margin-block-start: var(--space-lg);
     }
 
     .md\:flow-xl > * + * {
-        margin-top: var(--space-xl);
+        margin-block-start: var(--space-xl);
     }
 
     .grid {
@@ -187,7 +187,7 @@
 
     .two\:three > * + *,
     .three\:two > * + * {
-        margin-top: 0;
+        margin-block-start: 0;
     }
 
     .two\:three__two,

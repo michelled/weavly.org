@@ -1,11 +1,14 @@
+img {
+    height: auto;
+    margin: 0;
+    width: 100%;
+}
+
 picture {
     position: relative;
 
     img {
         border-radius: var(--radius-xl);
-        height: auto;
-        margin: 0;
-        width: 100%;
     }
 
     &::after {
