@@ -14,9 +14,11 @@ collections:
       - label: Home
         name: home
         file: "src/index.md"
+        editor:
+          preview: false
         fields:
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Subtitle", name: "subtitle", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "text"}
         - {label: "Header Call to Action Text", name: "headerCallToActionText", widget: "string"}
         - {label: "Header Call to Action Link", name: "headerCallToActionLink", widget: "string"}
         - label: Create Section
@@ -58,6 +60,72 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Title Link", name: "titleLink", widget: "string"}
           - {label: "Content", name: "content", widget: "text"}
+      - label: Learn
+        name: learn
+        file: "src/learn.md"
+        editor:
+          preview: false
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "text"}
+        - label: Resources Section
+          name: resourcesSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Image Alt Text", name: "imageAlt", widget: "string"}
+          - {label: "Call to Action Text", name: "callToActionText", widget: "string"}
+          - {label: "Call to Action Link", name: "callToActionLink", widget: "string"}
+        - label: Activities Section
+          name: activitiesSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: Cards
+            name: cards
+            widget: list
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Content", name: "content", widget: "text"}
+        - label: Activities with Robots Section
+          name: robotActivitiesSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Image Alt Text", name: "imageAlt", widget: "string"}
+          - {label: "Call to Action Text", name: "callToActionText", widget: "string"}
+          - {label: "Call to Action Link", name: "callToActionLink", widget: "string"}
+        - label: Trainings & Workshops Section
+          name: trainingsSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Image Alt Text", name: "imageAlt", widget: "string"}
+          - {label: "Call to Action Text", name: "callToActionText", widget: "string"}
+          - {label: "Call to Action Link", name: "callToActionLink", widget: "string"}
+        - label: Share Section
+          name: shareSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Title Link", name: "titleLink", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+      - label: About
+        name: about
+        file: "src/about.md"
+        editor:
+          preview: false
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "text"}
   - name: resources
     label: Coding Resources
     label_singular: Coding Resource
