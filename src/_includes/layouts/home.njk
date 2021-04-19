@@ -4,11 +4,32 @@
 
 {% block pageHeader %}
     <h1>{{ title }}</h1>
-    <p class="[ subtitle ] [ prose ]">{{ subtitle | safe }}</p>
+    <p class="[ subtitle ] [ prose ]"><span class="[ bg--green-85 ]">{{ subtitle | safe }}</span></p>
     <p class="[ sm:center ]"><a class="call-to-action" rel="external" href="{{ headerCallToActionLink }}">{{ headerCallToActionText }}</a></p>
 {% endblock %}
 
 {% block content %}
+<div>
+  <div class="[ wrapper ]">
+    <h2 class="[ center ]">{{ createSection.title }}</h2>
+    <div class="[ switcher ]">
+        <div>
+          {% for card in createSection.cards %}
+            <div class="[ card card--small card--yellow-75 ]">
+                  {% if card.image %}
+                <figure class="[ card__image ]">
+                  {% image "./src" + card.image, "", "50vw, 100vw" %}
+                </figure>
+                {% endif %}
+                <div class="[ card__content ] [ flow ]">
+                    <h3><a href="{{ card.link }}">{{ card.title }}</a></h3>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</div>
 <div class="[ bg bg--yellow-85 ]">
   <div class="[ wrapper ]">
     <div class="[ two:three ]">

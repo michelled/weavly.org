@@ -19,6 +19,18 @@ collections:
         - {label: "Subtitle", name: "subtitle", widget: "string"}
         - {label: "Header Call to Action Text", name: "headerCallToActionText", widget: "string"}
         - {label: "Header Call to Action Link", name: "headerCallToActionLink", widget: "string"}
+        - label: Create Section
+          name: createSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - label: Cards
+            name: cards
+            widget: list
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
         - label: Learn Section
           name: learnSection
           widget: object

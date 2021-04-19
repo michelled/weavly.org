@@ -26,10 +26,20 @@
         content: "";
         display: block;
         height: 100%;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline-start: 0;
         position: absolute;
-        top: 0;
         width: 100%;
+    }
+}
+
+.card picture {
+    img {
+        border-radius: var(--radius-md);
+    }
+
+    &::after {
+        border-radius: var(--radius-md);
     }
 }
 
@@ -47,4 +57,12 @@
 
 .card .tag {
     font-weight: 600;
+}
+
+.card--yellow-75 {
+    background-color: var(--color-yellow-75);
+}
+
+.card--yellow-75:hover {
+    box-shadow: 0 0 0 var(--space-xs) var(--color-red-65) inset, 0 var(--space-xs) var(--space-xs) rgba(0, 0, 0, 0.25);
 }
