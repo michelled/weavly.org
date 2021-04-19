@@ -1,0 +1,49 @@
+{% extends "layouts/base.njk" %}
+
+{% set bodyClass = "home" %}
+
+{% block pageHeader %}
+    <h1>{{ title }}</h1>
+    <p class="[ subtitle ] [ prose ]">{{ subtitle | safe }}</p>
+    <p class="[ sm:center ]"><a class="call-to-action" rel="external" href="{{ headerCallToActionLink }}">{{ headerCallToActionText }}</a></p>
+{% endblock %}
+
+{% block content %}
+<div class="[ bg bg--yellow-85 ]">
+  <div class="[ wrapper ]">
+    <div class="[ two:three ]">
+        <div class="[ two:three__two ] [ flow ]">
+            <h2>{{ learnSection.title }}</h2>
+            <p>{{ learnSection.content }}</p>
+            <p class="[ sm:center ]"><a class="call-to-action" href="{{ learnSection.callToActionLink }}">{{ learnSection.callToActionText }}</a></p>
+        </div>
+        <div class="[ two:three__three ] [ flow ]">
+          {% image "./src" + learnSection.image, learnSection.imageAlt, "50vw, 100vw" %}
+        </div>
+    </div>
+  </div>
+</div>
+<div class="[ bg bg--red-75 ]">
+  <div class="[ wrapper ]">
+    <div class="[ three:two ]">
+        <div class="[ three:two__three ] [ flow ]">
+          {% image "./src" + aboutSection.image, aboutSection.imageAlt, "50vw, 100vw" %}
+        </div>
+        <div class="[ three:two__two ] [ flow ]">
+          <h2>{{ aboutSection.title }}</h2>
+            <p>{{ aboutSection.content }}</p>
+            <p class="[ sm:center ]"><a class="call-to-action" href="{{ aboutSection.callToActionLink }}">{{ aboutSection.callToActionText }}</a></p>
+        </div>
+    </div>
+  </div>
+  <svg class="[ wave wave--bottom ]" viewBox="0 0 1437 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M824.685 0C1036.3 0 1325.5 31.333 1441 52H.078C82.042 52 560.164 0 824.685 0z" fill="var(--color-green-85)"/></svg>
+</div>
+<div class="[ bg bg--green-85 ]">
+  <div class="[ wrapper ]">
+    <div class="[ center flow ]">
+      <h2><a rel="external" href="{{ trySection.titleLink }}">{{ trySection.title }}</a></h2>
+      <p>{{ trySection.content }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

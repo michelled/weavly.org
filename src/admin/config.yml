@@ -8,6 +8,44 @@ site_url: "https://weavly.org"
 media_folder: "src/assets/media"
 public_folder: "/assets/media"
 collections:
+  - name: pages
+    label: Pages
+    files:
+      - label: Home
+        name: home
+        file: "src/index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "string"}
+        - {label: "Header Call to Action Text", name: "headerCallToActionText", widget: "string"}
+        - {label: "Header Call to Action Link", name: "headerCallToActionLink", widget: "string"}
+        - label: Learn Section
+          name: learnSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Image Alt Text", name: "imageAlt", widget: "string"}
+          - {label: "Call to Action Text", name: "callToActionText", widget: "string"}
+          - {label: "Call to Action Link", name: "callToActionLink", widget: "string"}
+        - label: About Section
+          name: aboutSection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Image Alt Text", name: "imageAlt", widget: "string"}
+          - {label: "Call to Action Text", name: "callToActionText", widget: "string"}
+          - {label: "Call to Action Link", name: "callToActionLink", widget: "string"}
+        - label: Try Section
+          name: trySection
+          widget: object
+          fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Title Link", name: "titleLink", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
   - name: resources
     label: Coding Resources
     label_singular: Coding Resource
