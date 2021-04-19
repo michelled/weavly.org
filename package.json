@@ -1,6 +1,7 @@
 {
-    "name": "fluidic-11ty",
-    "version": "0.1.0",
+    "name": "@codelearncreate/weavly.org",
+    "private": true,
+    "version": "1.0.0",
     "description": "Fluid is an open, collaborative project to improve the user experience and inclusiveness of open source software.",
     "scripts": {
         "build": "npm-run-all -l clean build:*",
