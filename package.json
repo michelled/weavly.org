@@ -1,7 +1,7 @@
 {
     "name": "@codelearncreate/weavly.org",
     "private": true,
-    "version": "1.0.0",
+    "version": "1.0.0-dev",
     "description": "Fluid is an open, collaborative project to improve the user experience and inclusiveness of open source software.",
     "scripts": {
         "build": "npm-run-all -l clean build:*",
@@ -35,8 +35,6 @@
         "@11ty/eleventy": "^0.12.1",
         "@11ty/eleventy-img": "^0.8.3",
         "@11ty/eleventy-navigation": "0.1.6",
-        "@11ty/eleventy-plugin-rss": "1.1.0",
-        "@11ty/eleventy-plugin-syntaxhighlight": "3.0.6",
         "@zachleat/filter-container": "1.0.3",
         "eleventy-plugin-fluid": "0.2.0",
         "modern-css-reset": "1.4.0"
