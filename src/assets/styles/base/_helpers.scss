@@ -18,6 +18,12 @@
     width: 1px;
 }
 
+@media (max-width: 959px) {
+    .sm\:center {
+        text-align: center;
+    }
+}
+
 .center {
     text-align: center;
 }
@@ -89,8 +95,11 @@
 
 .three\:two__three,
 .two\:three__three {
-    display: flex;
-    justify-content: center;
+    > picture,
+    > img {
+        margin-inline: auto;
+        max-width: calc(640 / 16 * 1rem);
+    }
 }
 
 .bg {
@@ -199,5 +208,10 @@
     .three\:two__three {
         display: block;
         width: calc((3 / 5 * 100%) - var(--space) / 2);
+
+        > img,
+        > picture {
+            max-width: 100%;
+        }
     }
 }
