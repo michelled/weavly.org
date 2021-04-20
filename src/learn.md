@@ -23,7 +23,7 @@ activitiesSection:
   title: Activities at Home
   cards:
     - title: Unplugged
-      link: 0/learn/activities/#unplugged
+      link: /learn/activities/#unplugged
       image: /assets/media/lego_sequencing.jpg
       content: Get “hands-on” with activities without using a computer or digital device
     - title: On-Screen
