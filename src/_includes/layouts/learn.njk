@@ -11,7 +11,7 @@
             <p class="[ sm:center ]"><a class="call-to-action" href="{{ resourcesSection.callToActionLink }}">{{ resourcesSection.callToActionText }}</a></p>
         </div>
         <div class="[ two:three__three ] ">
-          {% image resourcesSection.image, resourcesSection.imageAlt %}
+          {% image resourcesSection.image, resourcesSection.imageAlt, 640, 520 %}
         </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
           {% for card in activitiesSection.cards %}
             <div class="[ card card--small ]">
                 <figure class="[ card__image ]">
-                  {% image card.image, "" %}
+                  {% image card.image, "", 666, 480 %}
                 </figure>
                 <div class="[ card__content ] [ flow ]">
                     <h3><a href="{{ card.link }}">{{ card.title }}</a></h3>
@@ -45,7 +45,7 @@
             <p class="[ sm:center ]"><a class="call-to-action" href="{{ robotActivitiesSection.callToActionLink }}">{{ robotActivitiesSection.callToActionText }}</a></p>
         </div>
         <div class="[ two:three__three ] [ flow ]">
-            <img src="{{ robotActivitiesSection.image }}" alt="{{ robotActivitiesSection.imageAlt }}" width="640" height="360" /> 
+            <img src="{{ robotActivitiesSection.image }}?nf_resize=fit&w=640&h=360" alt="{{ robotActivitiesSection.imageAlt }}" width="640" height="360" /> 
         </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
             <p class="[ sm:center ]"><a class="call-to-action" rel="external" href="{{ trainingsSection.callToActionLink }}">{{ trainingsSection.callToActionText }}</a></p>
         </div>
         <div class="[ two:three__three ] [ flow ]">
-          {% image trainingsSection.image, trainingsSection.imageAlt %}
+          {% image trainingsSection.image, trainingsSection.imageAlt, 640, 520 %}
         </div>
     </div>
   </div>

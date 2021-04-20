@@ -25,7 +25,7 @@ goalSection:
   image: /assets/media/20190726_095446_hu0254f67d82f35e43a998c478f1615761_1190091_1000x0_resize_q75_box.jpg
   imageAlt: TODO
   callToActionText: Our Process
-  callToActionLink: "#TODO"
+  callToActionLink: https://www.codelearncreate.org/blog/
 headerBg: teal-75
 title: About
 subtitle: "We’re designing educational coding tools for kids who have been left

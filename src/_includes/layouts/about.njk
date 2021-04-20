@@ -8,10 +8,10 @@
         <div class="[ two:three__two ] [ flow ]">
             <h3 aria-level="2">{{ goalSection.title }}</h3>
             {{ goalSection.content | markdown | safe }}
-            <p class="[ sm:center ]"><a class="call-to-action" href="{{ goalSection.callToActionLink }}">{{ goalSection.callToActionText }}</a></p>
+            <p class="[ sm:center ]"><a class="call-to-action" rel="external" href="{{ goalSection.callToActionLink }}">{{ goalSection.callToActionText }}</a></p>
         </div>
         <div class="[ two:three__three ] ">
-          {% image goalSection.image, goalSection.imageAlt %}
+          {% image goalSection.image, goalSection.imageAlt, 640, 520 %}
         </div>
     </div>
   </div>
