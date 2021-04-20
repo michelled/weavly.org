@@ -18,7 +18,7 @@
             <div class="[ card card--small card--yellow-75 ]">
                   {% if card.image %}
                 <figure class="[ card__image ]">
-                  {% image "./src" + card.image, "", "50vw, 100vw" %}
+                  {% image card.image, "" %}
                 </figure>
                 {% endif %}
                 <div class="[ card__content ] [ flow ]">
@@ -39,7 +39,7 @@
             <p class="[ sm:center ]"><a class="call-to-action" href="{{ learnSection.callToActionLink }}">{{ learnSection.callToActionText }}</a></p>
         </div>
         <div class="[ two:three__three ] [ flow ]">
-          {% image "./src" + learnSection.image, learnSection.imageAlt, "50vw, 100vw" %}
+          {% image learnSection.image, learnSection.imageAlt %}
         </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
   <div class="[ wrapper ]">
     <div class="[ three:two ]">
         <div class="[ three:two__three ] [ flow ]">
-          {% image "./src" + aboutSection.image, aboutSection.imageAlt, "50vw, 100vw" %}
+          {% image aboutSection.image, aboutSection.imageAlt %}
         </div>
         <div class="[ three:two__two ] [ flow ]">
           <h2>{{ aboutSection.title }}</h2>

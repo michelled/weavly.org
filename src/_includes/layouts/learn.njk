@@ -11,7 +11,7 @@
             <p class="[ sm:center ]"><a class="call-to-action" href="{{ resourcesSection.callToActionLink }}">{{ resourcesSection.callToActionText }}</a></p>
         </div>
         <div class="[ two:three__three ] ">
-          {% image "./src" + resourcesSection.image, resourcesSection.imageAlt, "50vw, 100vw" %}
+          {% image resourcesSection.image, resourcesSection.imageAlt %}
         </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
           {% for card in activitiesSection.cards %}
             <div class="[ card card--small ]">
                 <figure class="[ card__image ]">
-                  {% image "./src" + card.image, "", "50vw, 100vw" %}
+                  {% image card.image, "" %}
                 </figure>
                 <div class="[ card__content ] [ flow ]">
                     <h3><a href="{{ card.link }}">{{ card.title }}</a></h3>
@@ -59,7 +59,7 @@
             <p class="[ sm:center ]"><a class="call-to-action" rel="external" href="{{ trainingsSection.callToActionLink }}">{{ trainingsSection.callToActionText }}</a></p>
         </div>
         <div class="[ two:three__three ] [ flow ]">
-          {% image "./src" + trainingsSection.image, trainingsSection.imageAlt, "50vw, 100vw" %}
+          {% image trainingsSection.image, trainingsSection.imageAlt %}
         </div>
     </div>
   </div>
