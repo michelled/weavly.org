@@ -1,0 +1,64 @@
+---
+resourcesSection:
+  title: Coding Resources
+  content: >+
+    Here you can find a collection of techniques and strategies to help create
+    and set up an accessible environment for coding education.
+
+  image: /assets/media/coding-resources.jpg
+  imageAlt: TODO
+  callToActionText: Resources
+  callToActionLink: /learn/resources/
+shareSection:
+  title: Share Learning Resources
+  titleLink: mailto:sshahi@ocadu.ca?subject=Share%20Learning%20Resources
+  content: Support other learners by sharing your ideas, handouts and activities.
+layout: layouts/learn
+permalink: /learn/
+title: Learn
+subtitle: Here you can find tools and resources for anyone who likes to learn to
+  code. Beginners, learners, parents, and teachers can explore many activities
+  to find a place to start.
+activitiesSection:
+  title: Activities at Home
+  cards:
+    - title: Unplugged
+      link: 0/learn/activities/#unplugged
+      image: /assets/media/lego_sequencing.jpg
+      content: Get “hands-on” with activities without using a computer or digital device
+    - title: On-Screen
+      image: /assets/media/mission-_hunting_the_sunken_treasure.jpg
+      content: Learn the basics of coding with activities using a computer or digital
+        device
+      link: /learn/activities/#on-screen
+    - title: Hybrid
+      link: /learn/activities/#hybrid
+      image: /assets/media/free_play_with_dash.jpg
+      content: Mix everything up! Combine virtual and physical interactions, or invite
+        the robots
+robotActivitiesSection:
+  title: Activities with Robots
+  content: >+
+    Check out a great collection of activities you can do with your robots to
+    develop your computational thinking and programming skills.
+
+  image: /assets/media/dashdot.png
+  imageAlt: TODO
+  callToActionText: Robot Activities
+  callToActionLink: /learn/robots/
+trainingsSection:
+  title: Trainings & Workshops
+  content: >-
+    Check out “Debug’d” upcoming online and in-person trainings and workshops.
+
+
+    Debugd’s explicit instruction, differentiated strategies, adapted electronic and ready-to-print materials deliver meaningful participation in classroom coding regardless of challenges
+  image: /assets/media/debugd.jpg
+  imageAlt: TODO
+  callToActionText: Visit Debug’d
+  callToActionLink: https://www.bridges-canada.com/pages/debugd-coding-curriculum
+headerBg: yellow-85
+eleventyNavigation:
+  key: Learn
+  order: 3
+---

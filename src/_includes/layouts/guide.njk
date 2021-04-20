@@ -1,6 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% set bodyClass = "guide" %}
+{% set headerBg = "green-85" %}
 
 {% block pageHeader %}
     <h1>{{ title }}</h1>
@@ -8,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+  <div class="[ wrapper ]">
     <div class="[ prose ]">
         <h2>Available Learning Resources</h2>
         {% if resources %}
@@ -21,4 +23,5 @@
         <p>No learning resources available.</p>
         {% endif %}
     </div>
+  </div>
 {% endblock %}

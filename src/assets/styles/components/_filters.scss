@@ -1,0 +1,33 @@
+.filters > * {
+    display: block;
+}
+
+.filters > * + * {
+    margin-top: var(--space-md);
+}
+
+[class*="--hide"] {
+    display: none;
+}
+
+@media (min-width: 960px) {
+    .filters {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .filters > * {
+        align-items: center;
+        display: flex;
+    }
+
+    .filters > * + * {
+        margin-left: calc(var(--space-xs) + var(--space-sm));
+        margin-top: 0;
+    }
+
+    .filters button {
+        margin-left: auto;
+    }
+}

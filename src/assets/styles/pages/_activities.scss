@@ -1,56 +1,10 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the activities page.
-// -----------------------------------------------------------------------------
-.activities .filters > * {
-    display: block;
-}
-
-.activities .filters > * + * {
-    margin-top: 1rem;
-}
-
-.activities .filter-experience--hide {
-    display: none;
-}
-
-.activities .filter-subject--hide {
-    display: none;
-}
-
-.activities .filter-type--hide {
-    display: none;
-}
-
+//
 .activity .book img[role="decoration"] {
-    max-width: 10rem;
+    // TODO
 }
 
 .no-js .activities #activities {
     display: none;
-}
-
-@media (min-width: 1024px) {
-    .activities .filters {
-        align-items: center;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .activities .filters > * {
-        align-items: center;
-        display: flex;
-    }
-
-    .activities .filters > * + * {
-        margin-left: 1rem;
-        margin-top: 0;
-    }
-
-    .activities button.button--primary {
-        margin-left: 0.5rem;
-    }
-
-    .activities button:not(.button--primary) {
-        margin-left: auto;
-    }
 }

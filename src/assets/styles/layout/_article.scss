@@ -2,34 +2,19 @@
 // This file contains all styles related to the article layout.
 // -----------------------------------------------------------------------------
 
-article .header {
-    width: 100%;
-}
-
-article .header .wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1024px;
-    padding: 1.5rem;
-}
-
+article .header,
 article .content {
-    margin-bottom: 3rem;
-    margin-top: 3rem;
     width: 100%;
 }
 
-article .content .wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1024px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+article .wrapper {
+    margin-inline: auto;
+    max-width: var(--max-content-width);
+    padding: var(--space-lg) var(--space-md);
 }
 
-@media (min-width: 768px) {
-    article .content {
-        margin-bottom: 6rem;
-        margin-top: 6rem;
+@media (min-width: 960px) {
+    article .wrapper {
+        padding: var(--space-xl) var(--space-lg);
     }
 }

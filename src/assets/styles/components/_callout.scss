@@ -3,6 +3,6 @@
 // -----------------------------------------------------------------------------
 
 .callout {
-    border: 1px solid black;
+    border: var(--border-hairline) solid black;
     padding: 0.75rem 1rem 1rem;
 }

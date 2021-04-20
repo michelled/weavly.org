@@ -1,6 +1,18 @@
 {% extends "layouts/base.njk" %}
 
 {% set bodyClass = "activity" %}
+{% if subject === "Sequencing" %}
+{% set headerBg = "yellow-75" %}
+{% elif subject === "Sorting & Patterns" %}
+{% set headerBg = "orange-75" %}
+{% elif subject === "Direction Based" %}
+{% set headerBg = "green-65" %}
+{% elif subject === "Goal Based" %}
+{% set headerBg = "blue-35" %}
+{% set headerText = "white" %}
+{% elif subject === "Introduction" %}
+{% set headerBg = "blue-65" %}
+{% endif %}
 
 {% block pageHeader %}
     <h1>{{ title }}</h1>
@@ -9,44 +21,47 @@
     </p>
 {% endblock %}
 
-{% block sidebar %}
-<div class="[ sidebar ]">
-    <div id="what-you-need" class="[ callout ] [ flow ]">
-        <h2>What you need</h2>
-        {{ whatYouNeed | markdown | safe }}
-    </div>
-    {% if books %}
-    <div id="books" class="[ callout ] [ flow ]">
-        <h2>Book suggestions</h2>
-        {% for book in books %}
-        <div class="[ book ] [ flow ]">
-            <img src="{{ book.coverImage }}" alt="" role="decoration" />
-            <p><em>{{ book.title }}</em><br />
-            By {{ book.author }}</p>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-</div>
-{% endblock %}
-
 {% block content %}
-    <div class="[ prose ]">
-        {{ content | safe }}
+    <div class="[ wrapper ]">
+      <div class="[ sidebar ] [ bg bg--cream-95 ]">
+      <div id="what-you-need" class="[ callout ] [ flow ]">
+          <h2>What you need</h2>
+          {{ whatYouNeed | markdown | safe }}
+      </div>
+      {% if books %}
+      <div id="books" class="[ callout ] [ flow ]">
+          <h2>Book suggestions</h2>
+          {% for book in books %}
+          <div class="[ book ] [ flow ]">
+              <img src="{{ book.coverImage }}" alt="" role="decoration" />
+              <p><em>{{ book.title }}</em><br />
+              By {{ book.author }}</p>
+          </div>
+          {% endfor %}
+      </div>
+      {% endif %}
+      </div>
+      <div class="[ prose ]">
+          {{ content | safe }}
+      </div>
     </div>
     {% if relatedActivities %}
-    <div class="[ related-activities ]">
-        <h2>You may like this:</h2>
-        <div class="[ grid ]">
-        {% for relatedActivity in relatedActivities %}
-            {% for activity in collections.activities %}
-                {% if activity.data.title == relatedActivity %}
-                    {% set item = activity %}
-                    {% include "partials/components/card--activity.njk" %}
-                {% endif %}
+    <div class="[ bg bg--purple-35 text--white ]">
+      <div class="[ wrapper ]">
+        <div class="[ related-activities ]">
+            <h2>You may like this:</h2>
+            <div class="[ grid ]">
+            {% for relatedActivity in relatedActivities %}
+                {% for activity in collections.activities %}
+                    {% if activity.data.title == relatedActivity %}
+                        {% set item = activity %}
+                        {% include "partials/components/card--activity.njk" %}
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
+            </div>
         </div>
+      </div>
     </div>
     {% endif %}
 {% endblock %}

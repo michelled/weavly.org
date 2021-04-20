@@ -1,0 +1,76 @@
+{% extends "layouts/page.njk" %}
+
+{% block content %}
+<div class="[ bg bg--orange-75 ]">
+  <svg class="[ wave wave--top ]" viewBox="0 0 1437 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M612.315 52C400.697 52 111.495 20.667-4 0h1440.92c-81.96 0-560.084 52-824.605 52z" fill="var(--color-yellow-85)" /></svg>
+  <div class="[ wrapper ]">
+    <div class="[ two:three ]">
+        <div class="[ two:three__two ] [ flow ]">
+            <h2>{{ resourcesSection.title }}</h2>
+            {{ resourcesSection.content | markdown | safe }}
+            <p class="[ sm:center ]"><a class="call-to-action" href="{{ resourcesSection.callToActionLink }}">{{ resourcesSection.callToActionText }}</a></p>
+        </div>
+        <div class="[ two:three__three ] ">
+          {% image "./src" + resourcesSection.image, resourcesSection.imageAlt, "50vw, 100vw" %}
+        </div>
+    </div>
+  </div>
+</div>
+<div id="activities">
+  <div class="[ wrapper ]">
+    <h2 class="[ center ]">{{ activitiesSection.title }}</h2>
+    <div class="[ switcher ]">
+        <div>
+          {% for card in activitiesSection.cards %}
+            <div class="[ card card--small ]">
+                <figure class="[ card__image ]">
+                  {% image "./src" + card.image, "", "50vw, 100vw" %}
+                </figure>
+                <div class="[ card__content ] [ flow ]">
+                    <h3><a href="{{ card.link }}">{{ card.title }}</a></h3>
+                    {{ card.content | markdown | safe }}
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</div>
+<div class="[ bg bg--green-85 ]">
+  <div class="[ wrapper ]">
+    <div class="[ two:three ]">
+        <div class="[ two:three__two ] [ flow ]">
+            <h2>{{ robotActivitiesSection.title }}</h2>
+            {{ robotActivitiesSection.content | markdown | safe }}
+            <p class="[ sm:center ]"><a class="call-to-action" href="{{ robotActivitiesSection.callToActionLink }}">{{ robotActivitiesSection.callToActionText }}</a></p>
+        </div>
+        <div class="[ two:three__three ] [ flow ]">
+            <img src="{{ robotActivitiesSection.image }}" alt="{{ robotActivitiesSection.imageAlt }}" width="640" height="360" /> 
+        </div>
+    </div>
+  </div>
+</div>
+<div class="[ bg bg--cream-95 ]">
+  <div class="[ wrapper ]">
+    <div class="[ two:three ]">
+        <div class="[ two:three__two ] [ flow ]">
+            <h2>{{ trainingsSection.title }}</h2>
+            {{ trainingsSection.content | markdown | safe }}
+            <p class="[ sm:center ]"><a class="call-to-action" rel="external" href="{{ trainingsSection.callToActionLink }}">{{ trainingsSection.callToActionText }}</a></p>
+        </div>
+        <div class="[ two:three__three ] [ flow ]">
+          {% image "./src" + trainingsSection.image, trainingsSection.imageAlt, "50vw, 100vw" %}
+        </div>
+    </div>
+  </div>
+  <svg class="[ wave wave--bottom ]" viewBox="0 0 1434 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M824.685 0C1036.3 0 1325.5 31.334 1441 52H.078C82.042 52 560.164 0 824.685 0z" fill="var(--color-red-75)"/></svg>
+</div>
+<div class="[ bg bg--red-75 ]">
+  <div class="[ wrapper ]">
+    <div class="[ center flow ]">
+      <h2><a rel="external" href="{{ shareSection.titleLink }}">{{ shareSection.title }}</a></h2>
+      {{ shareSection.content | markdown | safe }}
+    </div>
+  </div>
+</div>
+{% endblock %}

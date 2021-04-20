@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .nav {
-    margin-top: 2rem;
+    margin-block-start: var(--space-lg);
 }
 
 .nav ul {
@@ -12,8 +12,8 @@
 }
 
 .nav li {
-    margin-left: -0.5rem;
-    margin-top: 1rem;
+    margin-block-start: 1rem;
+    margin-inline-start: -0.5rem;
 }
 
 .nav a {
@@ -25,10 +25,10 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
     .nav {
-        margin-left: auto;
-        margin-top: 0;
+        margin-block-start: 0;
+        margin-inline-start: auto;
     }
 
     .nav ul {
@@ -37,7 +37,7 @@
     }
 
     .nav li {
-        margin-left: 1rem;
-        margin-top: 0;
+        margin-block-start: 0;
+        margin-inline-start: 1rem;
     }
 }

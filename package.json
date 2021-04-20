@@ -1,18 +1,19 @@
 {
     "name": "@codelearncreate/weavly.org",
     "private": true,
-    "version": "1.0.0",
+    "version": "1.0.0-dev",
     "description": "Fluid is an open, collaborative project to improve the user experience and inclusiveness of open source software.",
     "scripts": {
         "build": "npm-run-all -l clean build:*",
         "build:webpack": "mix --production",
-        "build:eleventy": "cross-env NODE_ENV=production eleventy",
+        "build:eleventy": "eleventy",
         "clean": "rimraf dist",
+        "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
         "lint": "fluid-lint-all",
         "release": "standard-version -t ''",
         "start": "npm-run-all -l clean -p start:*",
         "start:webpack": "mix watch",
-        "start:eleventy": "cross-env NODE_ENV=development eleventy --serve"
+        "start:eleventy": "concurrently \"npm run dev\" \"netlify-cms-proxy-server\""
     },
     "repository": {
         "type": "git",
@@ -31,7 +32,8 @@
         }
     },
     "dependencies": {
-        "@11ty/eleventy": "0.11.1",
+        "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy-img": "^0.8.3",
         "@11ty/eleventy-navigation": "0.1.6",
         "@zachleat/filter-container": "1.0.3",
         "eleventy-plugin-fluid": "0.2.0",
@@ -40,6 +42,7 @@
     "devDependencies": {
         "@commitlint/cli": "12.0.1",
         "@commitlint/config-conventional": "11.0.0",
+        "concurrently": "^6.0.2",
         "cross-env": "7.0.3",
         "debug": "4.3.1",
         "fluid-lint-all": "1.0.5-dev.20210201T163615Z.cff0a11.GH-3",
@@ -47,15 +50,18 @@
         "husky": "4.3.8",
         "image-size": "0.9.4",
         "jsdom": "16.4.0",
-        "laravel-mix": "6.0.13",
+        "json-to-scss": "1.6.2",
+        "laravel-mix": "6.0.9",
         "move-file": "2.0.0",
+        "netlify-cms-proxy-server": "^1.3.12",
         "npm-run-all": "4.1.5",
-        "postcss": "8.2.9",
+        "postcss": "8.2.6",
         "resolve-url-loader": "3.1.2",
         "rimraf": "3.0.2",
         "sass": "1.32.8",
         "sass-loader": "11.0.1",
-        "slugify": "1.5.0",
-        "standard-version": "9.1.1"
+        "slugify": "1.4.7",
+        "standard-version": "9.1.1",
+        "stylelint-use-logical": "^1.1.0"
     }
 }
