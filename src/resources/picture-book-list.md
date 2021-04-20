@@ -18,7 +18,7 @@ The list has been organized based on the scope and sequence followed in the Weav
 
 ![Book cover](/assets/media/robots-robots-everywhere-by-sue-fliess.jpg "Robots, Robots Everywhere By Sue Fliess")
 
-![Book Cover](/assets/media/have-you-seen-my-monster by-steve-light.jpg "Have You Seen My Monster By Steve Light")
+![Book Cover](/assets/media/have-you-seen-my-monster-by-steve-light.jpg "Have You Seen My Monster By Steve Light")
 
 ![Book cover](/assets/media/have-you-seen-my-dragon-by-steve-light.jpg "Have you Seen My Dragon By Steve Light")
 
