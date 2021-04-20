@@ -33,4 +33,8 @@ subtitle: "We’re designing educational coding tools for kids who have been lef
 eleventyNavigation:
   key: About
   order: 5
+connectSection:
+  title: Connect
+  titleLink: mailto:idrc@ocadu.ca
+  content: Please email us or connect with us via social media if you'd like to be part of this conversation.
 ---
