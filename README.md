@@ -1,6 +1,6 @@
 # C2LC Project
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b69af899-f119-4aa8-a7e2-e5d99e995b8c/deploy-status)](https://app.netlify.com/sites/c2lc-project/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b69af899-f119-4aa8-a7e2-e5d99e995b8c/deploy-status)](https://app.netlify.com/sites/weavly/deploys)
 
 This repository contains the files needed to build the [Eleventy](http://11ty.dev/)-based static site for the [C2LC Project](https://c2lc-project.netlify.app).
 
