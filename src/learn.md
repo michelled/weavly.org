@@ -5,8 +5,8 @@ resourcesSection:
     Here you can find a collection of techniques and strategies to help create
     and set up an accessible environment for coding education.
 
-  image: /assets/media/accessible-coding.png
-  imageAlt: TODO
+  image: /assets/media/20200304_132303-edit.jpg
+  imageAlt: Image of two kids playing with Debug'd kit
   callToActionText: Resources
   callToActionLink: /learn/resources/
 shareSection:
@@ -54,7 +54,7 @@ trainingsSection:
 
     Debugd’s explicit instruction, differentiated strategies, adapted electronic and ready-to-print materials deliver meaningful participation in classroom coding regardless of challenges
   image: /assets/media/debugd.jpg
-  imageAlt: TODO
+  imageAlt: Lesson plans and robots in bubbles surrounded by written text Debug'd
   callToActionText: Visit Debug’d
   callToActionLink: https://www.bridges-canada.com/pages/debugd-coding-curriculum
 headerBg: yellow-85
