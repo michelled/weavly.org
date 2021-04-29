@@ -3,31 +3,26 @@
 }
 
 .filters > * + * {
-    margin-top: var(--space-md);
+    margin-block-start: var(--space-md);
 }
 
 [class*="--hide"] {
     display: none;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
     .filters {
         align-items: center;
         display: flex;
+        flex-wrap: wrap;
         justify-content: flex-start;
+        margin: calc(-1 * var(--space-md)) 0 0 calc(-1 * var(--space-md));
+        width: calc(100% + var(--space-md));
     }
 
     .filters > * {
         align-items: center;
         display: flex;
-    }
-
-    .filters > * + * {
-        margin-left: calc(var(--space-xs) + var(--space-sm));
-        margin-top: 0;
-    }
-
-    .filters button {
-        margin-left: auto;
+        margin: var(--space-md) 0 0 var(--space-md);
     }
 }

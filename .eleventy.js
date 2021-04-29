@@ -133,7 +133,7 @@ module.exports = function (config) {
     </svg>`;
     });
 
-    config.addNunjucksAsyncShortcode("image", imageShortcode);
+    config.addShortcode("image", imageShortcode);
     config.addPairedShortcode("blockquote", blockquoteShortcode);
 
     // 404
