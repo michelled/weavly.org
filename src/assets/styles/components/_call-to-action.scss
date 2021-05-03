@@ -2,7 +2,7 @@
     align-items: center;
     background-color: var(--color-white);
     border-radius: var(--radius-lg);
-    box-shadow: 0 1rem 0 0 var(--cta-accent);
+    box-shadow: 0 1rem 0 0 var(--fl-fgColor, var(--cta-accent));
     color: currentColor;
     display: inline-flex;
     font-size: var(--step-1);
@@ -16,16 +16,16 @@
     width: 100%;
 
     &:hover {
-        box-shadow: 0 1rem 0 0 var(--cta-interactive);
+        box-shadow: 0 1rem 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--cta-interactive)));
     }
 
     &:focus {
-        box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--cta-interactive) inset, 0 1rem 0 0 var(--cta-interactive);
+        box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--fl-linkColor, var(--fl-fgColor, var(--cta-interactive))) inset, 0 1rem 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--cta-interactive)));
         outline: none;
     }
 
     &:active {
-        box-shadow: 0 calc(12 / 16 * 1rem) 0 0 var(--cta-interactive);
+        box-shadow: 0 calc(12 / 16 * 1rem) 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--cta-interactive)));
         margin-block: calc(36 / 16 * 1rem) calc(12 / 16 * 1rem);
     }
 }

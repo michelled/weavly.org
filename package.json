@@ -37,6 +37,7 @@
         "@11ty/eleventy-navigation": "0.2.0",
         "@zachleat/filter-container": "1.0.3",
         "eleventy-plugin-fluid": "0.2.1",
+        "infusion": "dev",
         "modern-css-reset": "1.4.0"
     },
     "devDependencies": {

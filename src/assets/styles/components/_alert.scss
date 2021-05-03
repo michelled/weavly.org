@@ -41,7 +41,7 @@
 }
 
 .alert--info {
-    --alert-color: var(--color-teal-35);
+    --alert-color: var(--fl-fgColor, var(--color-teal-35));
     --alert-bg: var(--color-teal-85);
     --alert-border: var(--color-teal-45);
 
@@ -51,7 +51,7 @@
 }
 
 .alert--success {
-    --alert-color: var(--color-green-25);
+    --alert-color: var(--fl-fgColor, var(--color-green-25));
     --alert-bg: var(--color-green-85);
     --alert-border: var(--color-green-45);
 
@@ -61,7 +61,7 @@
 }
 
 .alert--warning {
-    --alert-color: rgb(0, 0, 0);
+    --alert-color: var(--fl-fgColor, rgb(0, 0, 0));
     --alert-bg: rgba(252, 214, 103, 0.3);
     --alert-border: rgba(252, 214, 103, 1);
 
@@ -71,7 +71,7 @@
 }
 
 .alert--error {
-    --alert-color: rgb(186, 1, 1);
+    --alert-color: var(--fl-fgColor, rgb(186, 1, 1));
     --alert-bg: rgba(186, 1, 1, 0.1);
     --alert-border: rgba(186, 1, 1, 0.3);
 

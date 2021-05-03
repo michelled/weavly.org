@@ -53,11 +53,11 @@
     }
 
     &:hover {
-        color: var(--color-green-45);
+        color: var(--fl-linkColor, var(--color-green-45));
 
         @supports (mask-image: url('../images/wavy.svg')) {
             &::after {
-                background-color: var(--color-green-45);
+                background-color: var(--fl-linkColor, var(--color-green-45));
             }
         }
 
@@ -74,7 +74,7 @@
 
     &:active {
         background-color: var(--color-green-45);
-        box-shadow: 0 0 0 var(--border-thin) var(--color-green-45);
+        box-shadow: 0 0 0 var(--border-thin) var(-fl-linkColor, var(--color-green-45));
         color: var(--color-white);
     }
 }
