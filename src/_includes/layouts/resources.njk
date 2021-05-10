@@ -12,12 +12,11 @@
               {% image "/assets/media/design-activity_hua7f35ba46080e3314a834735ed95f389_2828843_1000x0_resize_q75_box.jpg", "", "570", "380" %}
           </div>
           <div class="[ three:two__two ] [ flow ]">
-              <h2>{{ item.data.title }}</h2>
+              <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
               <p class="metadata">{% if item.data.author %}By <span class="[ author ]">{{ item.data.author }}</span> / {% endif %}Posted <time datetime="{{ item.data.date | isoDate }}" class="[ dt-published ]">{{ item.data.date | formatDate }}</time></p>
               {% if item.data.description %}
               <p>{{ item.data.description | safe }}</p>
               {% endif %}
-              <p><a href="{{ item.url }}">Read more<span class="[ visually-hidden ]"> of &ldquo;{{ item.data.title }}&rdquo;</span></a></p>
           </div>
       </article>
       {% endfor %}
