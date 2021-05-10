@@ -20,7 +20,8 @@
     padding: var(--space-md);
 }
 
-.card a {
+.card__link {
+    color: currentColor;
     text-decoration: none;
 
     &::before {
