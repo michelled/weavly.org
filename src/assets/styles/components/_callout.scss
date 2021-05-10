@@ -3,12 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .callout {
-    color: var(--color-teal-35);
     padding: var(--space-xl) var(--space-md);
-
-    [aria-level="2"] {
-        color: var(--color-black-05);
-    }
 }
 
 .callout + .callout {

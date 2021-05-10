@@ -31,12 +31,12 @@
     <div class="[ wrapper ] [ has-sidebar ]">
       <div class="[ sidebar ] [ flow ] [ bg bg--cream-95 ]">
         <div id="what-you-need" class="[ callout ] [ flow ]">
-            <h3 aria-level="2">What you need</h3>
+            <h2>What you need</h2>
             {{ whatYouNeed | markdown | safe }}
         </div>
         {% if books %}
         <div id="books" class="[ callout ] [ flow ]">
-            <h3 aria-level="2">Book suggestions</h3>
+            <h2>Book suggestions</h2>
             {% for book in books %}
             <div class="[ book ]">
                 <img src="{{ book.coverImage }}" alt="" role="decoration" />
