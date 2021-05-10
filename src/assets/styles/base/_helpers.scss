@@ -33,6 +33,64 @@
     width: 0;
 }
 
+.linked-video {
+    border-radius: var(--radius-xl);
+    display: block;
+    position: relative;
+    width: auto;
+
+    .play-button {
+        border-radius: 50%;
+        box-shadow: 0 1rem 0 0 var(--fl-fgColor, var(--color-red-65));
+        height: auto;
+        left: calc(50% - 132px / 2);
+        position: absolute;
+        top: calc(50% - 132px / 2);
+        width: 132px;
+        z-index: 1;
+
+        .bg {
+            fill: var(--fl-bgColor, var(--color-white));
+        }
+
+        .fg {
+            fill: var(--fl-fgColor, var(--color-red-65));
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 0 var(--space-xs) var(--fl-linkColor, var(--fl-fgColor, var(--color-red-45)));
+
+        .play-button {
+            box-shadow: 0 1rem 0 0 var(--fl-fgColor, var(--color-red-45));
+
+            .fg {
+                fill: var(--fl-fgColor, var(--color-red-45));
+            }
+        }
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 var(--space-xs) var(--fl-linkColor, var(--fl-fgColor, var(--color-red-45)));
+        outline: none;
+
+        .play-button {
+            box-shadow: 0 1rem 0 0 var(--fl-fgColor, var(--color-red-45));
+
+            .fg {
+                fill: var(--fl-fgColor, var(--color-red-45));
+            }
+        }
+    }
+
+    &:active {
+        .play-button {
+            box-shadow: 0 12px 0 0 var(--fl-fgColor, var(--color-red-45));
+            top: calc(50% - 62px);
+        }
+    }
+}
+
 .center {
     text-align: center;
 }
