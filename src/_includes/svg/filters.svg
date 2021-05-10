@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<svg xmlns="http://www.w3.org/2000/svg" class="filters">
   <filter id="yellow">
 		<feColorMatrix type="matrix" result="grayscale"
 		  values="1 0 0 0 0
