@@ -3,7 +3,9 @@
                   {% image item.data.metaImage, item.data.metaImageAlt, 570, 393 %}
                 </div>
                 <div class="[ card__content ] [ flow ]">
-                    <h3{% if level %} aria-level="{{ level }}"{% endif %}><a class="[ card__link ]" href="{{ item.url }}">{{ item.data.title }}</a></h3>
+                    <h{{ level if level else "3" }} class="h3">
+                    <a class="[ card__link ]" href="{{ item.url }}">{{ item.data.title }}</a>
+                    </h{{ level if level else "3" }}>
                     <p class="metadata">{{ item.data.type }} &middot; {{ item.data.experience }} &middot; {{ item.data.subject }}</p>
                     {% if item.data.description %}
                     <p>{{ item.data.description | safe }}</p>

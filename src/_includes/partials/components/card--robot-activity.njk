@@ -1,9 +1,21 @@
+        {% set headingLevel = "h2" %}
         <article class=" [ card ]" data-filter-topic="{{ item.data.topic }}" data-filter-experience="{{ item.data.experience }}">
             <div class="[ card__image ]">
                   {% image item.data.metaImage, item.data.metaImageAlt, 570, 393 %}
             </div>
             <div class="[ card__content ] [ flow ]">
-            <h3{% if bodyClass === "robot-activities" %} aria-level="2"{% endif %}><a class="[ card__link ]" href="{{ item.url }}">{{ item.data.title }}</a></h3>
+            {% if bodyClass === "robot-activities" %}
+            <h2 class="h3">
+            {% else %}
+            <h3>
+            {% endif %}
+            <h3 aria-level="2">
+                    <a class="[ card__link ]" href="{{ item.url }}">{{ item.data.title }}</a>
+            {% if bodyClass === "robot-activities" %}
+            </h2>
+            {% else %}
+            </h3>
+            {% endif %}
             <p class="metadata">{{ item.data.robot }} &middot; {{ item.data.experience }} &middot; {{ item.data.topic }}</p>
             {% if item.data.description %}
             <p>{{ item.data.description | safe }}</p>

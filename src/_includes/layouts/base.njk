@@ -17,6 +17,7 @@
         {% include "partials/global/header.njk" %}
         <main>
             <article>
+                <nav class="[ flc-toc-tocContainer ] [ wrapper ]"></nav>
                 <header class="[ header ]{% if headerBg %} [ bg bg--{{ headerBg }} ]{% endif %}{% if headerText %} [ text--{{ headerText }} ]{% endif %}">
                     <div class="[ wrapper ]">
                     {% block pageHeader %}
@@ -30,7 +31,6 @@
                     {% endblock %}
                     </div>
                 </header>
-                <nav class="flc-toc-tocContainer"></nav>
                 <div class="[ content ]">
                     {% block content %}
                     {{ content | safe }}
