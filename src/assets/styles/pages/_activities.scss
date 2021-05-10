@@ -61,8 +61,7 @@
     padding: 0;
 
     .prose {
-        padding-block: var(--space-xl);
-        padding-inline: var(--space-md);
+        padding: var(--space-xl);
     }
 }
 
