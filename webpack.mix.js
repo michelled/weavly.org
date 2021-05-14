@@ -35,7 +35,7 @@ mix.purgeCss({
         path.join(__dirname, "src/_includes/**/*.svg"),
         path.join(__dirname, "src/shortcodes/*.js")
     ],
-    safelist: ["picture", /^bg/, /^fl/]
+    safelist: ["picture", /^bg/, /^fl/, /^grid/]
 });
 
 mix.options({
@@ -45,7 +45,8 @@ mix.options({
     postCss: [
         require("postcss-logical")({
             dir: "ltr"
-        })
+        }),
+        require("postcss-aspect-ratio-polyfill")
     ]
 });
 

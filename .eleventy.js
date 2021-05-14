@@ -17,6 +17,8 @@ const fs = require("fs");
 const fluidPlugin = require("eleventy-plugin-fluid");
 const navigationPlugin = require("@11ty/eleventy-navigation");
 const blockquoteShortcode = require("./src/shortcodes/blockquote.js");
+const gridShortcode = require("./src/shortcodes/grid.js");
+const gridImageShortcode = require("./src/shortcodes/grid-image.js");
 const imageShortcode = require("./src/shortcodes/image.js");
 
 // Import transforms
@@ -149,7 +151,9 @@ module.exports = function (config) {
     });
 
     config.addShortcode("image", imageShortcode);
+    config.addPairedShortcode("gridImage", gridImageShortcode);
     config.addPairedShortcode("blockquote", blockquoteShortcode);
+    config.addPairedShortcode("grid", gridShortcode);
 
     // 404
     config.setBrowserSyncConfig({
@@ -173,6 +177,7 @@ module.exports = function (config) {
             output: "dist",
             includes: "_includes"
         },
+        markdownTemplateEngine: "njk",
         passthroughFileCopy: true
     };
 };

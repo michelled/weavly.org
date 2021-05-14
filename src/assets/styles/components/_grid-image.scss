@@ -1,0 +1,21 @@
+.grid__image {
+    text-align: center;
+}
+
+.grid__image__wrapper {
+    aspect-ratio: 320 / 310;
+    background-color: var(--color-cream-75);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: var(--radius-md);
+    margin-inline: auto;
+    max-width: calc(320 / 16 * 1rem);
+    overflow: hidden;
+}
+
+@media (min-width: 960px) {
+    .grid__image {
+        text-align: start;
+    }
+}
