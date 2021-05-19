@@ -36,6 +36,7 @@ class VideoOverlay {
 
     displayOverlay() {
         const id = this.link.dataset.id;
+        const scrollY = window.scrollY;
         this.overlay = document.createElement("div");
         this.overlay.className = "overlay flow";
         this.overlay.setAttribute("role", "dialog");
@@ -49,6 +50,8 @@ class VideoOverlay {
         this.overlay.insertBefore(this.closeButton, this.overlay.firstChild);
         document.body.appendChild(this.overlay);
         document.body.classList.add("has-overlay");
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollY}px`;
         this.closeButton.focus();
 
         this.closeButton.onclick = () => {
@@ -57,11 +60,15 @@ class VideoOverlay {
     }
 
     dismissOverlay() {
+        const scrollY = document.body.style.top;
         this.overlay.remove();
         Array.prototype.forEach.call(this.elems, elem => {
             elem.removeAttribute("inert");
         });
         document.body.classList.remove("has-overlay");
+        document.body.style.position = "";
+        document.body.style.top = "";
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
 
     addEventListeners() {
