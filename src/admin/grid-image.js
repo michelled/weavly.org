@@ -22,8 +22,8 @@ CMS.registerEditorComponent({
             widget: "string"
         },
         {
-            name: "content",
-            label: "Content",
+            name: "caption",
+            label: "Caption",
             widget: "markdown"
         }
     ],
@@ -33,23 +33,23 @@ CMS.registerEditorComponent({
             src: match[1],
             alt: match[2],
             url: match[3],
-            content: match[4]
+            caption: match[4]
         };
     },
     toBlock: function (obj) {
-        const {src, alt, url, content} = obj;
-        return `{% gridImage "${src}", "${alt}", "${url}" %}\n${content}\n{% endgridImage %}`;
+        const {src, alt, url, caption} = obj;
+        return `{% gridImage "${src}", "${alt}", "${url}" %}\n${caption}\n{% endgridImage %}`;
     },
     toPreview: function (obj, getAsset, fields) {
-        const {src, alt, url, content} = obj;
+        const {src, alt, url, caption} = obj;
         const imageField = fields.find(f => f.get("widget") === "image");
         src = getAsset(src, imageField);
         const md = window.markdownit();
-        content = content ? md.render(obj.content) : "";
+        caption = caption ? md.render(caption) : "";
         let image = `<div class="grid__image__wrapper" role="image" aria-label="${alt}" style="background-image: url(${src}?nf_resize=fit&w=320&h=310);"></div>`;
         if (url !== "") {
             image = `<a rel="external" href="${url}">${image}</a>`;
         }
-        return `<div class="grid__image flow">${image}<div class="grid__image__content">${content}</div></div>`;
+        return `<div class="grid__image flow">${image}<div class="grid__image__content">${caption}</div></div>`;
     }
 });
