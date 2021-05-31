@@ -11,7 +11,7 @@
               <h2>Filter Activities</h2>
               <form class="[ filters ]">
                   <label class="[ label ]" for="type">
-                      Type: 
+                      Type:
                       <select class="[ select ]" name="type" id="type" data-filter-bind="type">
                           <option value="">Any Type</option>
                           {% for type in activityTags.types %}
@@ -20,7 +20,7 @@
                       </select>
                   </label>
                   <label class="[ label ]" for="experience">
-                      Experience:        
+                      Experience:
                       <select class="[ select ]" name="experience" id="experience" data-filter-bind="experience">
                           <option value="">Any Level</option>
                           {% for level in activityTags.experience %}
@@ -37,9 +37,9 @@
                           {% endfor %}
                       </select>
                   </label>
-                  <button type="reset" class="[ button ]" id="reset">Clear Filters</button>
+                  <button type="reset" class="[ button ] [ button--sm ]" id="reset">{% include "svg/reset.svg" %}Clear Filters</button>
               </form>
-              <div class="[ alert ] [ alert--info ]" role="alert" aria-live="polite">
+              <div class="[ alert ]" role="alert" aria-live="polite">
               <p>Showing <strong data-filter-results="activity/activities">{{ collections.activities.length }} activities</strong>.</p>
               </div>
               <div class="[ grid ]">

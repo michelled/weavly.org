@@ -3,50 +3,65 @@
 // -----------------------------------------------------------------------------
 
 .button {
+    align-items: center;
     appearance: none;
-    background: var(--color-white);
-    border: var(--border-hairline) solid black;
-    border-radius: var(--radius-xs);
-    font-family: inherit;
-    font-size: 100%;
-    height: var(--space-lg);
-    line-height: inherit;
-    padding: var(--space-xxs) var(--space-md);
-}
-
-.button.button--primary {
-    font-weight: 600;
-}
-
-.button:focus {
-    border-color: var(--color-red-45);
-    box-shadow: 0 0 0 var(--space-xxs) var(--fl-fgColor, var(--color-red-45));
-    outline: none;
-}
-
-.button:active {
-    background: var(--color-red-45);
-    border-color: var(--color-red-45);
-    color: var(--color-white);
-}
-
-.link {
-    appearance: none;
-    background: transparent;
+    background-color: var(--color-green-45);
     border: 0;
-    border-radius: 0;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1rem 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-35)));
+    color: var(--color-white);
+    display: inline-flex;
     font-family: inherit;
-    font-size: 100%;
-    line-height: inherit;
-    padding: var(--space-xs);
+    font-size: var(--step-1);
+    font-weight: var(--font-weight-semibold);
+    height: 5rem;
+    justify-content: center;
+    margin-block: 2rem 1rem;
+    max-width: 20rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+
+    svg {
+        height: 1em;
+        margin-inline-end: 0.5em;
+        width: auto;
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25)));
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25))) inset, 0 1rem 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25)));
+        outline: none;
+    }
+
+    &:active {
+        box-shadow: 0 calc(12 / 16 * 1rem) 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25)));
+        margin-block: calc(36 / 16 * 1rem) calc(12 / 16 * 1rem);
+    }
 }
 
-.link.link--current {
-    background: black;
-    color: white;
-}
+.button--sm {
+    border-radius: var(--radius-md);
+    box-shadow: 0 calc(12 / 16 * 1rem) 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-35)));
+    font-size: var(--step-0);
+    height: 2.5rem;
+    margin-block: calc(24 / 16 * 1rem) calc(12 / 16 * 1rem);
+    max-width: 12rem;
 
-.link:focus {
-    box-shadow: 0 0 0 2px skyblue;
-    outline: none;
+    &:hover {
+        box-shadow: 0 calc(12 / 16 * 1rem) 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25)));
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25))) inset, 0 calc(12 / 16 * 1rem) 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25)));
+        outline: none;
+    }
+
+    &:active {
+        box-shadow: 0 calc(8 / 16 * 1rem) 0 0 var(--fl-linkColor, var(--fl-fgColor, var(--color-green-25)));
+        margin-block: calc(32 / 16 * 1rem) calc(8 / 16 * 1rem);
+    }
 }

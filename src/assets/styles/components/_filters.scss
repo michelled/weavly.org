@@ -28,4 +28,12 @@
         display: flex;
         margin: var(--space-md) 0 0 var(--space-md);
     }
+
+    .filters > .button {
+        margin: 2rem 0 1rem var(--space-md);
+
+        &:active {
+            margin: calc(36 / 16 * 1rem) 0 calc(12 / 16 * 1rem) var(--space-md);
+        }
+    }
 }

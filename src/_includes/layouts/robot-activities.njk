@@ -43,9 +43,9 @@
                           {% endfor %}
                       </select>
                   </label>
-                  <button type="reset" class="[ button ]" id="reset">Clear Filters</button>
+                  <button type="reset" class="[ button ] [ button--sm ]" id="reset">{% include "svg/reset.svg" %}Clear Filters</button>
               </form>
-              <div class="[ alert ] [ alert--info ]" role="alert" aria-live="polite">
+              <div class="[ alert ]" role="alert" aria-live="polite">
               <p>Showing <strong data-filter-results="activity/activities">{{ robotActivities.length }} activities</strong>.</p>
               </div>
               <div class="[ grid ]">

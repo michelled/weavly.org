@@ -10,7 +10,7 @@
               <h2>Filter Projects</h2>
               <form class="[ filters ]">
                   <label class="[ label ]" for="category">
-                      Category:        
+                      Category:
                       <select class="[ select ]" name="category" id="category" data-filter-bind="category">
                           <option value="">Any Category</option>
                           {% for category in projectTags.categories %}
@@ -18,16 +18,16 @@
                           {% endfor %}
                       </select>
                   </label>
-                  <button type="reset" class="[ button ]" id="reset">Clear Filters</button>
+                  <button type="reset" class="[ button ] [ button--sm ]" id="reset">{% include "svg/reset.svg" %}Clear Filters</button>
               </form>
-              <div class="[ alert ] [ alert--info ]" role="alert" aria-live="polite">
+              <div class="[ alert ]" role="alert" aria-live="polite">
               <p>Showing <strong data-filter-results="project/projects">{{ collections.projects.length }} projects</strong>.</p>
               </div>
               <div class="[ flow ] [ flow-md ]">
               {% for item in collections.projects %}
                   {% include "partials/components/card--project.njk" %}
               {% endfor %}
-              </div> 
+              </div>
           </filter-container>
       </div>
   </div>

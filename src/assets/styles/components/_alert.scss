@@ -3,9 +3,8 @@
 // -----------------------------------------------------------------------------
 
 .alert {
-    background-color: var(--alert-bg, rgba(0, 0, 0, 0.1));
-    border: var(--border-hairline) solid var(--alert-border, rgba(0, 0, 0, 0.3));
-    border-radius: var(--radius-xs);
+    background-color: var(--color-cream-95);
+    border-radius: var(--radius-sm);
     color: var(--alert-color, rgb(0, 0, 0));
     font-weight: 500;
     margin-block: var(--space-md) var(--space-lg);
@@ -15,67 +14,4 @@
 
 .alert:empty {
     display: none;
-}
-
-.alert--info,
-.alert--success,
-.alert--warning,
-.alert--error {
-    background-position: left 0.75rem center;
-    background-repeat: no-repeat;
-    padding-inline-start: 2.5rem;
-
-    &::before {
-        background-color: var(--alert-color);
-        content: "";
-        display: block;
-        height: calc(20 / 16 * 1rem);
-        inset-block-start: calc(var(--space-sm) + var(--space-xs));
-        inset-inline-start: var(--space-sm);
-        mask-position: center;
-        mask-repeat: no-repeat;
-        mask-size: 100% 100%;
-        position: absolute;
-        width: calc(20 / 16 * 1rem);
-    }
-}
-
-.alert--info {
-    --alert-color: var(--fl-fgColor, var(--color-teal-35));
-    --alert-bg: var(--color-teal-85);
-    --alert-border: var(--color-teal-45);
-
-    &::before {
-        mask-image: url('../images/info.svg');
-    }
-}
-
-.alert--success {
-    --alert-color: var(--fl-fgColor, var(--color-green-25));
-    --alert-bg: var(--color-green-85);
-    --alert-border: var(--color-green-45);
-
-    &::before {
-        mask-image: url('../images/success.svg');
-    }
-}
-
-.alert--warning {
-    --alert-color: var(--fl-fgColor, rgb(0, 0, 0));
-    --alert-bg: rgba(252, 214, 103, 0.3);
-    --alert-border: rgba(252, 214, 103, 1);
-
-    &::before {
-        mask-image: url('../images/warning.svg');
-    }
-}
-
-.alert--error {
-    --alert-color: var(--fl-fgColor, rgb(186, 1, 1));
-    --alert-bg: rgba(186, 1, 1, 0.1);
-    --alert-border: rgba(186, 1, 1, 0.3);
-
-    &::before {
-        mask-image: url('../images/error.svg');
-    }
 }
