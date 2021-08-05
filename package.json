@@ -16,14 +16,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fluid-project/fluidic-11ty.git"
+        "url": "git+https://github.com/codelearncreate/weavly.org.git"
     },
     "author": "OCAD University",
     "license": "BSD-3-Clause",
     "bugs": {
-        "url": "https://github.com/fluid-project/fluidic-11ty/issues"
+        "url": "https://github.com/codelearncreate/weavly.org/issues"
     },
-    "homepage": "https://github.com/fluid-project/fluidic-11ty#readme",
+    "homepage": "https://github.com/codelearncreate/weavly.org#readme",
     "husky": {
         "hooks": {
             "pre-commit": "npm run lint",
