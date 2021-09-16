@@ -41,26 +41,29 @@ books:
 ---
 ## Description
 
-This is a multi-level activity that starts simple and builds in complexity. The different scene of each activity creates a mission for the on-screen character. Learners will build a sequence using different actions to help their on-screen character complete its mission.
+This is a multi-level activity that starts simple and builds in complexity. Learners will build a sequence using different actions to help their on-screen character complete different missions and visit different animals on the scene.
 
 * Jungle Safari: \[Link]
-* Farm Visit: \[Link]
+
+  ![An image of the jungle safari background with animals, trees, bushes, and a pond.](/assets/media/jungle-safari.svg "Mission: Visiting Animals")
 
 ## Steps
 
-* Pick an activity link.
+* Select the "Jungle Safari" activity link above.
 * Choose an animal you want to visit.
 * Use a combination of different action blocks to build a program to move your character on the grid and reach your selected animal.
-* Select the “Play” button to run the program and view how the on-screen character completes each step of the activity.
+* As you build your sequence, remember that you cannot go over the trees, bushes, and the pond. And you have to stay away from the crocodiles. 
+* Once your program is ready, select the “Play” button to run the program and view how the on-screen character completes each step of the activity.
 * To visit another animal, select the “Delete” button to delete your current program.
 * Start building a new one.
 
 ## Tips
 
-* Adult moderators can show the movements to help learners understand the purpose of the activity.
-* Learners can leave the pen down feature enabled to draw a line as they move between the steps.
+* Start simple and encourage learners to begin the activity by visiting either the giraffe or the lion.
+* Once the learner completed the simple missions, encourage them to visit the pelican or the hippo. 
+* If learner builds a program that makes their on-screen character go over the trees, bushes, or the lake, or hit the crocodiles, adult moderators can pause the activity and talk with them about how to debug their program. 
 * Once a goal is reached, moderators can encourage learners to think about other potential ways to get to the same animal.
-* Animal sounds can be played once the learners complete the activity to celebrate and add excitement.
+* Moderator can play the sound of animal once the learners complete a mission to celebrate and add excitement.
 
 ## Skill Development
 
@@ -72,4 +75,4 @@ This is a multi-level activity that starts simple and builds in complexity. The 
 
 ## Level Up!
 
-Learners can create their own program to add a specific challenge to their mission. An example would be picking up a farmer on their way to visit a farm animal or avoiding quick sand in their jungle safari adventure.
+Learners can create their own program to add a specific challenge to their mission. An example would be avoiding quick sand in their jungle safari adventure.
