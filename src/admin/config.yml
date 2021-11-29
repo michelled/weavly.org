@@ -215,6 +215,14 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Title Link", name: "titleLink", widget: "string"}
           - {label: "Content", name: "content", widget: "text"}
+      - label: Share Learning Resources
+        name: share-learning-resources
+        file: "src/share-learning-resources.md"
+        editor:
+          preview: false
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}
   - name: resources
     label: Coding Resources
     label_singular: Coding Resource
