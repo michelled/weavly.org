@@ -27,6 +27,7 @@
                 "./src/robot-activities/*.md",
                 "./src/projects/*.md",
                 "./src/resources/*.md",
+                "./src/*.md",
                 "./CHANGELOG.md"
             ]
         }
@@ -37,6 +38,7 @@
             "./src/robot-activities/*.md",
             "./src/projects/*.md",
             "./src/resources/*.md",
+            "./src/*.md",
             "./CHANGELOG.md"
         ]
     }
