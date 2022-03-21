@@ -62,7 +62,6 @@
     "rimraf": "3.0.2",
     "sass": "1.49.9",
     "sass-loader": "12.6.0",
-    "slugify": "1.6.0",
     "stylelint-use-logical-spec": "3.2.2"
   }
 }
