@@ -14,7 +14,7 @@
       <p class="[ subtitle ] [ prose ]">
         {{ subtitle | safe }}
       </p>
-      <p><a href="/learn/robots/{{ robot.data.title | slug }}/guide/">Check out the manufacturer's guide</a></p>
+      <p><a href="/learn/robots/{{ robot.data.title | slugify }}/guide/">Check out the manufacturer's guide</a></p>
     </div>
 {% endblock %}
 

@@ -5,7 +5,7 @@ subtitle: Check out a great collection of activities you can do with your robots
 eleventyNavigation:
   parent: Activities with Robots
   order: 2
-permalink: /learn/robots/{{ robot.data.title | slug }}/
+permalink: /learn/robots/{{ robot.data.title | slugify }}/
 pagination:
   data: collections.guides
   size: 1

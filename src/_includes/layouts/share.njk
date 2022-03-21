@@ -29,8 +29,8 @@
 			<legend>What type of resource are you sharing?</legend>
 			{% for item in ['Lesson plans', 'Unplugged coding activities', 'Robot-based coding activities', 'Educational coding materials', 'Other'] %}
 			<div>
-				<input type="checkbox" id="{{ item | slug }}" name="resource-type" value="{{ item }}" />
-				<label for="{{ item | slug }}">{{ item }}</label>
+				<input type="checkbox" id="{{ item | slugify }}" name="resource-type" value="{{ item }}" />
+				<label for="{{ item | slugify }}">{{ item }}</label>
 			</div>
 			{% endfor %}
 		</fieldset>

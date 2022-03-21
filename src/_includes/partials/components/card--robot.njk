@@ -3,6 +3,6 @@
                 {% image item.data.metaImage, item.data.metaImageAlt, 570, 393 %}
             </div>
             <div class="[ card__content ] [ flow ]">
-                <h2 class="h3"><a class="[ card__link ]" href="/learn/robots/{{ item.data.title | slug }}/">{{ item.data.title }}</a></h2>
+                <h2 class="h3"><a class="[ card__link ]" href="/learn/robots/{{ item.data.title | slugify }}/">{{ item.data.title }}</a></h2>
             </div>
         </article>

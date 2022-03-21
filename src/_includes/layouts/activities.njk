@@ -15,7 +15,7 @@
                       <select class="[ select ]" name="type" id="type" data-filter-bind="type">
                           <option value="">Any Type</option>
                           {% for type in activityTags.types %}
-                          <option value="{{ type }}" data-slug="{{ type | slug }}">{{ type }}</option>
+                          <option value="{{ type }}" data-slug="{{ type | slugify }}">{{ type }}</option>
                           {% endfor %}
                       </select>
                   </label>

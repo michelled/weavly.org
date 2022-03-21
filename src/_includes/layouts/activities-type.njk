@@ -4,7 +4,7 @@
 {% set headerBg = "cream-95" %}
 
 {% block headerScripts %}
-    <script>window.location.href = "/learn/activities/#{{ type | slug }}";</script>
+    <script>window.location.href = "/learn/activities/#{{ type | slugify }}";</script>
 {% endblock %}
 
 {% block content %}
