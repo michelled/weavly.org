@@ -1,6 +1,6 @@
 "use strict";
 
-const slugify = require("../../node_modules/eleventy-plugin-fluid/src/filters/slug-filter.js");
+const slugify = require("@sindresorhus/slugify");
 
 module.exports = {
     eleventyComputed: {
@@ -10,5 +10,4 @@ module.exports = {
         }
     },
     layout: "layouts/robot-activity"
-
 };
