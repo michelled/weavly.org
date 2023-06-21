@@ -19,3 +19,7 @@ updates:
     ignore:
       - dependency-name: husky
         versions: [">=5"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
