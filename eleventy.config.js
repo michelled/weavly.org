@@ -146,6 +146,9 @@ module.exports = function (config) {
     config.addPlugin(fluidPlugin, {
         css: {
             enabled: false
+        },
+        sass: {
+            enabled: true
         }
     });
     config.addPlugin(navigationPlugin);
