@@ -26,18 +26,18 @@ const getYouTubeIdFilter = require("./src/utils/extract-youtube-id.js");
 // Import transforms
 const parseTransform = require("./src/transforms/parse-transform.js");
 
-module.exports = function (config) {
-    config.setUseGitIgnore(false);
+module.exports = function (eleventyConfig) {
+    eleventyConfig.setUseGitIgnore(false);
 
     // Transforms
-    config.addTransform("parse", parseTransform);
+    eleventyConfig.addTransform("parse", parseTransform);
 
     // Passthrough copy
-    config.addPassthroughCopy({"src/assets/icons": "/"});
-    config.addPassthroughCopy({"src/assets/images": "assets/images"});
-    config.addPassthroughCopy({"src/assets/media": "assets/media"});
-    config.addPassthroughCopy("src/admin/config.yml");
-    config.addPassthroughCopy("src/admin/*.js");
+    eleventyConfig.addPassthroughCopy({"src/assets/icons": "/"});
+    eleventyConfig.addPassthroughCopy({"src/assets/images": "assets/images"});
+    eleventyConfig.addPassthroughCopy({"src/assets/media": "assets/media"});
+    eleventyConfig.addPassthroughCopy("src/admin/eleventyConfig.yml");
+    eleventyConfig.addPassthroughCopy("src/admin/*.js");
 
     const now = new Date();
 
@@ -66,13 +66,13 @@ module.exports = function (config) {
 
     const liveResources = resource => resource.date <= now && !resource.data.draft;
 
-    config.addCollection("resources", collection => {
+    eleventyConfig.addCollection("resources", collection => {
         return [
             ...collection.getFilteredByGlob("./src/resources/*.md").filter(liveResources).reverse()
         ];
     });
 
-    config.addCollection("activities", collection => {
+    eleventyConfig.addCollection("activities", collection => {
         return [
             ...collection
                 .getFilteredByGlob("./src/activities/*.md")
@@ -80,7 +80,7 @@ module.exports = function (config) {
         ];
     });
 
-    config.addCollection("robotActivities", collection => {
+    eleventyConfig.addCollection("robotActivities", collection => {
         return [
             ...collection
                 .getFilteredByGlob("./src/robot-activities/*.md")
@@ -88,14 +88,14 @@ module.exports = function (config) {
         ];
     });
 
-    config.addCollection("guides", collection => {
+    eleventyConfig.addCollection("guides", collection => {
         return [
             ...collection.getFilteredByGlob("./src/guides/*.md")
                 .sort((a, b) => a.data.title.localeCompare(b.data.title))
         ];
     });
 
-    config.addCollection("unpluggedActivities", collection => {
+    eleventyConfig.addCollection("unpluggedActivities", collection => {
         return [
             ...collection
                 .getFilteredByGlob("./src/activities/*.md")
@@ -108,7 +108,7 @@ module.exports = function (config) {
         ];
     });
 
-    config.addCollection("onscreenActivities", collection => {
+    eleventyConfig.addCollection("onscreenActivities", collection => {
         return [
             ...collection
                 .getFilteredByGlob("./src/activities/*.md")
@@ -121,7 +121,7 @@ module.exports = function (config) {
         ];
     });
 
-    config.addCollection("hybridActivities", collection => {
+    eleventyConfig.addCollection("hybridActivities", collection => {
         return [
             ...collection
                 .getFilteredByGlob("./src/activities/*.md")
@@ -134,7 +134,7 @@ module.exports = function (config) {
         ];
     });
 
-    config.addCollection("projects", collection => {
+    eleventyConfig.addCollection("projects", collection => {
         return [
             ...collection
                 .getFilteredByGlob("./src/projects/*.md")
@@ -143,7 +143,7 @@ module.exports = function (config) {
     });
 
     // Plugins
-    config.addPlugin(fluidPlugin, {
+    eleventyConfig.addPlugin(fluidPlugin, {
         css: {
             enabled: false
         },
@@ -151,23 +151,23 @@ module.exports = function (config) {
             enabled: true
         }
     });
-    config.addPlugin(navigationPlugin);
+    eleventyConfig.addPlugin(navigationPlugin);
 
-    config.addShortcode("svgPlaceholder", function (width, height) {
+    eleventyConfig.addShortcode("svgPlaceholder", function (width, height) {
         return `<svg viewBox="0 0 ${width} ${height}" style="--width: ${width}px;" class="placeholder">
         <rect width="${width}" height="${height}" />
     </svg>`;
     });
 
-    config.addFilter("getYouTubeId", getYouTubeIdFilter);
-    config.addShortcode("image", imageShortcode);
-    config.addPairedShortcode("gridImage", gridImageShortcode);
-    config.addPairedShortcode("gridVideo", gridVideoShortcode);
-    config.addPairedShortcode("blockquote", blockquoteShortcode);
-    config.addPairedShortcode("grid", gridShortcode);
+    eleventyConfig.addFilter("getYouTubeId", getYouTubeIdFilter);
+    eleventyConfig.addShortcode("image", imageShortcode);
+    eleventyConfig.addPairedShortcode("gridImage", gridImageShortcode);
+    eleventyConfig.addPairedShortcode("gridVideo", gridVideoShortcode);
+    eleventyConfig.addPairedShortcode("blockquote", blockquoteShortcode);
+    eleventyConfig.addPairedShortcode("grid", gridShortcode);
 
     // 404
-    config.setBrowserSyncConfig({
+    eleventyConfig.setBrowserSyncConfig({
         callbacks: {
             ready: function (err, bs) {
 
