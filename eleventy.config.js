@@ -12,19 +12,17 @@ https://github.com/codelearncreate/weavly.org/raw/main/LICENSE.md.
 
 "use strict";
 
-const fs = require("fs");
-
 const fluidPlugin = require("eleventy-plugin-fluid");
 const navigationPlugin = require("@11ty/eleventy-navigation");
-const blockquoteShortcode = require("./src/shortcodes/blockquote.js");
-const gridShortcode = require("./src/shortcodes/grid.js");
-const gridImageShortcode = require("./src/shortcodes/grid-image.js");
-const gridVideoShortcode = require("./src/shortcodes/grid-video.js");
-const imageShortcode = require("./src/shortcodes/image.js");
-const getYouTubeIdFilter = require("./src/utils/extract-youtube-id.js");
+const blockquoteShortcode = require("./src/_shortcodes/blockquote.js");
+const gridShortcode = require("./src/_shortcodes/grid.js");
+const gridImageShortcode = require("./src/_shortcodes/grid-image.js");
+const gridVideoShortcode = require("./src/_shortcodes/grid-video.js");
+const imageShortcode = require("./src/_shortcodes/image.js");
+const getYouTubeIdFilter = require("./src/_utils/extract-youtube-id.js");
 
 // Import transforms
-const parseTransform = require("./src/transforms/parse-transform.js");
+const parseTransform = require("./src/_transforms/parse-transform.js");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
@@ -36,8 +34,18 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({"src/assets/icons": "/"});
     eleventyConfig.addPassthroughCopy({"src/assets/images": "assets/images"});
     eleventyConfig.addPassthroughCopy({"src/assets/media": "assets/media"});
-    eleventyConfig.addPassthroughCopy("src/admin/eleventyConfig.yml");
+    eleventyConfig.addPassthroughCopy("src/admin/config.yml");
     eleventyConfig.addPassthroughCopy("src/admin/*.js");
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/netlify-cms/dist/netlify-cms.js": "lib/cms/netlify-cms.js",
+        "node_modules/netlify-cms/dist/netlify-cms.js.map": "lib/cms/netlify-cms.js.map",
+        "node_modules/@babel/standalone/babel.min.js": "lib/cms/babel.min.js",
+        "node_modules/@babel/standalone/babel.min.js.map": "lib/cms/babel.min.js.map",
+        "node_modules/markdown-it/dist/markdown-it.min.js": "lib/cms/markdown-it.min.js",
+        "node_modules/prop-types/prop-types.min.js": "lib/cms/prop-types.min.js",
+        "node_modules/react/umd/react.development.js": "lib/cms/react.development.js",
+        "node_modules/react/umd/react.production.min.js": "lib/cms/react.production.min.js"
+    });
 
     const now = new Date();
 
@@ -68,14 +76,14 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection("resources", collection => {
         return [
-            ...collection.getFilteredByGlob("./src/resources/*.md").filter(liveResources).reverse()
+            ...collection.getFilteredByGlob("./src/collections/resources/*.md").filter(liveResources).reverse()
         ];
     });
 
     eleventyConfig.addCollection("activities", collection => {
         return [
             ...collection
-                .getFilteredByGlob("./src/activities/*.md")
+                .getFilteredByGlob("./src/collections/activities/*.md")
                 .sort(sortByLevel)
         ];
     });
@@ -83,14 +91,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("robotActivities", collection => {
         return [
             ...collection
-                .getFilteredByGlob("./src/robot-activities/*.md")
+                .getFilteredByGlob("./src/collections/robot-activities/*.md")
                 .sort(sortByLevel)
         ];
     });
 
     eleventyConfig.addCollection("guides", collection => {
         return [
-            ...collection.getFilteredByGlob("./src/guides/*.md")
+            ...collection.getFilteredByGlob("./src/collections/guides/*.md")
                 .sort((a, b) => a.data.title.localeCompare(b.data.title))
         ];
     });
@@ -98,7 +106,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("unpluggedActivities", collection => {
         return [
             ...collection
-                .getFilteredByGlob("./src/activities/*.md")
+                .getFilteredByGlob("./src/collections/activities/*.md")
                 .filter(
                     function (activity) {
                         return activity.data.type === "Unplugged";
@@ -111,7 +119,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("onscreenActivities", collection => {
         return [
             ...collection
-                .getFilteredByGlob("./src/activities/*.md")
+                .getFilteredByGlob("./src/collections/activities/*.md")
                 .filter(
                     function (activity) {
                         return activity.data.type === "On-Screen";
@@ -124,7 +132,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("hybridActivities", collection => {
         return [
             ...collection
-                .getFilteredByGlob("./src/activities/*.md")
+                .getFilteredByGlob("./src/collections/activities/*.md")
                 .filter(
                     function (activity) {
                         return activity.data.type === "Hybrid";
@@ -137,7 +145,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("projects", collection => {
         return [
             ...collection
-                .getFilteredByGlob("./src/projects/*.md")
+                .getFilteredByGlob("./src/collections/projects/*.md")
                 .sort((a, b) => a.data.title.localeCompare(b.data.title))
         ];
     });
@@ -149,7 +157,8 @@ module.exports = function (eleventyConfig) {
         },
         sass: {
             enabled: true
-        }
+        },
+        i18n: false
     });
     eleventyConfig.addPlugin(navigationPlugin);
 
@@ -166,27 +175,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPairedShortcode("blockquote", blockquoteShortcode);
     eleventyConfig.addPairedShortcode("grid", gridShortcode);
 
-    // 404
-    eleventyConfig.setBrowserSyncConfig({
-        callbacks: {
-            ready: function (err, bs) {
-
-                bs.addMiddleware("*", (req, res) => {
-                    const content_404 = fs.readFileSync("dist/404.html");
-                    // Provides the 404 content without redirect.
-                    res.write(content_404);
-                    res.writeHead(404);
-                    res.end();
-                });
-            }
-        }
-    });
-
     return {
         dir: {
-            input: "src",
-            output: "dist",
-            includes: "_includes"
+            input: "src"
         },
         markdownTemplateEngine: "njk",
         passthroughFileCopy: true
