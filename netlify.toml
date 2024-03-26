@@ -9,3 +9,21 @@
   publish = "_site"
   autoLaunch = false
   framework = "#custom"
+
+[[redirects]]
+  from = "https://resources.codelearncreate.ca/*"
+  to = "https://weavly.org/learn/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://resources.codelearncreate.com/*"
+  to = "https://weavly.org/learn/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://resources.codelearncreate.org/*"
+  to = "https://weavly.org/learn/:splat"
+  status = 301
+  force = true
